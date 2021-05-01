@@ -1,0 +1,41 @@
+:root {
+    font-size: 10px;
+}
+
+ul {
+	  list-style-type: none;
+}
+
+input[type="radio"] {
+    display:none;   
+}
+
+input[type="radio"]:checked + label {
+    border: solid 3px #40a5fc;
+}
+
+.card img {
+	min-width: 15px;
+	max-height: 100px;
+}
+
+.row-view {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 16px;
+    }
+}
+/* LIST VIEW*/
+#lgDemo {
+  display: grid;
+  grid-template-columns: 100%;
+}
+/* TRANSFORM TO GRID VIEW */
+#lgDemo.grid { 
+	grid-template-columns: 50% 50%;
+	margin: 10px;
+}
