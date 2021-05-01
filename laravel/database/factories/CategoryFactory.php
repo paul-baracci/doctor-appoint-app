@@ -3,7 +3,11 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
 
 class CategoryFactory extends Factory
 {
@@ -22,7 +26,11 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->title(),
+            'slug' => Str::slug($this->faker->unique()->name(), '-'),
+            'image_id' => Image::inRandomOrder()->first()->id,
+            'seo_title' => $this->faker->title(),
+            'seo_description' => $this->faker->sentence(),
         ];
     }
 }

@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 class ImageFactory extends Factory
 {
@@ -22,7 +24,9 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'path' => Str::length(6),
+            'name' => $this->faker->name(),
+            'size' => Str::length(6),
         ];
     }
 }

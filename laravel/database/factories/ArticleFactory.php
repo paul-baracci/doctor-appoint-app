@@ -3,7 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\Article;
+use App\Models\Image;
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
 
 class ArticleFactory extends Factory
 {
@@ -22,7 +28,16 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'article_title' => $this->faker->title(),
+            'article_description' => $this->faker->realText(),
+            'author_id' => User::inRandomOrder()->first()->id,
+            'article_content' => $this->faker->realText(),
+            'image_id' => Image::inRandomOrder()->first()->id,
+            'category_id' => Category::inRandomOrder()->first()->id,
+            'published_at' => $this->faker->date(),
+            'seo_title' => $this->faker->title(),
+            'seo_description' => $this->faker->sentence(),
+            'slug' => Str::slug($this->faker->unique()->name(), '-'),
         ];
     }
 }

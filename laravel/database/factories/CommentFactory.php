@@ -3,7 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Comment;
+use App\Models\Article;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
 class CommentFactory extends Factory
 {
@@ -22,7 +25,10 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'message' => $this->faker->realText(),
+            'approved_at' => $this->faker->dateTime(),
+            'article_id' => Article::inRandomOrder()->first()->id,
+            'author_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

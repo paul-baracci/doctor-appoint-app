@@ -24,7 +24,14 @@ class CreateCommentsTable extends Migration
                   ->onUpdate('cascade');
 
             $table->text('message');
-            $table->string('author');
+            
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('restrict')
+                  ->onUpdate('cascade');
+
             $table->timestamps();
             $table->datetime('approved_at');
         });
