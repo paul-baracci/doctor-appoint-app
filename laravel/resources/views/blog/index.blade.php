@@ -16,7 +16,7 @@
               <h3 class="mb-1">{{ $article->article_title }}</h3>
               <div class="mb-1 text-muted"> <strong>Published on </strong>{{ $article->published_at }}</div>
               <p class="card-text mb-auto">{{ $article->article_description }}</p>
-              <a href="article/{{ $article->id }}">Continue reading</a>
+              <a href="/article/{{ $article->id }}">Continue reading</a>
               <p class="card-text mb-auto">{{ $article->article_description }}</p>
             </div>           
           </div>
