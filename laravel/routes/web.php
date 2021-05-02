@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ArticleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,9 @@ use App\Http\Controllers\IndexController;
 |
 */
 Route::get('/',[IndexController::class, 'index']);
-Route::get('services',[IndexController::class, 'services']);
-Route::get('about',[IndexController::class, 'about']);
-Route::get('blog',[IndexController::class, 'blog']);
-Route::get('contact',[IndexController::class, 'contact']);
-Route::get('terms',[IndexController::class, 'terms']);
-Route::get('article',[IndexController::class, 'article']);
+//Route::get('/services',[IndexController::class, 'services']);
+Route::get('/about',[IndexController::class, 'about']);
+Route::get('/blog',[ArticleController::class, 'blog']);
+Route::get('/contact',[IndexController::class, 'contact']);
+Route::get('/terms',[IndexController::class, 'terms']);
+Route::get('/article/{id}',[ArticleController::class, 'article']);

@@ -26,10 +26,10 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->title(),
+            'name' => $this->faker->unique()->word(),
             'slug' => Str::slug($this->faker->unique()->name(), '-'),
             'image_id' => Image::inRandomOrder()->first()->id,
-            'seo_title' => $this->faker->title(),
+            'seo_title' => $this->faker->word(2),
             'seo_description' => $this->faker->sentence(),
         ];
     }

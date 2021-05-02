@@ -28,16 +28,16 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'article_title' => $this->faker->title(),
-            'article_description' => $this->faker->realText(),
+            'article_title' => $this->faker->unique()->word(),
+            'article_description' => $this->faker->sentence(),
             'author_id' => User::inRandomOrder()->first()->id,
-            'article_content' => $this->faker->realText(),
+            'article_content' => $this->faker->paragraph(),
             'image_id' => Image::inRandomOrder()->first()->id,
             'category_id' => Category::inRandomOrder()->first()->id,
-            'published_at' => $this->faker->date(),
-            'seo_title' => $this->faker->title(),
+            'published_at' => $this->faker->unique()->date(),
+            'seo_title' => $this->faker->word(),
             'seo_description' => $this->faker->sentence(),
-            'slug' => Str::slug($this->faker->unique()->name(), '-'),
+            'slug' => Str::slug($this->faker->unique()->word(2), '-'),
         ];
     }
 }

@@ -2,12 +2,14 @@
 
 @section('content')
 <div class="container">
-	<div class="col">
-            <h2>{{ $articles->article_title }}</h2>
-            <p>{{ $articles->published_at }} by <a href="#">{{ $articles->author_id }}</a></p>
-            <p>{{ $articles->article_description }}</p>
+	<div class="row m-5">
+		<div class ="col">
+            <h2>{{ $article->article_title }}</h2>
+            <p>{{ $article->published_at }}</p>
+            <p>{{ $article->article_description }}</p>
             <hr>
-	{{ $articles->article_content }}
+	{{ $article->article_content }}
+		</div>
 	</div>
 </div>    
 @endsection

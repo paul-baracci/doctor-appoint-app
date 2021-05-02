@@ -25,7 +25,7 @@ class ImageFactory extends Factory
     {
         return [
             'path' => Str::length(6),
-            'name' => $this->faker->name(),
+            'name' => $this->faker->word(),
             'size' => Str::length(6),
         ];
     }

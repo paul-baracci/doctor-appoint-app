@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
 use App\Models\Service;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -24,16 +24,7 @@ class IndexController extends Controller
     {
     	return view('about');
     }
-    public function blog()
-    {
-
-	$articles = Article::all();
-	return view('blog', [
-	    'articles' => $articles
-	
-	]);
-
-    }
+    
     public function contact()
     {
     	return view('contact');
@@ -41,9 +32,5 @@ class IndexController extends Controller
     public function terms()
     {
     	return view('terms');
-    }
-    public function article()
-    {
-        return view ('article');
     }
 }
