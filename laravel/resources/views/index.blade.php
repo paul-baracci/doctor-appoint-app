@@ -49,7 +49,7 @@
         </div>
         <div class="row justify-content-center">       
             <div class="col-sm-10 text-center text-muted">
-                <h4>Augmented Heart Clinic allows you to schedule appointments with ease and speed. Access the <a href="services">Services page</a> and set up an appoinment. Once a request is submitted, our team will contact you to confirm the exact time and payment method.</h4>
+                <h4>Augmented Heart Clinic allows you to schedule appointments with ease and speed. Access the <a href="/services">Services page</a> and set up an appoinment. Once a request is submitted, our team will contact you to confirm the exact time and payment method.</h4>
             </div>
         </div>
     </div>

@@ -14,9 +14,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function blog()
+    public function index()
     {
-        return view ('blog')
+        return view ('blog.index')
             ->with('articles', Article::orderBy('published_at', 'DESC')->paginate(5));
         /*$article = Article::all();
 				return view('blog', [
@@ -53,9 +53,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function article($id)
+    public function show($id)
     {
-        return view('article')
+        return view('blog.show')
             ->with('article', Article::where('id', $id)->first());
     }
 

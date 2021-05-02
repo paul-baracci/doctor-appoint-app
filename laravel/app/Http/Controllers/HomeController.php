@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use Illuminate\Support\Facades\DB;
 
-class IndexController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {

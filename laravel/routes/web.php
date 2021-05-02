@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,12 @@ use App\Http\Controllers\ArticleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[IndexController::class, 'index']);
+Route::get('/',[HomeController::class, 'index']);
 //Route::get('/services',[IndexController::class, 'services']);
-Route::get('/about',[IndexController::class, 'about']);
-Route::get('/blog',[ArticleController::class, 'blog']);
-Route::get('/contact',[IndexController::class, 'contact']);
-Route::get('/terms',[IndexController::class, 'terms']);
-Route::get('/article/{id}',[ArticleController::class, 'article']);
+Route::get('/about',[HomeController::class, 'about']);
+Route::get('/blog',[ArticleController::class, 'index']);
+Route::get('/contact',[HomeController::class, 'contact']);
+Route::get('/terms',[HomeController::class, 'terms']);
+Route::get('/article/{id}',[ArticleController::class, 'show']);
+Route::get('/category/{id}',[CategoryController::class, 'show']);
+Route::get('/tag/{id}',[TagController::class, 'show']);

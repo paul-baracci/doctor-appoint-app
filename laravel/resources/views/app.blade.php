@@ -15,11 +15,11 @@
     	<span class="navbar-toggler-icon"></span>
 	    </button>
   	    <div class="collapse navbar-collapse justify-content-end" id="topnav">
-            <a href="services" class="nav-link">Services</a>
-            <a href="about" class="nav-link">About us</a>
-            <a href="blog" class="nav-link">Blog</a>
-            <a href="contact" class="nav-link">Contact us</a>
-            <a href="article" class="nav-link">Terms and conditions</a>
+            <a href="/services" class="nav-link">Services</a>
+            <a href="/about" class="nav-link">About us</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/contact" class="nav-link">Contact us</a>
+            <a href="/terms" class="nav-link">Terms and conditions</a>
             <a href="https://www.facebook.com/" class="nav-link">
 			<img class="img-fluid" src="https://via.placeholder.com/40x40?text=FB" alt="Facebook page"></a>
         </div>
@@ -30,11 +30,11 @@
     <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="/"><img src="https://via.placeholder.com/200x50?text=Logo+Image" alt="Augmented Heart Logo"></a>
             <ul>
-                    <li><a href="services" class="nav-link">Services</a></li>
-                    <li><a href="about" class="nav-link">About us</a></li>
-                    <li><a href="blog" class="nav-link">Blog</a></li>
-                    <li><a href="contact" class="nav-link">Contact us</a></li>
-                    <li><a href="terms" class="nav-link">Terms and conditions</a></li>
+                    <li><a href="/services" class="nav-link">Services</a></li>
+                    <li><a href="/about" class="nav-link">About us</a></li>
+                    <li><a href="/blog" class="nav-link">Blog</a></li>
+                    <li><a href="/contact" class="nav-link">Contact us</a></li>
+                    <li><a href="/terms" class="nav-link">Terms and conditions</a></li>
             </ul>
             <ul>
                     <li><a href="#" class="nav-link"><img class="img-fluid" src="https://via.placeholder.com/30x30?text=F" alt="Facebook">Facebook</a></li>
