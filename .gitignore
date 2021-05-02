@@ -1,5 +1,5 @@
 /laravel/public/node_modules
-/public/img
+/laravel/public/img
 /docker-containers
 /laravel/public/storage
 /laravel/storage/*.key
