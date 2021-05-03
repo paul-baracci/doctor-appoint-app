@@ -4,9 +4,7 @@
 <div class="container text">
   <h1 class="text-center"> Category </h1>
 
-  <div class="row m-2 justify-content-center">
-    {{ $articles->links() }}
-  </div>
+ 
   @foreach($articles as $article)
       <div class="row m-2">
         <div class="col-md-12">
@@ -23,9 +21,7 @@
       </div>
   @endforeach
 
-  <div class="row m-2 justify-content-center">
-    {{ $articles->links() }}
-  </div>
+ 
 </div>
 
 @endsection

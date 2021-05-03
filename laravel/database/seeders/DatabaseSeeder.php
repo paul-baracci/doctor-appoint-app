@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,11 +22,5 @@ class DatabaseSeeder extends Seeder
 		\App\Models\Tag::factory(7)->create();
 		\App\Models\Article::factory(15)->create();
 		\App\Models\Comment::factory(10)->create();
-
-       /* DB::table('article_tag')->insert([
-            'article_id' => Str::random(10),
-            'tag_id' => Str::random(10),
-        ]); */
-		
     }
 }

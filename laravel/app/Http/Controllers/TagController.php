@@ -48,8 +48,8 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        return view('tag')
-            ->with('articles', Article::orderBy('published_at', 'DESC')->paginate(5));
+        return view ('tag')
+            ->with('articles', Article::orderBy('published_at', 'DESC')->get());
     }
 
     /**

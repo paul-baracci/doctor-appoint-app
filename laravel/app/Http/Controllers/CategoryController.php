@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Models\Article;
 use App\Models\Tag;
@@ -17,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('blog.categories')
-            ->with('categories', Article::orderBy('name', 'ASC')->paginate(5)
+            ->with('categories', Category::orderBy('name', 'ASC')->paginate(5));
     }
 
     /**
@@ -49,8 +50,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return view('blog.category')
-            ->with('articles', Article::orderBy('published_at', 'DESC')->paginate(5));
+        return view ('blog.category')
+            		->with('articles', Article::where('category_id', '=', $id)
+            		->get());
     }
 
     /**
