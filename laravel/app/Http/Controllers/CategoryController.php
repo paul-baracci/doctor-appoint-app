@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('blog.categories')
-            ->with('categories', Category::orderBy('name', 'ASC')->paginate(5));
+            ->with('categories', Category::orderBy('name', 'ASC')->get());
     }
 
     /**

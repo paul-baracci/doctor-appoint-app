@@ -9,7 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
 
-   /* public function article() {
-        return $this->hasMany(Article::class);
-    } */
+    public function articles() {
+        return $this->belongstoMany(Article::class);
+    } 
 }

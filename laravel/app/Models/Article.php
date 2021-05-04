@@ -24,9 +24,9 @@ public function user() {
 
     public function comment() {
         return $this->hasMany(Comment::class);
-    }
+    } */
 
     public function tag() {
-        return $this->hasMany(Tag::class);
-    } */
+        return $this->belongsToMany(Tag::class);
+    }
 }
