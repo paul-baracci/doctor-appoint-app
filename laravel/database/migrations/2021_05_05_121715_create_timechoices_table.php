@@ -18,6 +18,7 @@ class CreateTimechoicesTable extends Migration
         DB::statement("
             CREATE TABLE `timechoices` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                `name` VARCHAR(30),
                 `time` TIME
             ) ENGINE=INNODB
             ");

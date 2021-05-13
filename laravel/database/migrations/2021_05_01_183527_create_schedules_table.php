@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateServicesTable extends Migration
+class CreateSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class UpdateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::table('services', function (Blueprint $table) {
-            $table->integer('price')->after('description');
-            $table->integer('requests');
+        Schema::create('schedules', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 30);
+            $table->time('start_time');
+            $table->time('end_time');
         });
     }
 
@@ -26,10 +28,6 @@ class UpdateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::table('services', function (Blueprint $table) {
-            $table->dropColumn('price');
-            $table->dropColumn('requests');
-        });
+        Schema::dropIfExists('schedules');
     }
 }
-

@@ -13,7 +13,7 @@
                     <h4><a href="services.html">Schedule an appointment</a> today, we're glad to hear what time works for you!</h4>
                 </div>
 	       </div>
-    </div>
+    
     <div class="row">
                 <div class="col-md-6 col-lg-4 my-2">
                     <a class="lightbox" href="https://via.placeholder.com/800x583?text=Image">
@@ -46,57 +46,32 @@
                     </a>
                 </div>
             </div>
+    </div>
     <div class="container" id="Staff">
         <div class="text-center m-4"> 
          <h1>Our Staff</h1>
         </div>
-        <div class="row align-items-center">
-                <div class="col-sm">
-                    <img class="flow-left mx-auto d-block" src="img/grisha.png" alt="about" width="250" />
-                </div>
-                <div class="col-sm">
-                  <h2>Dr. Grisha Yaeger</h2>
+        <div class="row align-items-left">
+            <div class="col-md-6">
+              <div class="card mb-4 box-shadow">
+                <img class="flow-left mx-auto d-block" src="img/grisha.png" alt="about" size="250" />
+                    <h2>Dr. Grisha Yaeger</h2>
                     <p>Specialization: Surgery and Anesthesiology</p>
                     <p>Email:</p>
                     <p>Social:</p>
                     <p>Phone:</p>
-                </div>   
-         </div>
-         <div class="row align-items-center">
-                <div class="col-sm">
-                    <img class="flow-left mx-auto d-block" src="img/jd.jpg" alt="about" width="250" />
-                </div>
-                <div class="col-sm">
-                  <h2>Dr. John Dorian</h2>
-                    <p>Specialization: Emergency medicine</p>
+                </div>           
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4 box-shadow">
+                    <img class="flow-left mx-auto d-block" src="img/jd.jpg" alt="about" size="250" />
+                    <h2>Dr. John Dorian</h2>
+                    <p>Specialization: Surgery and Anesthesiology</p>
                     <p>Email:</p>
                     <p>Social:</p>
                     <p>Phone:</p>
-                </div>
-         </div>
-         <div class="row align-items-center">
-                <div class="col-sm">
-                    <img class="flow-left mx-auto d-block" src="img/tyrell.jpg" alt="about" width="250" />
-                </div>
-                <div class="col-sm">
-                  <h2>Dr. Eldon Tyrell</h2>
-                    <p>Specialization: Surgeries and Cybernetics</p>
-                    <p>Email:</p>
-                    <p>Social:</p>
-                    <p>Phone:</p>
-                </div>
-         </div>
-         <div class="row align-items-center">
-                <div class="col-sm">
-                    <img class="flow-left mx-auto d-block" src="img/house.jpg" alt="about" width="250" />
-                </div>
-                <div class="col-sm">
-                  <h2>Dr. Gregory House</h2>
-                    <p>Specialization: Virusology and Diagnostic Investigations</p>
-                    <p>Email:</p>
-                    <p>Social:</p>
-                    <p>Phone:</p>
-                </div>
-         </div>
+                </div>           
+              </div>
+        </div>
     </div>
 @endsection

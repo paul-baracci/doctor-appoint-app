@@ -38,11 +38,3 @@ window.addEventListener("DOMContentLoaded", function(){
     document.getElementById("lgDemo").classList.add("grid");
   });
 });
-
-// Match service modal title with service name
-$('#schedule').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var service = button.data('content') // Extract info from data-* attributes
-  var modal = $(this)
-  modal.find('.modal-title').text('Schedule ' + service)
-})

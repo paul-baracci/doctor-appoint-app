@@ -3,26 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
+use App\Models\Service;
 use Illuminate\Support\Facades\DB;
 
-
-class ArticleController extends Controller
-{
+class ServiceController extends Controller
+{   
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   
-        $articles = Article::whereNotNull('published_at')
-                            ->orderBy('published_at', 'desc')
-                            ->paginate(5);
-        return view ('blog.index' , [
-            'articles'=>$articles
-        ]);        
-        //    ->with('articles', Article::orderBy('published_at', 'DESC')->paginate(5));
+    public function services()
+    {
+        $services = Service::whereNotNull('price')
+                        ->orderBy('created_at')
+                        ->paginate(10);
+
+    	return view('services', [
+            'services' => $services
+        ]);
     }
 
     /**
@@ -52,32 +51,31 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function service($id)
     {
-        return view('blog.show')
-            ->with('article', Article::where('id', $id)->first());
+        return view('service')
+            ->with('service', Service::where('id', $id)->first());
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
         //
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -85,10 +83,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
         //
     }

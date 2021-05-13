@@ -12,6 +12,9 @@ class Category extends Model
     public function articles() {
         return $this->belongstoMany(Article::class);
         }
+    public function services() {
+        return $this->belongstoMany(Service::class);
+        }
     /*
     public function image() {
         return $this->has(Image::class);

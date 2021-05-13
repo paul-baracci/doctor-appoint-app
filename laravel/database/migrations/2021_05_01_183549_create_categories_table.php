@@ -24,7 +24,7 @@ class CreateCategoriesTable extends Migration
             $table->foreign('image_id')
                    ->references('id')
                    ->on('images')
-                   ->onDelete('restrict')
+                   ->onDelete('cascade')
                    ->onUpdate('cascade');
 
             $table->timestamps();

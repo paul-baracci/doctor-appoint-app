@@ -2,25 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
-
+use App\Http\Controllers\ContactFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 Route::get('/',[HomeController::class, 'index']);
-//Route::get('/services',[IndexController::class, 'services']);
+Route::get('/services',[ServiceController::class, 'services']);
+Route::get('/service/{id}',[ServiceController::class, 'service']);
 Route::get('/about',[HomeController::class, 'about']);
 Route::get('/blog',[ArticleController::class, 'index']);
-Route::get('/contact',[HomeController::class, 'contact']);
+
+Route::get('/contact',[ContactFormController::class, 'contact']);
+Route::post('/contact',ContactFormController::class);
+
 Route::get('/terms',[HomeController::class, 'terms']);
 Route::get('/article/{id}',[ArticleController::class, 'show']);
 Route::get('/category/{id}',[CategoryController::class, 'show']);

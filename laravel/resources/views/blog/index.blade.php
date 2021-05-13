@@ -3,7 +3,7 @@
 @section('content')
 <div class="container text">
   <h1 class="text-center">Our Blog</h1>
-
+  
   <div class="row m-2 justify-content-center">
     {{ $articles->links() }}
   </div>
