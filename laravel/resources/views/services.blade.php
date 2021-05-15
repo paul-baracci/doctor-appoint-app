@@ -10,17 +10,15 @@
       <button id="sGrid" class="btn btn-outline-primary">Grid</button>
     </div>
     <div class="m-4" id="button-group">
-        <button class="order btn btn-outline-primary" id="ascName" data-order="ascendingByName">ASC BY Name</button>
-        <button class="order btn btn-outline-primary" id="decName" data-order="descendingByName">DESC BY Name</button>
-        <button class="order btn btn-outline-primary" id="asc" data-order="ascendingByPrice">ASC BY Price</button>
-        <button class="order btn btn-outline-primary" id="dec" data-order="descendingByPrice">DESC BY Price</button>
-         <button class="order btn btn-outline-primary" id="ascName" data-order="ascendingByDate">ASC BY Date</button>
-        <button class="order btn btn-outline-primary" id="decName" data-order="descendingByDate">DESC BY Date</button>
+	<button class="order btn btn-outline-primary" > @sortablelink('title', 'Sort by Name') </button>
+        <button class="order btn btn-outline-primary" > @sortablelink('price', 'Sort by Price') </button>
+        <button class="order btn btn-outline-primary" > @sortablelink('created_at', 'Sort by Date') </button>
     </div>
-    <div id= "lgDemo" class="row row-view">
+
 	<div class="row justify-content-center">
-	    {{ $services->links() }}
+	    {!! $services->appends(\Request::except('page'))->render() !!}
 	</div>
+    <div id= "lgDemo" class="row row-view">
  
     @foreach($services as $service)
       <div class="card row m-2 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">

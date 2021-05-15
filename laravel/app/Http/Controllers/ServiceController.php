@@ -15,9 +15,8 @@ class ServiceController extends Controller
      */
     public function services()
     {
-        $services = Service::whereNotNull('price')
-                        ->orderBy('created_at')
-                        ->paginate(5);
+        $services = Service::sortable()
+            ->paginate(6);
 
     	return view('services', [
             'services' => $services
