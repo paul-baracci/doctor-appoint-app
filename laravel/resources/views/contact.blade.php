@@ -1,17 +1,18 @@
 @extends('app')
 
 @section('content')
-<div class="container " id="contact">
-    <div class="row">
-        <div class="col-m-6">
+
 	    <div class="text-center">
 		<h1>Contact us</h1>
 	    </div>
+<div class="container " id="contact">
+    <div class="row">
+        <div class="col-8">
             @include('contactForm')   
         </div>
-        <div class="col-m-6">
+        <div class="col-4">
 	    <iframe 
-		width="425" 
+		width="300" 
 		height="250" 
 		frameborder="0" 
 		scrolling="no" 

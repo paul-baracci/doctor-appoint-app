@@ -8,7 +8,7 @@
                         <input type="text" id="fname" name="fname" class="form-control" placeholder="Name" required>
                     </div>
                     <div class="form-group col-3">
-                    <input type="email" id="email2" name="email" class="form-control" placeholder="Email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                     </div>   
                 </div> 
                 <div class="row justify-content-center">        

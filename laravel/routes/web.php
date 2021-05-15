@@ -7,6 +7,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\AppointmentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +20,10 @@ Route::get('/service/{id}',[ServiceController::class, 'service']);
 Route::get('/about',[HomeController::class, 'about']);
 Route::get('/blog',[ArticleController::class, 'index']);
 
+Route::post('/services',[AppointmentController::class, 'setappointment']);
+
 Route::get('/contact',[ContactFormController::class, 'contact']);
-Route::post('/contact',ContactFormController::class);
+Route::post('/contact',[ContactFormController::class, 'contactform']);
 
 Route::get('/terms',[HomeController::class, 'terms']);
 Route::get('/article/{id}',[ArticleController::class, 'show']);

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Message;
+use Illuminate\Contracts\Mail\Mailer;
 
 class AppointmentController extends Controller
 {
@@ -81,5 +83,32 @@ class AppointmentController extends Controller
     public function destroy(Appointment $appointment)
     {
         //
+    }
+    public function setappointment(Request $request)
+    {
+	$request->validate([
+	    'name' => 'required',
+	    'email' => 'required|email',
+	    'phone' => 'required|numeric'
+
+	]);
+
+	$input = $request->all();
+
+	Appointment::created($input);
+
+    	\Mail::send('emails.appointment', 
+    	    [
+		'name' => $request->input('name'),   
+		'email' => $request->input('email'),
+		'phone' => $request->input('phone'), 
+	    ], 
+    		function (Message $message) use ($request) {
+	        $message->to('support@augmented.com');
+		$message->from('no-reply@augmented.com');
+    		$message->subject('Appointment request: ' . $request->input('subject'));
+    	});
+	
+	return back()->with('success', 'Contact Form Submit Successfully');
     }
 }

@@ -8,13 +8,14 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="mailto:ma@developmentaid.org?subject=Reservation+for+"
+      <form action="#"
               method="post"
               enctype="multipart/form-data"
-              name="Reserve">
+	      name="Reserve">
+	    @csrf
           <div class="form-group">
-          <input type="hidden" id="service" name="service" value="">
-          <input type="text" class="form-control" id="recipient-name" name="fullname" placeholder="Full Name" required>
+          <input type="hidden" id="service" name="service" value=" {{ $service->title }} ">
+          <input type="text" class="form-control" id="fname" name="fname" placeholder="Full Name" required>
           </div>
           <div class="form-group">
             <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
