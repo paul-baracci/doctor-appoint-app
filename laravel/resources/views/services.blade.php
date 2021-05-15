@@ -18,8 +18,12 @@
         <button class="order btn btn-outline-primary" id="decName" data-order="descendingByDate">DESC BY Date</button>
     </div>
     <div id= "lgDemo" class="row row-view">
+	<div class="row justify-content-center">
+	    {{ $services->links() }}
+	</div>
+ 
     @foreach($services as $service)
-      <div class="card row m-4 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
+      <div class="card row m-2 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
         
         <div class="col-1 p-2 mr-2 mb-3 mb-lg-0">
         <img src="#" class="img-fluid" alt="Image">

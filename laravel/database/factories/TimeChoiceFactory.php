@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\TimeChoice;
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TimeChoiceFactory extends Factory
@@ -22,7 +23,8 @@ class TimeChoiceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word(),
+            'time' => $this->faker->unique()->date(),
         ];
     }
 }

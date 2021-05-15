@@ -4,7 +4,7 @@
 <div class="container text">
   <h1 class="text-center">Our Blog</h1>
   
-  <div class="row m-2 justify-content-center">
+  <div class="row justify-content-center">
     {{ $articles->links() }}
   </div>
   @foreach($articles as $article)
@@ -17,7 +17,7 @@
               <div class="mb-1 text-muted"> <strong>Published on </strong>{{ $article->published_at }}</div>
               <p class="card-text mb-auto">{{ $article->article_description }}</p>
               <a href="/article/{{ $article->id }}">Continue reading</a>
-              <p class="card-text mb-auto">{{ $article->article_description }}</p>
+              <p class="card-text mb-auto">tags</p>
             </div>           
           </div>
         </div>

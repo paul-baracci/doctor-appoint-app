@@ -22,7 +22,6 @@ class ArticleController extends Controller
         return view ('blog.index' , [
             'articles'=>$articles
         ]);        
-        //    ->with('articles', Article::orderBy('published_at', 'DESC')->paginate(5));
     }
 
     /**

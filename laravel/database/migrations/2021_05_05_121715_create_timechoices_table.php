@@ -16,7 +16,7 @@ class CreateTimechoicesTable extends Migration
     public function up()
     {
         DB::statement("
-            CREATE TABLE `timechoices` (
+            CREATE TABLE `time_choices` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 `name` VARCHAR(30),
                 `time` TIME
@@ -31,6 +31,6 @@ class CreateTimechoicesTable extends Migration
      */
     public function down()
     {
-        DB::statement('DROP TABLE IF EXISTS timechoices');
+        DB::statement('DROP TABLE IF EXISTS time_choices');
     }
 }

@@ -20,9 +20,9 @@ class CreateAppointmentsTable extends Migration
                 `requester_email` VARCHAR(50) NOT NULL UNIQUE,
                 `service_id` BIGINT UNSIGNED NOT NULL,
                 `requested_at` DATETIME NULL DEFAULT NULL,
-                `time_choice_id` BIGINT UNSIGNED NOT NULL,
+                `timechoice_id` BIGINT UNSIGNED NOT NULL,
                 FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON UPDATE CASCADE ON DELETE RESTRICT,
-                FOREIGN KEY (`time_choice_id`) REFERENCES `timechoices` (`id`) ON UPDATE CASCADE ON DELETE RESTRICT
+                FOREIGN KEY (`timechoice_id`) REFERENCES `time_choices` (`id`) ON UPDATE CASCADE ON DELETE RESTRICT
             ) ENGINE=InnoDB
             ");
     }

@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
 		\App\Models\Article::factory(15)->create();
 		\App\Models\Comment::factory(10)->create();
         \App\Models\Service::factory(10)->create();
-        \App\Models\TimeChoice::factory(10)->create();
+        //\App\Models\TimeChoice::factory(10)->create();
     }
 }
