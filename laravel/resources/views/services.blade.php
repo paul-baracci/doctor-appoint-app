@@ -34,7 +34,7 @@
           <h6 class="text-muted font-weight-normal">{{ $service->description }}</h6>
         </div>  
 
-        <div class="col text-center ml-auto p-2" >
+        <div class="col-m-12 text-center ml-auto p-2" >
           <h2>${{ $service->price }}</h2>
           
           @include('scheduleButton')
