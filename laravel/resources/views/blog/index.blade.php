@@ -17,7 +17,12 @@
               <div class="mb-1 text-muted"> <strong>Published on </strong>{{ $article->published_at }}</div>
               <p class="card-text mb-auto">{{ $article->article_description }}</p>
               <a href="/article/{{ $article->id }}">Continue reading</a>
-              <p class="card-text mb-auto">tags</p>
+              <p class="card-text mb-auto">category: <a href="/category/{{ $article->category_id }}"> {{ $article->category->name }} </a></p>
+              <p class="card-text mb-auto">tags: 
+                @foreach($article->tags as $tag)
+                  <a href="/tag/{{ $tag->id }}"> {{ $tag->name }} </a>
+                @endforeach
+              </p>
             </div>           
           </div>
         </div>

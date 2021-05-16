@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 
 
@@ -16,12 +17,15 @@ class ArticleController extends Controller
      */
     public function index()
     {   
-        $articles = Article::whereNotNull('published_at')
+        $articles = Article::with('category' , 'tags')
                             ->orderBy('published_at', 'desc')
                             ->paginate(5);
-        return view ('blog.index' , [
-            'articles'=>$articles
-        ]);        
+		
+	    
+	    return view ('blog.index' , [
+            'articles'=>$articles ,
+	]); 
+    
     }
 
     /**
@@ -52,9 +56,12 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return view('blog.show')
-            ->with('article', Article::where('id', $id)->first());
+    {   
+        $article = Article::where('id', $id)->first();
+        return view('blog.show', [
+            'article'=>$article
+        ]);
+            
     }
 
     /**

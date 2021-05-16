@@ -10,10 +10,10 @@ class Category extends Model
     use HasFactory;
 
     public function articles() {
-        return $this->belongstoMany(Article::class);
+        return $this->hasMany(Article::class);
         }
     public function services() {
-        return $this->belongstoMany(Service::class);
+        return $this->hasMany(Service::class);
         }
     /*
     public function image() {

@@ -26,7 +26,11 @@ public function user() {
         return $this->hasMany(Comment::class);
     } 
 
-    public function tag() {
+    public function tags() {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }
