@@ -30,7 +30,7 @@ class ArticleFactory extends Factory
         return [
             'article_title' => $this->faker->unique()->word(),
             'article_description' => $this->faker->sentence(),
-            'author_id' => User::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
             'article_content' => $this->faker->paragraph(),
             'image_id' => Image::inRandomOrder()->first()->id,
             'category_id' => Category::inRandomOrder()->first()->id,

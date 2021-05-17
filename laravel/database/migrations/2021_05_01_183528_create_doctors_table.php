@@ -22,7 +22,7 @@ class CreateDoctorsTable extends Migration
                   ->references('id')
                   ->on('images')
                   ->unique()
-                  ->onDelete('restrict')
+                  ->onDelete('cascade')
                   ->onUpdate('cascade');
             $table->unsignedBigInteger('schedule_id');
             $table->foreign('schedule_id')

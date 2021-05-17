@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Models\Tag;
 use App\Models\Comment;
-use Illuminate\Support\Facades\DB;
 
-
-class ArticleController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +14,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $articles = Article::with('category' , 'tags')
-                            ->orderBy('published_at', 'desc')
-                            ->paginate(5);
-		
-	    
-	    return view ('blog.index' , [
-            'articles'=>$articles ,
-	]); 
-    
+    {
+	//
     }
 
     /**
@@ -57,17 +46,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $article = Article::where('id', $id)->first();
-	$comments = Comment::where('article_id', $article->id)
-	    ->orderBy('created_at' , 'DESC')
-	    ->paginate(5);
-
-	return view('blog.show', [
-	    'article' => $article,
-	    'comments' => $comments
-        ]);
-            
+    {
+        //
     }
 
     /**
@@ -79,7 +59,6 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
-
     }
 
     /**

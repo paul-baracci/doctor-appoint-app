@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-	<div class="row m-5">
-		<div class ="col">
+    <div class="row m-5">
+	<div class ="col">
             <h2>{{ $article->article_title }}</h2>
             <p>{{ $article->published_at }}</p>
             <p>{{ $article->article_description }}</p>
@@ -15,7 +15,23 @@
             </p>
             <hr>
 	{{ $article->article_content }}
-		</div>
 	</div>
+    </div>
 </div>    
+	<div class="container">
+	    <div class="card w-75 mx-auto">
+		<div class="card-header">
+		    comments
+		</div>
+		<div class="card-body">
+		    @foreach($comments as $comment)
+			<p>posted by USER on {{ $comment->approved_at }} </p>
+			<p> {{ $comment->message }} </p>
+			<hr>
+			@endforeach
+		   <p>Post a comment</p> 
+		</div>
+	    </div>
+	</div>
+    
 @endsection
