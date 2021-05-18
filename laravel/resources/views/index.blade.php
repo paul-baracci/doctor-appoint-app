@@ -56,13 +56,36 @@
     <div class="text-center mb-4"> 
        <h1>Popular services</h1>
     </div>
-    <div class="row align-items-center">
-            <div class="col-sm">
-                <img class="flow-left mx-auto d-block" src="https://via.placeholder.com/640x480?text=About+us+image" alt="about" width="250" />
-            </div>
-            <div class="col-sm text-muted">
-                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Ipsum nunc aliquet bibendum enim facilisis gravida. Viverra maecenas accumsan lacus vel facilisis. Ipsum consequat nisl vel pretium. Nisl vel pretium lectus quam id leo in vitae. Nibh tellus molestie nunc non blandit massa enim. Aliquam ut porttitor leo a diam sollicitudin tempor. </h4>
-            </div>
+    <div class="card-group">		
+    @foreach ($services as $service)
+	<div class="card">
+        
+        <div class="col p-2 mr-2 mb-3 mb-lg-0">
+	    <img src="#" class="img-fluid" alt="Image">
+        </div>
+
+        <div class="col p-2">
+	    <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
+	    <p><strong>Available since </strong> {{ $service->created_at }} </p>
+	    
+	    <hr>
+	    
+	    <h6 class="text-muted font-weight-normal"> {{ $service->description }} </h6>
+        </div>  
+
+        <div class="col-m-12 text-center ml-auto p-2" >
+          <h2> ${{ $service->price }} </h2>
+          
+          @include('scheduleButton')
+          @include('scheduleModal')
+          
+          <button type="button" class="btn btn-outline-seconday btn-sm">
+          <a href="/service/{{ $service->id }}">More details</a></button>
+	</div>
+	</div>  
+	@endforeach
+	</div>
+       </div>
        </div>
 </div>
 
@@ -70,14 +93,38 @@
     <div class="text-center mb-4"> 
        <h1>Recent services</h1>
     </div>
-    <div class="row align-items-center">
-            <div class="col-sm">
-                <img class="flow-left mx-auto d-block" src="https://via.placeholder.com/640x480?text=About+us+image" alt="about" width="250" />
-            </div>
-            <div class="col-sm text-muted">
-                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Ipsum nunc aliquet bibendum enim facilisis gravida. Viverra maecenas accumsan lacus vel facilisis. Ipsum consequat nisl vel pretium. Nisl vel pretium lectus quam id leo in vitae. Nibh tellus molestie nunc non blandit massa enim. Aliquam ut porttitor leo a diam sollicitudin tempor. </h4>
-            </div>
+    <div class="card-group">		
+    @foreach ($services as $service)
+	<div class="card">
+        
+        <div class="col p-2 mr-2 mb-3 mb-lg-0">
+	    <img src="#" class="img-fluid" alt="Image">
+        </div>
+
+        <div class="col p-2">
+	    <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
+	    <p><strong>Available since </strong> {{ $service->created_at }} </p>
+	    
+	    <hr>
+	    
+	    <h6 class="text-muted font-weight-normal"> {{ $service->description }} </h6>
+        </div>  
+
+        <div class="col-m-12 text-center ml-auto p-2" >
+          <h2> ${{ $service->price }} </h2>
+          
+          @include('scheduleButton')
+          @include('scheduleModal')
+          
+          <button type="button" class="btn btn-outline-seconday btn-sm">
+          <a href="/service/{{ $service->id }}">More details</a></button>
+	</div>
+	</div>  
+	@endforeach
+	</div>
        </div>
+       </div>
+</div>
 </div>
 <div class="container my-4" id="sponsors">
     <div class="text-center mb-4">

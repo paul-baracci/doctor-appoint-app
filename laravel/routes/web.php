@@ -15,6 +15,7 @@ use App\Http\Controllers\AppointmentController;
 |--------------------------------------------------------------------------
 */
 Route::get('/',[HomeController::class, 'index']);
+Route::post('/',[AppointmentController::class, 'setappointment']);
 Route::get('/services',[ServiceController::class, 'services']);
 Route::get('/service/{id}',[ServiceController::class, 'service']);
 Route::get('/about',[HomeController::class, 'about']);
