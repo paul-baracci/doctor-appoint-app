@@ -1,7 +1,30 @@
-Contact Form
+<!DOCTYPE html>
+<html lang="en">
 
-From: {{ $name }}
+<head>
+    <meta charset="utf-8">
+</head>
 
-Email: {{ $email }} 
+<body>
 
-Message: {{ $content }}
+    <h1>Contact Form</h1>
+
+    <p>Dear Colleague,</p>
+
+    <p>We have a new email sent through our contact form. You know what to do.</p>
+
+    <h2>Details</h2>
+
+    <p>From: {{ $name }} </p>
+    <p>Email: {{ $email }} </p>
+    <p>Message: {{ $content }} </p>
+
+</body>
+
+<footer>
+    <h3>Augmented Heart Logo</h3>
+</footer>
+
+</body>
+
+</html>
