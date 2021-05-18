@@ -24,7 +24,7 @@ class ContactFormController extends Controller
     		$message->subject('Contact Form: ' . $request->input('subject'));
     	});
 	
-	return back()->with('success', 'Contact Form Submit Successfully');
+	return back()->with('success', 'Contact Form Submitted Successfully');
     }
     public function contact()
     {
