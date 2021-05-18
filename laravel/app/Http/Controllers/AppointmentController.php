@@ -86,29 +86,21 @@ class AppointmentController extends Controller
     }
     public function setappointment(Request $request)
     {
-	$request->validate([
-	    'name' => 'required',
-	    'email' => 'required|email',
-	    'phone' => 'required|numeric'
-
-	]);
-
-	$input = $request->all();
-
-	Appointment::created($input);
 
     	\Mail::send('emails.appointment', 
     	    [
-		'name' => $request->input('name'),   
+		'name' => $request->input('fname'),   
 		'email' => $request->input('email'),
-		'phone' => $request->input('phone'), 
+		'phone' => $request->input('phone'),
+		'service' => $request->input('service'),
+		'options' => $request->input('options'),	
 	    ], 
     		function (Message $message) use ($request) {
 	        $message->to('support@augmented.com');
 		$message->from('no-reply@augmented.com');
-    		$message->subject('Appointment request: ' . $request->input('subject'));
+    		$message->subject('Appointment request: ' . $request->input('service'));
     	});
 	
-	return back()->with('success', 'Contact Form Submit Successfully');
+	return back()->with('success', 'Thank you for your request. We will send you the appointment confirmation and details shortly.');
     }
 }
