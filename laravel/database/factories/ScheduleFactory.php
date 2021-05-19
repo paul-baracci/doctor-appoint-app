@@ -4,11 +4,12 @@ namespace Database\Factories;
 
 use App\Models\Schedule;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
 class ScheduleFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * App\Models\Schedule
      *
      * @var string
      */
@@ -22,7 +23,9 @@ class ScheduleFactory extends Factory
     public function definition()
     {
         return [
-            //
+	    'name' => $this->faker->unique()->date(),
+	    'start_time' => $this->faker->unique()->time(),
+	    'end_time' =>  $this->faker->unique()->time(),
         ];
     }
 }
