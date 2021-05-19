@@ -59,6 +59,7 @@ class ArticleController extends Controller
     public function show($id)
     {   
         $article = Article::where('id', $id)->first();
+	
 	$comments = Comment::where('article_id', $article->id)
 	    ->orderBy('created_at' , 'DESC')
 	    ->paginate(5);
