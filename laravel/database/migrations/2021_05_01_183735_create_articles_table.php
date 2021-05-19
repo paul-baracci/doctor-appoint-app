@@ -20,10 +20,10 @@ class CreateArticlesTable extends Migration
             $table->text('article_content');
             $table->datetime('published_at');
             
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')
                   ->references('id')
-                  ->on('users')
+                  ->on('doctors')
                   ->onDelete('restrict')
                   ->onUpdate('cascade');
 
