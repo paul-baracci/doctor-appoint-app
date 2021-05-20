@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale())) }}">
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +24,5 @@
 <footer>
     <h3>Augmented Heart Logo</h3>
 </footer>
-
-</body>
 
 </html>

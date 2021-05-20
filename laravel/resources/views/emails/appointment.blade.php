@@ -27,6 +27,4 @@
     <h3>Augmented Heart Logo</h3>
 </footer>
 
-</body>
-
 </html>
