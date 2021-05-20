@@ -7,17 +7,19 @@
 
 <body>
 
-    <h1>Contact Form</h1>
+    <h1>Appointment Request Form</h1>
 
     <p>Dear Colleague,</p>
 
-    <p>We have a new email sent through our contact form. You know what to do.</p>
+    <p>An appointment has been requested. Please follow up with a confirmation</p>
 
     <h2>Details</h2>
 
     <p>From: {{ $name }} </p>
     <p>Email: {{ $email }} </p>
-    <p>Message: {{ $content }} </p>
+    <p>Phone: {{ $phone }} </p>
+    <p>Service: {{ $service }} </p>
+    <p>Time choice: {{ $options }} </p>
 
 </body>
 

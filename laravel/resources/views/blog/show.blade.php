@@ -5,7 +5,7 @@
     <div class="row m-5">
 	<div class ="col">
             <h2>{{ $article->article_title }}</h2>
-            <p>{{ $article->published_at }}</p>
+            <p>Author: {{ $article->doctor->name }}, published on {{ $article->published_at }}</p>
             <p>{{ $article->article_description }}</p>
             <p class="card-text mb-auto">category: <a href="/category/{{ $article->category_id }}"> {{ $article->category->name }} </a></p>
             <p class="card-text mb-auto">tags: 
@@ -25,7 +25,7 @@
 		</div>
 		<div class="card-body">
 		    @foreach($comments as $comment)
-			<p>posted by USER on {{ $comment->approved_at }} </p>
+			<p>posted by {{ $comment->user->name }} on {{ $comment->approved_at }} </p>
 			<p> {{ $comment->message }} </p>
 			<hr>
 			@endforeach
