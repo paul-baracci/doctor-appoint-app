@@ -10,11 +10,16 @@ class HomeController extends Controller
 {
     public function index()
     {
-	$services = Service::sortable()
-			    ->paginate(3);
+	$services = Service::orderBy('requests', 'desc')
+			    ->limit(3)
+			    ->get();
+	$recentServices = Service::orderBy('created_at', 'desc')
+			    ->limit(3)
+			    ->get();
 	
 	return view ('index' , [
 	    'services' => $services ,
+	    'recentServices' => $recentServices,
 	]);
     }
     

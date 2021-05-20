@@ -17,19 +17,21 @@ use App\Http\Controllers\AppointmentController;
 */
 Route::get('/',[HomeController::class, 'index']);
 Route::post('/',[AppointmentController::class, 'setappointment']);
+
 Route::get('/services',[ServiceController::class, 'services']);
+Route::post('/services',[AppointmentController::class, 'setappointment']);
 Route::get('/service/{id}',[ServiceController::class, 'service']);
+
 Route::get('/about',[HomeController::class, 'about']);
 Route::get('/about',[DoctorController::class, 'index']);
 
 Route::get('/blog',[ArticleController::class, 'index']);
-
-Route::post('/services',[AppointmentController::class, 'setappointment']);
+Route::get('/article/{id}',[ArticleController::class, 'show']);
+Route::get('/category/{id}',[CategoryController::class, 'show']);
+Route::get('/tag/{id}',[TagController::class, 'show']);
 
 Route::get('/contact',[ContactFormController::class, 'contact']);
 Route::post('/contact',[ContactFormController::class, 'contactform']);
 
 Route::get('/terms',[HomeController::class, 'terms']);
-Route::get('/article/{id}',[ArticleController::class, 'show']);
-Route::get('/category/{id}',[CategoryController::class, 'show']);
-Route::get('/tag/{id}',[TagController::class, 'show']);
+
