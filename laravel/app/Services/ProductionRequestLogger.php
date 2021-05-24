@@ -4,18 +4,18 @@ namespace App\Services;
 use Illuminate\Http\Request;
 
 /**
- *  MyRequestLogger
+ *  ProductionRequestLogger
  *
  */
 
-class MyRequestLogger extends AbstractRequestLogger
+class ProctionRequestLogger extends AbstractRequestLogger
 {
     /**
      *  @inheritDoc
      */
     protected function generateMessage(): string
     {
-	return 'Local request logger';
+	return 'Production request logger';
     }
     
     /**
@@ -23,7 +23,7 @@ class MyRequestLogger extends AbstractRequestLogger
      */
     protected function extractRequestData(Request $request): array
     {
-	if (app()->environment('local')) {
+	if (app()->environment('produtcion')) {
 	    return [
 		'Request came from' => $request->ip(),
 		'Browser' => $request->header('User-Agent'),
