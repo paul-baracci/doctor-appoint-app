@@ -10,6 +10,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Middleware\RequestLoggingMiddleware;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------

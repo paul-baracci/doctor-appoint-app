@@ -2,6 +2,7 @@
 namespace App\Http\Middleware;
 
 use App\Services\RequestLoggerInterface;
+use Illuminate\Support\Facades\Log;
 use Closure;
 
 /**
@@ -29,6 +30,17 @@ class RequestLoggingMiddleware
 	$this->requestLogger->logRequest($request);
 
 	$response = $next($request);
+
+	if (app()->environment('local')) {
+	    $log = [
+		'URI' => $request->getUri(),
+		'METHOR' => $request->getUri(),
+		'REQUEST_BODY' => $request->getUri(),
+		'RESPONSE' => $request->getUri(),
+	    ]; 
+	    
+	    Log::info(json_encode($log));
+	}
 
 	return $response;
     }
