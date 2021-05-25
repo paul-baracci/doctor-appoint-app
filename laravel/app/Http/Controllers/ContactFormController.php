@@ -3,31 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Mail\Message;
-use Illuminate\Contracts\Mail\Mailer;
+use Illuminate\Services\ContactUsMailer;
 
 class ContactFormController extends Controller
 {
+    private ContactUsMailer $mailer;
 
-    public function contactform(Request $request)
+    public function __construct(ContactUsMailer $mailer)
     {
+	$this->mailer = $mailer;	
+    }
 
-    	\Mail::send('emails.email', 
-    	    [
-		'name' => $request->input('fname'),   
-		'email' => $request->input('email'),
-		'content' => $request->input('message'), 
-	    ], 
-    		function (Message $message) use ($request) {
-	        $message->to('support@augmented.com');
-		$message->from('no-reply@augmented.com');
-    		$message->subject('Contact Form: ' . $request->input('subject'));
-    	});
-	
-	return back()->with('success', 'Contact Form Submit Successfully');
-    }
-    public function contact()
+    public function __invoke(Request $request)
     {
-    	return view('contact');
+    	$this->mailer->send($request->all());
+
+	return back()->with('success', 'Contact form submittted successfully');
     }
+
 }

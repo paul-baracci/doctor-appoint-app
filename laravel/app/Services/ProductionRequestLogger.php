@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  *
  */
 
-class ProctionRequestLogger extends AbstractRequestLogger
+class ProductionRequestLogger extends AbstractRequestLogger
 {
     /**
      *  @inheritDoc
@@ -23,11 +23,12 @@ class ProctionRequestLogger extends AbstractRequestLogger
      */
     protected function extractRequestData(Request $request): array
     {
-	if (app()->environment('produtcion')) {
+	if (app()->environment('production')) {
 	    return [
-		'Request came from' => $request->ip(),
-		'Browser' => $request->header('User-Agent'),
+		'Cache' => $request->header('Cache-Control')
 	    ];
+	} else {
+	    return back();
 	}
     }
 }
