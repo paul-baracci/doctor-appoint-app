@@ -1,7 +1,7 @@
 <form action="/contact"
                 method="post"
                 enctype="multipart/form-data"
-                name="Bootcamp">
+                name="Contact us">
                 @csrf 
                 <div class="row justify-content-center">
                     <div class="form-group col-3">
