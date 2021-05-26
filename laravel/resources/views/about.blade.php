@@ -52,26 +52,19 @@
          <h1>Our Staff</h1>
         </div>
         <div class="row align-items-left">
-            <div class="col-md-6">
+	    
+	    @foreach ($doctors as $doctor)
+	    <div class="col-md-6">
               <div class="card mb-4 box-shadow">
-                <img class="flow-left mx-auto d-block" src="img/grisha.png" alt="about" size="250" />
-                    <h2>Dr. Grisha Yaeger</h2>
-                    <p>Specialization: Surgery and Anesthesiology</p>
+                <img class="flow-left mx-auto d-block" src="#" alt="Doctor Photo" size="250" />
+                    <h2> {{ $doctor->name }} </h2>
+                    <p>Specialization: {{ $doctor->specialization }} </p>
                     <p>Email:</p>
                     <p>Social:</p>
                     <p>Phone:</p>
-                </div>           
-              </div>
-              <div class="col-md-6">
-                <div class="card mb-4 box-shadow">
-                    <img class="flow-left mx-auto d-block" src="img/jd.jpg" alt="about" size="250" />
-                    <h2>Dr. John Dorian</h2>
-                    <p>Specialization: Surgery and Anesthesiology</p>
-                    <p>Email:</p>
-                    <p>Social:</p>
-                    <p>Phone:</p>
-                </div>           
-              </div>
+              </div>           
+	    </div>
+	    @endforeach
         </div>
     </div>
 @endsection

@@ -1,0 +1,69 @@
+version: "3"
+services:
+  doctor-db:
+    image: mariadb:10.5
+    container_name: doctor-db
+    volumes:
+      - "/home/paulbaracci/www/doctor-appointment-app/.docker/docker-compose/database/data:/var/lib/mysql"
+      - "/home/paulbaracci/www/doctor-appointment-app/.docker/docker-compose/database/config:/etc/mysql/conf.d"
+    ports:
+      - "3386:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=groot
+    networks:
+      - doctor-network
+    restart: unless-stopped
+
+  doctor-app:
+    image: amoraresco/it-academy-project:latest
+    container_name: doctor-app
+    links:
+      - doctor-db
+      - doctor-redis
+    ports:
+      - "880:80"
+      - "882:22"
+    volumes:
+      - "/home/paulbaracci/www/doctor-appointment-app/laravel/:/var/www/html"
+    environment:
+      - APP_URL=http://augmentedheart.com
+      - MAIL_HOST=doctor-mailhog
+      - MAIL_USERNAME=null
+      - MAIL_PASSWORD=null
+      - MAIL_ENCRYPTION=null
+      - MAIL_PORT=1025
+      - MAIL_FROM_ADDRESS=paul.baracci@tuta.io
+      - MAIL_NAME="PHR API"
+      - MAIL_DELAY=2500
+      - DB_HOST=doctor-db
+      - DB_DATABASE=doctor_database
+      - DB_USERNAME=root
+      - DB_PASSWORD=groot
+      - DB_PORT=3306
+    networks:
+      - doctor-network
+    restart: unless-stopped
+
+  doctor-mailhog:
+    image: mailhog/mailhog
+    container_name: doctor-mailhog
+    ports:
+      - "8825:8025"
+      - "8125:1025"
+    networks:
+      - doctor-network
+
+  doctor-redis:
+    image: redis:3.0
+    container_name: doctor-redis
+    volumes:
+      - "/home/paulbaracci/www/doctor-appointment-app/.docker/docker-compose/redis/cache/data:/data"
+    ports:
+      - "8379:6379"
+    restart: unless-stopped
+    networks:
+      - doctor-network
+
+networks:
+  doctor-network:
+    driver: bridge

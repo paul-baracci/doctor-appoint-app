@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Article;
 use App\Models\Image;
 use App\Models\Category;
-use App\Models\User;
+use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 class ArticleFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * App\Models\Article
      *
      * @var string
      */
@@ -30,7 +30,7 @@ class ArticleFactory extends Factory
         return [
             'article_title' => $this->faker->unique()->word(),
             'article_description' => $this->faker->sentence(),
-            'user_id' => User::inRandomOrder()->first()->id,
+            'doctor_id' => Doctor::inRandomOrder()->first()->id,
             'article_content' => $this->faker->paragraph(),
             'image_id' => Image::inRandomOrder()->first()->id,
             'category_id' => Category::inRandomOrder()->first()->id,

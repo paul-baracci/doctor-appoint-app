@@ -4,6 +4,10 @@ namespace Database\Factories;
 
 use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
+use App\Models\Image;
+use App\Models\Schedule;
+
 
 class DoctorFactory extends Factory
 {
@@ -22,7 +26,10 @@ class DoctorFactory extends Factory
     public function definition()
     {
         return [
-            //
+	    'name' => $this->faker->name(),
+	    'specialization' => $this->faker->word(),
+	    'image_id' => Image::inRandomOrder()->first()->id,
+	    'schedule_id' =>Schedule::inRandomOrder()->first()->id,
         ];
     }
 }
