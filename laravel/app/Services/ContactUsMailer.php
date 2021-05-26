@@ -35,24 +35,25 @@ class ContactUsMailer
     public function send(array $input): void
     {
 	[
-	    'content' => $message,
 	    'fname' => $name,
 	    'email' => $email,
 	    'subject' => $subject,
+	    'content' => $content
 	] = $input;
 
     	$this->mailer->send('emails.email',
     	    [
-		'fname' => $name,
+		'name' => $name,
 		'email' => $email,
-		'content' => $message,
+		'content' => $content
 	    ],
     		function (Message $message) use ($subject) {
-	        $message->to('DESTINATION_EMAIL');
+	        $message->to(self::DESTINATION_EMAIL);
 		$message->from('no-reply@augmented.com');
     		$message->subject($subject);
 		}
 	);
 
     $this->logger->info('Contact us message send to' . self::DESTINATION_EMAIL);
+    }
 }

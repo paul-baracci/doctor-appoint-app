@@ -18,7 +18,7 @@
                 </div>           
                 <div class="row justify-content-center">         
                     <div class="form-group col-6">
-                        <textarea name="message" rows="3" class="form-control" placeholder="Message" required></textarea>
+                        <textarea name="content" rows="3" class="form-control" placeholder="Message" required></textarea>
                     </div>
                 </div>
                 <div class="row justify-content-center">         
