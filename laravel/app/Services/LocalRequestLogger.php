@@ -4,11 +4,11 @@ namespace App\Services;
 use Illuminate\Http\Request;
 
 /**
- *  MyRequestLogger
+ *  LocalRequestLogger
  *
  */
 
-class MyRequestLogger extends AbstractRequestLogger
+class LocalRequestLogger extends AbstractRequestLogger
 {
     /**
      *  @inheritDoc
@@ -28,6 +28,9 @@ class MyRequestLogger extends AbstractRequestLogger
 		'Request came from' => $request->ip(),
 		'Browser' => $request->header('User-Agent'),
 	    ];
+	} else {
+	    return back();    
 	}
+
     }
 }

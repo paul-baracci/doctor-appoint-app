@@ -18,7 +18,7 @@ class ContactFormController extends Controller
     {
     	$this->mailer->send($request->all());
 
-	return back()->with('success', 'Contact form submittted successfully');
+	return back()->with('success', 'Contact form submitted successfully');
     }
 
 }

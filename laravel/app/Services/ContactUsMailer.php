@@ -54,6 +54,6 @@ class ContactUsMailer
 		}
 	);
 
-    $this->logger->info('Contact us message send to' . self::DESTINATION_EMAIL);
+    $this->logger->info('Contact Us message was sent to ' . self::DESTINATION_EMAIL);
     }
 }
