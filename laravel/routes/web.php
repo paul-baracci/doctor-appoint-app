@@ -9,7 +9,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
-use App\Http\Middleware\RequestLoggingMiddleware;
+use App\Http\Middleware\LoggingMiddleware;
 use App\Services\ContactUsMailer;
 
 /*
@@ -34,7 +34,7 @@ Route::get('/tag/{id}',[TagController::class, 'show']);
 
 Route::get('/contact', [ 'uses' => function () {
     return view ('contact');
-}, 'middleware' => RequestLoggingMiddleware::class]);
+}, 'middleware' => LoggingMiddleware::class]);
 
 Route::post('/contact', ContactFormController::class);
 
