@@ -1,7 +1,9 @@
 /laravel/public/node_modules
 /laravel/public/img
 /docker-containers
-/.docker/docker-compose/database/data/*
+/composer*
+/
+/.docker/docker-compose/*
 /laravel/public/storage
 /laravel/storage/*.key
 /laravel/vendor
@@ -13,3 +15,4 @@
 /laravel/Homestead.yaml
 /laravel/npm-debug.log
 /laravel/yarn-error.log
+*.swp
