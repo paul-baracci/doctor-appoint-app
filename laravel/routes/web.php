@@ -18,10 +18,10 @@ use App\Services\ContactUsMailer;
 |--------------------------------------------------------------------------
 */
 Route::get('/',[HomeController::class, 'index']);
-Route::post('/',[AppointmentController::class, 'setappointment']);
+Route::post('/',[AppointmentController::class, 'setAppointment']);
 
 Route::get('/services',[ServiceController::class, 'services']);
-Route::post('/services',[AppointmentController::class, 'setappointment']);
+Route::post('/services',[AppointmentController::class, 'setAppointment']);
 Route::get('/service/{id}',[ServiceController::class, 'service']);
 
 Route::get('/about',[HomeController::class, 'about']);

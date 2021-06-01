@@ -11,7 +11,7 @@ class ContactFormController extends Controller
 
     public function __construct(ContactUsMailer $mailer)
     {
-	$this->mailer = $mailer;	
+        $this->mailer = $mailer;	
     }
 
     public function __invoke(Request $request)

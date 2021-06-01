@@ -84,8 +84,10 @@ class AppointmentController extends Controller
     {
         //
     }
-    public function setappointment(Request $request)
+    public function setAppointment(Request $request)
     {
+        
+
 	\Mail::send('emails.appointment', 
     	    [
 		'name' => $request->input('fname'),   

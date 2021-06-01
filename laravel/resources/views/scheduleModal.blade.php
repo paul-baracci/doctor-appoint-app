@@ -15,13 +15,21 @@
 	    @csrf
           <div class="form-group">
           <input type="hidden" id="service" name="service" value=" {{ $service->title }} ">
-          <input type="text" class="form-control" id="fname" name="fname" placeholder="Full Name" required>
+
+          <input type="text" class="form-control" id="fname" name="fname" placeholder="Full Name">
+          @if ($errors->has('name'))
+
+              <span class="text-danger">{{ $errors->first('fname') }}</span>
+
+          @endif
+
+
           </div>
           <div class="form-group">
-            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="phone" id="phone" name="phone" class="form-control" placeholder="Phone number" required>
+            <input type="phone" id="phone" name="phone" class="form-control" placeholder="Phone number">
           </div>
           <div class="form-group" >
             <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="asap" checked>
