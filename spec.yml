@@ -321,7 +321,7 @@ paths:
     get:
       tags:
       - articles
-      summary: get all articles of a specific category
+      summary: get all articles of a specific doctor
       parameters:
       - name: doctorId
         in: path
@@ -565,7 +565,7 @@ paths:
     delete:
       tags:
       - doctors
-      summary: delete an doctor
+      summary: delete a doctor
       parameters:
       - name: api_key
         in: header
