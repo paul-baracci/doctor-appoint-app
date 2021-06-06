@@ -1,0 +1,1530 @@
+openapi: 3.0.1
+info:
+  title: Doctor
+  description: 'This is a sample server Petstore server.  You can find out more about
+    Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For
+    this sample, you can use the api key `special-key` to test the authorization filters.'
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.5
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: http://localhost:880
+tags:
+- name: appointments
+  description: operations with appointments
+- name: articles
+  description: operations with articles
+- name: categories
+  description: operations with categories
+- name: doctors
+  description: operations with doctors
+- name: images
+  description: operations with images
+- name: schedules
+  description: operations with schedules
+- name: services
+  description: operations with services
+  externalDocs:
+    description: Find out more about our store
+    url: http://swagger.io
+- name: tags
+  description: operations with tags
+- name: users
+  description: operations with users
+paths:
+  /appointments:
+    get:
+      tags:
+      - appointments
+      summary: get all appointments
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - appointments
+      summary: create an appointment
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the pet
+                status:
+                  type: string
+                  description: Updated status of the pet
+      responses:
+        201:
+          description: Information on the newly created appointment
+          content: {}
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /appointments/{appointmentId}:
+    get:
+      tags:
+      - appointments
+      summary: get a single appointment by provided id
+      parameters:
+      - name: appointmentId
+        in: path
+        description: id of appointment
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - appointments
+      summary: delete an appointment
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: appointmentId
+        in: path
+        description: appointment id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: appointment not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - appointments
+      summary: update a specific appointment
+      parameters:
+      - name: appointmentId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Appointment'
+        required: true
+      responses:
+        201:
+          description: Information on the updated appointment
+          content: {}
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /articles:
+    get:
+      tags:
+      - articles
+      summary: get all articles
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - articles
+      summary: create an article
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the article
+                status:
+                  type: string
+                  description: Updated status of the article
+      responses:
+        201:
+          description: Information on the newly created article
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /articles/{articleId}:
+    get:
+      tags:
+      - articles
+      summary: get a single article by provided id
+      parameters:
+      - name: articleId
+        in: path
+        description: id of article
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - articles
+      summary: delete an article
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: articleId
+        in: path
+        description: article id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: article not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - articles
+      summary: update a specific article
+      parameters:
+      - name: articleId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+        required: true
+      responses:
+        201:
+          description: Information on the updated article
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /articles/categories/{categorySlug}:
+    get:
+      tags:
+      - articles
+      summary: get all articles of a specific category
+      parameters:
+      - name: categorySlug
+        in: path
+        description: slug of a category
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /articles/doctors/{doctorId}:
+    get:
+      tags:
+      - articles
+      summary: get all articles of a specific category
+      parameters:
+      - name: doctorId
+        in: path
+        description: id of doctor
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /articles/tags/{tagSlug}:
+    get:
+      tags:
+      - articles
+      summary: get all articles of a specific tag
+      parameters:
+      - name: tagSlug
+        in: path
+        description: slug of a tag
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /categories:
+    get:
+      tags:
+      - categories
+      summary: get all categories
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - categories
+      summary: create a category
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the category
+                status:
+                  type: string
+                  description: Updated status of the category
+      responses:
+        201:
+          description: Information on the newly created category
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /categories/{categoryId}:
+    get:
+      tags:
+      - categories
+      summary: get a single category by provided id
+      parameters:
+      - name: categoryId
+        in: path
+        description: id of category
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - categories
+      summary: delete a category
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: categoryId
+        in: path
+        description: category id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: category not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - categories
+      summary: update a specific category
+      parameters:
+      - name: categoryId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        201:
+          description: Information on the updated catgeory
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /doctors:
+    get:
+      tags:
+      - doctors
+      summary: get all doctors
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - doctors
+      summary: create a doctor
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the doctor
+                status:
+                  type: string
+                  description: Updated status of the doctor
+      responses:
+        201:
+          description: Information on the newly created doctor
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /doctors/{doctorId}:
+    get:
+      tags:
+      - doctors
+      summary: get a single doctor by provided id
+      parameters:
+      - name: doctorId
+        in: path
+        description: id of doctor
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - doctors
+      summary: delete an doctor
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: doctorId
+        in: path
+        description: doctor id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: doctor not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - doctors
+      summary: update a specific doctor
+      parameters:
+      - name: doctorId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Doctor'
+        required: true
+      responses:
+        201:
+          description: Information on the newly updated doctor
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /images:
+    get:
+      tags:
+      - images
+      summary: get all images
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - images
+      summary: create an image
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the image
+                status:
+                  type: string
+                  description: Updated status of the image
+      responses:
+        201:
+          description: Information on the newly created image
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /images/{imageId}:
+    get:
+      tags:
+      - images
+      summary: get a single image by provided id
+      parameters:
+      - name: imageId
+        in: path
+        description: id of image
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - images
+      summary: delete an image
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: imageId
+        in: path
+        description: image id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: image not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - images
+      summary: update a specific image
+      parameters:
+      - name: imageId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated image object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Image'
+        required: true
+      responses:
+        201:
+          description: Information on the updated image
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /schedules:
+    get:
+      tags:
+      - schedules
+      summary: get all schedules
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - schedules
+      summary: create a schedule
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the schedule
+                status:
+                  type: string
+                  description: Updated status of the schedule
+      responses:
+        201:
+          description: Information on the newly created schedule
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /schedules/{scheduleId}:
+    get:
+      tags:
+      - schedules
+      summary: get a single schedule by provided id
+      parameters:
+      - name: scheduleId
+        in: path
+        description: id of schedule
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - schedules
+      summary: delete a schedule
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: scheduleId
+        in: path
+        description: schedule id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: schedule not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - schedules
+      summary: update a specific schedule
+      parameters:
+      - name: scheduleId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schedule'
+        required: true
+      responses:
+        201:
+          description: Information on the updated image
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /services:
+    get:
+      tags:
+      - services
+      summary: get all services
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - services
+      summary: create a service
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the service
+                status:
+                  type: string
+                  description: Updated status of the service
+      responses:
+        201:
+          description: Information on the newly created service
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /services/{serviceId}:
+    get:
+      tags:
+      - services
+      summary: get a single service by provided id
+      parameters:
+      - name: serviceId
+        in: path
+        description: id of service
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - services
+      summary: delete a service
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        description: service id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: service not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - services
+      summary: update a specific service
+      parameters:
+      - name: serviceId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+        required: true
+      responses:
+        201:
+          description: Information on the updated service
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /services/categories/{categorySlug}:
+    get:
+      tags:
+      - services
+      summary: get all services of a specific category
+      parameters:
+      - name: categorySlug
+        in: path
+        description: slug of a category
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /services/tags/{tagSlug}:
+    get:
+      tags:
+      - services
+      summary: get all services of a specific tag
+      parameters:
+      - name: tagSlug
+        in: path
+        description: slug of a tag
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /tags:
+    get:
+      tags:
+      - tags
+      summary: get all tags
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    post:
+      tags:
+      - tags
+      summary: create a tag
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the tag
+                status:
+                  type: string
+                  description: Updated status of the tag
+      responses:
+        201:
+          description: Information on the newly created tag
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+  /tags/{tagId}:
+    get:
+      tags:
+      - tags
+      summary: get a single tag by provided id
+      parameters:
+      - name: tagId
+        in: path
+        description: id of tag
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    delete:
+      tags:
+      - tags
+      summary: delete a tag
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: tagId
+        in: path
+        description: tag id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: tag not found
+          content: {}
+      security:
+      - doctor_auth:
+        - write:something
+        - read:something
+    put:
+      tags:
+      - tags
+      summary: update a specific tag
+      parameters:
+      - name: tagId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        201:
+          description: Information on the updated tag
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+  /users/{userId}:
+    get:
+      tags:
+      - users
+      summary: Get user by user name
+      operationId: getUserByName
+      parameters:
+      - name: userId
+        in: path
+        description: 'The name that needs to be fetched. Use user1 for testing. '
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+        400:
+          description: Invalid username supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+    put:
+      tags:
+      - users
+      summary: Updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      parameters:
+      - name: userId
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        400:
+          description: Invalid user supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+      - users
+      summary: Delete user
+      description: This can only be done by the logged in user.
+      operationId: deleteUser
+      parameters:
+      - name: userId
+        in: path
+        description: The name that needs to be deleted
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid username supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+  /user/login:
+    get:
+      tags:
+      - users
+      summary: Logs user into the system
+      operationId: loginUser
+      parameters:
+      - name: userId
+        in: query
+        description: The user name for login
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: The password for login in clear text
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/json:
+              schema:
+                type: string
+            application/xml:
+              schema:
+                type: string
+        400:
+          description: Invalid username/password supplied
+          content: {}
+  /users:
+    post:
+      tags:
+      - users
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        default:
+          description: successful operation
+          content: {}
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    Article:
+      required:
+      - name
+      - photoUrls
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        category:
+          $ref: '#/components/schemas/Category'
+        name:
+          type: string
+          example: vaccination
+        description:
+          type: string
+          example: best service in town!
+        published_at:
+          type: string
+          example: 2020-01-01
+        image:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            type: string
+            xml:
+              name: imageId
+        tags:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Tag'
+      xml:
+        name: Article
+    Appointment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        requester_email:
+          type: string
+        service_id:
+          type: integer
+          format: int64
+        timechoice_id:
+          type: string
+      xml:
+        name: Appointment
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+      xml:
+        name: Category
+    Doctor:
+      required:
+      - name
+      - photoUrls
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: John Dorian
+        specialization:
+          type: string
+          example: clinical psychology
+        schedule:
+          type: string
+          example: 2020-01-01
+        image:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            type: string
+            xml:
+              name: imageId
+      xml:
+        name: Doctor
+    Image:
+      required:
+      - name
+      - image_path
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        path:
+          type: string
+          example: img/
+        name:
+          type: string
+          example: service1.png
+        size:
+          type: integer
+      xml:
+        name: Image
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+      xml:
+        name: Tag
+    Schedule:
+      required:
+      - name
+      - image_path
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        path:
+          type: string
+          example: img/
+        start_time:
+          type: string
+          example: 09:00
+        end_time:
+          type: string
+          example: 18:00
+        size:
+          type: integer
+      xml:
+        name: Schedule
+    Service:
+      required:
+      - name
+      - photoUrls
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        category:
+          $ref: '#/components/schemas/Category'
+        name:
+          type: string
+          example: vaccination
+        description:
+          type: string
+          example: best service in town!
+        published_at:
+          type: string
+          example: 2020-01-01
+        image:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            type: string
+            xml:
+              name: imageId
+        tags:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Tag'
+      xml:
+        name: Service
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+      xml:
+        name: User
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
+    doctor_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore.swagger.io/oauth/authorize
+          scopes:
+            read:something: read something
+            write:something: modify something
+
