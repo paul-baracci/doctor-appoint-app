@@ -26,11 +26,7 @@ class LocalRequestLogger extends AbstractRequestLogger
 	if (app()->environment('local')) {
 	    return [
 		'Request came from' => $request->ip(),
-		'Browser' => $request->header('User-Agent'),
-	    ];
-	} else {
-	    return back();    
+		'Browser' => $request->header('User-Agent')];
 	}
-
     }
 }

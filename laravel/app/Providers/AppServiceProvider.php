@@ -24,8 +24,10 @@ class AppServiceProvider extends ServiceProvider
 	$this->app->bind(RequestLoggerInterface::class, function () {
 	    return new LocalRequestLogger($this->app->make(LoggerInterface::class));
 	});
-
-	//        $this->app->bind(RequestLoggerInterface::class, ProductionRequestLogger::class);
+	
+	/** $this->app->bind(RequestLoggerInterface::class, function () {
+	    return new ProductionRequestLogger($this->app->make(LoggerInterface::class));
+	 }); */
 
 	$this->app->bind(ResponseLoggerInterface::class, function () {
 	    return new DebugResponseLogger($this->app->make(LoggerInterface::class), $this->app->make(Dispatcher::class));

@@ -25,10 +25,7 @@ class ProductionRequestLogger extends AbstractRequestLogger
     {
 	if (app()->environment('production')) {
 	    return [
-		'Cache' => $request->header('Cache-Control')
-	    ];
-	} else {
-	    return back();
+		'Cache' => $request->header('Cache-Control')];
 	}
     }
 }

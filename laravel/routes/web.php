@@ -9,7 +9,6 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
-use App\Http\Middleware\LoggingMiddleware;
 use App\Services\ContactUsMailer;
 
 /*
@@ -17,26 +16,39 @@ use App\Services\ContactUsMailer;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/',[HomeController::class, 'index']);
-Route::post('/',[AppointmentController::class, 'setAppointment']);
+Route::get('/',[HomeController::class, 'index'])
+    ->middleware('logger');
+Route::post('/',[AppointmentController::class, 'setAppointment'])
+    ->middleware('logger');
 
-Route::get('/services',[ServiceController::class, 'services']);
-Route::post('/services',[AppointmentController::class, 'setAppointment']);
-Route::get('/service/{id}',[ServiceController::class, 'service']);
+Route::get('/services',[ServiceController::class, 'services'])
+    ->middleware('logger');
+Route::post('/services',[AppointmentController::class, 'setAppointment'])
+    ->middleware('logger');
+Route::get('/service/{id}',[ServiceController::class, 'service'])
+    ->middleware('logger');
 
-Route::get('/about',[HomeController::class, 'about']);
-Route::get('/about',[DoctorController::class, 'index']);
+Route::get('/about',[HomeController::class, 'about'])
+    ->middleware('logger');
+Route::get('/about',[DoctorController::class, 'index'])
+    ->middleware('logger');
 
-Route::get('/blog',[ArticleController::class, 'index']);
-Route::get('/article/{id}',[ArticleController::class, 'show']);
-Route::get('/category/{id}',[CategoryController::class, 'show']);
-Route::get('/tag/{id}',[TagController::class, 'show']);
+Route::get('/blog',[ArticleController::class, 'index'])
+    ->middleware('logger');
+Route::get('/article/{id}',[ArticleController::class, 'show'])
+    ->middleware('logger');
+Route::get('/category/{id}',[CategoryController::class, 'show'])
+    ->middleware('logger');
+Route::get('/tag/{id}',[TagController::class, 'show'])
+    ->middleware('logger');
 
-Route::get('/contact', [ 'uses' => function () {
+Route::get('/contact', function () {
     return view ('contact');
-}, 'middleware' => LoggingMiddleware::class]);
+})->middleware('logger');
 
-Route::post('/contact', ContactFormController::class);
+Route::post('/contact', ContactFormController::class)
+    ->middleware('logger');
 
-Route::get('/terms',[HomeController::class, 'terms']);
+Route::get('/terms',[HomeController::class, 'terms'])
+    ->middleware('logger');
 
