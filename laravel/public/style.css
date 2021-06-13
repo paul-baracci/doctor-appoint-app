@@ -3,7 +3,7 @@
 }
 
 ul {
-	  list-style-type: none;
+    list-style-type: none;
 }
 
 input[type="radio"] {
@@ -15,8 +15,22 @@ input[type="radio"]:checked + label {
 }
 
 .card img {
-	min-width: 15px;
-	max-height: 100px;
+    min-width: 15px;
+    max-height: 100px;
+}
+
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.slider-container {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: .2s;
 }
 
 .row-view {
