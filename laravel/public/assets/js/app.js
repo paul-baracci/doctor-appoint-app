@@ -1,15 +1,27 @@
 //Click on the “grid view” button to add a .grid CSS class to #lgDemo.
 //Clicking on the “list view” button will remove the .grid CSS class. 
+checkGrid();
+
+function checkGrid() {
+    let storedView = sessionStorage.getItem('view');
+
+    if (storedView === 'grid') {
+	document.getElementById("lgDemo").classList.add("grid");
+    }
+}; 
+
 window.addEventListener("DOMContentLoaded", function(){
   document.getElementById("sList").addEventListener("click", function(){
     document.getElementById("lgDemo").classList.remove("grid");
+    sessionStorage.setItem('view', 'list');
   });
   document.getElementById("sGrid").addEventListener("click", function(){
     document.getElementById("lgDemo").classList.add("grid");
+    sessionStorage.setItem('view', 'grid');
   });
 });
 
-//Slider functionality
+// Slider functionality
 let position = 0;
 const slidesVisible = 3;
 const slidesOnScroll = 2;
