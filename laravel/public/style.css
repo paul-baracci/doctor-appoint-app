@@ -6,12 +6,16 @@ ul {
     list-style-type: none;
 }
 
+.h-captcha {
+    text-align: center;
+}
+
 input[type="radio"] {
     display:none;   
 }
 
 input[type="radio"]:checked + label {
-    border: solid 3px #40a5fc;
+    border: solid 2px #40a5fc;
 }
 
 .card img {
@@ -20,7 +24,7 @@ input[type="radio"]:checked + label {
 }
 
 .wrapper {
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -33,16 +37,15 @@ input[type="radio"]:checked + label {
     transition: .2s;
 }
 
+.slider-buttons {
+    text-align: center;
+}
+
 .row-view {
   display: flex;
   flex-direction: column;
 }
 
-@media only screen and (min-width: 768px) {
-    :root {
-        font-size: 16px;
-    }
-}
 /* LIST VIEW*/
 #lgDemo {
   display: grid;
@@ -50,6 +53,17 @@ input[type="radio"]:checked + label {
 }
 /* TRANSFORM TO GRID VIEW */
 #lgDemo.grid { 
-	grid-template-columns: 30% 30% 30%; 
+	grid-template-columns: 50% 50%; 
 	margin: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 16px;
+    }
+
+    #lgDemo.grid { 
+        grid-template-columns: 30% 30% 30%; 
+        margin: 10px;
+    }
 }
