@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<div class="wrapper container">
+<div class="wrapper">
     <div class="slider-container">
         <div class="text-center mb-4"> 
             <h1>Popular Services</h1>
@@ -78,12 +78,12 @@
                 <h2> ${{ $service->price }} </h2>
                 
                 @include('scheduleButton')
-                @include('scheduleModal')
+               
                 
                 <button type="button" class="btn btn-outline-seconday btn-sm">
                 <a href="/service/{{ $service->id }}">More details</a></button>
                 </div>
-            </div>  
+            </div>
         @endforeach
 	    </div>
     </div>
@@ -92,6 +92,9 @@
 	<button class="btn-next">Next</button>
     </div>
 </div>
+@foreach ($popularServices as $service)
+    @include('scheduleModal')
+@endforeach
 <div class="container my-4" id="sponsors">
     <div class="text-center mb-4">
         <h1>Our Sponsors</h1>
