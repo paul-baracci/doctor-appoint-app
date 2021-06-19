@@ -23,10 +23,9 @@
     @foreach($services as $service)
       <div class="card row m-2 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
         
-        <div class="col-1 p-2 mr-2 mb-3 mb-lg-0">
-        <img src="#" class="img-fluid" alt="Image">
+        <div class="p-2 mb-lg-0">
+        <img src="https://via.placeholder.com/200x200?text=Product" class="img-fluid" alt="Image">
         </div>
-
         <div class="col p-2">
           <h6 class="font-weight-semibold">{{ $service->title }}</h6>
           <p><strong>Available since </strong>{{ $service->created_at }}</p>

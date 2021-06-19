@@ -53,43 +53,36 @@
     </div>
 </div>
 
-<div class="wrapper">
+<div class="wrapper container">
     <div class="slider-container">
         <div class="text-center mb-4"> 
             <h1>Popular Services</h1>
         </div>
-	    <div class="slider-track">
-        @foreach ($popularServices as $service)
-            <div class="slider-item card">               
+	<div class="slider-track">
+	    @foreach ($popularServices as $service)
+            <div class="slider-item card col-lg-4">             
                 <div class="col p-2 mr-2 mb-3 mb-lg-0">
                 <img src="#" class="img-fluid" alt="Image">
                 </div>
-
                 <div class="col p-2">
                 <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
-                <p><strong>Available since </strong> {{ $service->created_at }} </p>
-                
-                <hr>
-                
+                <p><strong>Available since </strong> {{ $service->created_at }} </p>              
+                <hr>            
                 <h6 class="text-muted font-weight-normal"> {{ $service->description }} </h6>
                 </div>  
-
                 <div class="col-m-12 text-center ml-auto p-2" >
-                <h2> ${{ $service->price }} </h2>
-                
+                <h2> ${{ $service->price }} </h2>       
                 @include('scheduleButton')
-               
-                
                 <button type="button" class="btn btn-outline-seconday btn-sm">
                 <a href="/service/{{ $service->id }}">More details</a></button>
                 </div>
             </div>
-        @endforeach
-	    </div>
+	    @endforeach
+	</div>
     </div>
     <div class="slider-buttons">
-	<button class="btn-prev">Prev</button>
-	<button class="btn-next">Next</button>
+	    <button class="btn btn-prev btn-outline-primary"><</button>
+	    <button class="btn btn-next btn-outline-primary">></button>
     </div>
 </div>
 @foreach ($popularServices as $service)
