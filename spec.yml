@@ -80,9 +80,12 @@ paths:
         201:
           description: Information on the newly created appointment
           content: {}
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -128,9 +131,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: appointment not found
           content: {}
@@ -159,9 +159,6 @@ paths:
       responses:
         201:
           description: Information on the updated appointment
-          content: {}
-        400:
-          description: Invalid user supplied
           content: {}
         404:
           description: User not found
@@ -207,9 +204,12 @@ paths:
       responses:
         201:
           description: Information on the newly created article
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -255,9 +255,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: article not found
           content: {}
@@ -286,9 +283,6 @@ paths:
       responses:
         201:
           description: Information on the updated article
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -405,9 +399,12 @@ paths:
       responses:
         201:
           description: Information on the newly created category
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -453,9 +450,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: category not found
           content: {}
@@ -484,9 +478,6 @@ paths:
       responses:
         201:
           description: Information on the updated catgeory
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -531,9 +522,12 @@ paths:
       responses:
         201:
           description: Information on the newly created doctor
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -579,9 +573,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: doctor not found
           content: {}
@@ -610,9 +601,6 @@ paths:
       responses:
         201:
           description: Information on the newly updated doctor
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -657,9 +645,12 @@ paths:
       responses:
         201:
           description: Information on the newly created image
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -705,9 +696,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: image not found
           content: {}
@@ -736,9 +724,6 @@ paths:
       responses:
         201:
           description: Information on the updated image
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -783,9 +768,12 @@ paths:
       responses:
         201:
           description: Information on the newly created schedule
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -831,9 +819,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: schedule not found
           content: {}
@@ -862,9 +847,6 @@ paths:
       responses:
         201:
           description: Information on the updated image
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -909,9 +891,12 @@ paths:
       responses:
         201:
           description: Information on the newly created service
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -957,9 +942,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: service not found
           content: {}
@@ -988,9 +970,6 @@ paths:
       responses:
         201:
           description: Information on the updated service
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -1083,9 +1062,12 @@ paths:
       responses:
         201:
           description: Information on the newly created tag
-        405:
-          description: Invalid input
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
       security:
       - doctor_auth:
         - write:something
@@ -1131,9 +1113,6 @@ paths:
           type: integer
           format: int64
       responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
         404:
           description: tag not found
           content: {}
@@ -1162,9 +1141,6 @@ paths:
       responses:
         201:
           description: Information on the updated tag
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -1192,9 +1168,6 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/User'
-        400:
-          description: Invalid username supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -1219,9 +1192,6 @@ paths:
               $ref: '#/components/schemas/User'
         required: true
       responses:
-        400:
-          description: Invalid user supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -1240,9 +1210,6 @@ paths:
         schema:
           type: string
       responses:
-        400:
-          description: Invalid username supplied
-          content: {}
         404:
           description: User not found
           content: {}
@@ -1286,9 +1253,12 @@ paths:
             application/xml:
               schema:
                 type: string
-        400:
-          description: Invalid username/password supplied
-          content: {}
+        404:
+          description: page not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
   /users:
     post:
       tags:

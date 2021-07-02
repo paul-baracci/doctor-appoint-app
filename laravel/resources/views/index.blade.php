@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+
+
 <div class='container'>
     <div id="myslide" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -29,6 +31,7 @@
         </a>
     </div>
 </div>
+
 <div class="container my-4" id="aboutus">
     <div class="text-center mb-4"> 
        <h1>About us</h1>
@@ -51,79 +54,8 @@
             <h4>Augmented Heart Clinic allows you to schedule appointments with ease and speed. Access the <a href="/services">Services page</a> and set up an appoinment. Once a request is submitted, our team will contact you to confirm the exact time and payment method.</h4>
         </div>
     </div>
+</div> 
 </div>
-<div class="container my-4" id="pop-products">
-    <div class="text-center mb-4"> 
-       <h1>Popular services</h1>
-    </div>
-    <div class="card-group">		
-    @foreach ($services as $service)
-	<div class="card">
-        
-        <div class="col p-2 mr-2 mb-3 mb-lg-0">
-	    <img src="#" class="img-fluid" alt="Image">
-        </div>
-
-        <div class="col p-2">
-	    <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
-	    <p><strong>Available since </strong> {{ $service->created_at }} </p>
-	    
-	    <hr>
-	    
-	    <h6 class="text-muted font-weight-normal"> {{ $service->description }} </h6>
-        </div>  
-
-        <div class="col-m-12 text-center ml-auto p-2" >
-          <h2> ${{ $service->price }} </h2>
-          
-          @include('scheduleButton')
-          @include('scheduleModal')
-          
-          <button type="button" class="btn btn-outline-seconday btn-sm">
-          <a href="/service/{{ $service->id }}">More details</a></button>
-	</div>
-	</div>  
-	@endforeach
-	</div>
-       </div>
-       </div>
-</div>
-
-<div class="container my-4" id="aboutus">
-    <div class="text-center mb-4"> 
-       <h1>Recent services</h1>
-    </div>
-    <div class="card-group">		
-    @foreach ($services as $service)
-	<div class="card">
-        
-        <div class="col p-2 mr-2 mb-3 mb-lg-0">
-	    <img src="#" class="img-fluid" alt="Image">
-        </div>
-
-        <div class="col p-2">
-	    <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
-	    <p><strong>Available since </strong> {{ $service->created_at }} </p>
-	    
-	    <hr>
-	    
-	    <h6 class="text-muted font-weight-normal"> {{ $service->description }} </h6>
-        </div>  
-
-        <div class="col-m-12 text-center ml-auto p-2" >
-          <h2> ${{ $service->price }} </h2>
-          
-          @include('scheduleButton')
-          @include('scheduleModal')
-          
-          <button type="button" class="btn btn-outline-seconday btn-sm">
-          <a href="/service/{{ $service->id }}">More details</a></button>
-	</div>
-	</div>  
-	@endforeach
-	</div>
-       </div>
-       </div>
 </div>
 </div>
 <div class="container my-4" id="sponsors">

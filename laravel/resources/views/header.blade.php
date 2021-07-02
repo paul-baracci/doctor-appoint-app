@@ -11,8 +11,9 @@
             <a href="/contact" class="nav-link">Contact</a>
             <a href="/terms" class="nav-link">Terms and conditions</a>
             <a href="https://www.facebook.com/" class="nav-link">
-            <img class="img-fluid" src="#" alt="Facebook page"></a>
+            <img class="img-fluid" src="#" alt="Facebook page"></a> 
         </div>
-        
+        <cart class="d-flex"></cart>
     </nav>
+    
 </header> 

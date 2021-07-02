@@ -17,12 +17,13 @@
 
 	<div class="row justify-content-center">
 	    {!! $services->appends(\Request::except('page'))->render() !!}
+
 	</div>
     <div id= "lgDemo" class="row row-view">
- 
+
     @foreach($services as $service)
       <div class="card row m-2 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
-        
+
         <div class="col-1 p-2 mr-2 mb-3 mb-lg-0">
         <img src="#" class="img-fluid" alt="Image">
         </div>
@@ -32,21 +33,44 @@
           <p><strong>Available since </strong>{{ $service->created_at }}</p>
             <hr>
           <h6 class="text-muted font-weight-normal">{{ $service->description }}</h6>
-        </div>  
+        </div>
 
         <div class="col-m-12 text-center ml-auto p-2" >
           <h2>${{ $service->price }}</h2>
-          
-          @include('scheduleButton')
+          <add-to-cart :service-id="{{ $service->id }}">Add</add-to-cart>
           @include('scheduleModal')
-          
-          <button type="button" class="btn btn-outline-seconday btn-sm">
+
+          <button type="button" class="btn btn-outline-secondary btn-sm">
           <a href="/service/{{ $service->id }}">More details</a></button>
-        </div>  
+
+
+        </div>
 
       </div>
     @endforeach
     </div>
-</div>   
-                                   
+    <script type="text/javascript">
+      checkGrid();
+
+      function checkGrid() {
+          let storedView = sessionStorage.getItem('view');
+
+          if (storedView === 'grid') {
+        document.getElementById("lgDemo").classList.add("grid");
+          }
+      };
+
+      window.addEventListener("DOMContentLoaded", function(){
+        document.getElementById("sList").addEventListener("click", function(){
+          document.getElementById("lgDemo").classList.remove("grid");
+          sessionStorage.setItem('view', 'list');
+        });
+        document.getElementById("sGrid").addEventListener("click", function(){
+          document.getElementById("lgDemo").classList.add("grid");
+          sessionStorage.setItem('view', 'grid');
+        });
+      });
+    </script>
+</div>
+
 @endsection

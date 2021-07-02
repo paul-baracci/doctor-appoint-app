@@ -53,6 +53,18 @@ services:
     networks:
       - doctor-network
 
+  doctor-api:
+    image: swaggerapi/swagger-ui
+    container_name: doctor-api
+    ports:
+      - "90:8080"
+    volumes:
+      - "/home/paulbaracci/www/doctor-appointment-app:/spec"
+    environment:
+      SWAGGER_JSON: /spec/spec.yml
+    networks:
+      - doctor-network
+
   doctor-redis:
     image: redis:3.0
     container_name: doctor-redis
