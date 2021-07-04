@@ -7,7 +7,7 @@ use App\Models\Service;
 use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
-{   
+{
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +16,7 @@ class ServiceController extends Controller
     public function services()
     {
         $services = Service::sortable()
-            ->paginate(6);
+            ->paginate(9);
 
     	return view('services', [
             'services' => $services

@@ -4,14 +4,17 @@
 <div class="container" id="prices">
     <div class="text-center">
         <h1>Services</h1>
-    </div>
-    <grid-list></grid-list>
 
-    <div class="m-4" id="button-group">
-	<button class="order btn btn-outline-primary" > @sortablelink('title', 'Sort by Name') </button>
-        <button class="order btn btn-outline-primary" > @sortablelink('price', 'Sort by Price') </button>
-        <button class="order btn btn-outline-primary" > @sortablelink('created_at', 'Sort by Date') </button>
     </div>
+    <div class="d-flex">
+        <div class="btn-group mr-auto">
+            <button type="button" class="order btn btn-outline-primary" > @sortablelink('title', 'Sort by Name') </button>
+            <button type="button" class="order btn btn-outline-primary" > @sortablelink('price', 'Sort by Price') </button>
+            <button type="button" class="order btn btn-outline-primary" > @sortablelink('created_at', 'Sort by Date') </button>
+        </div>
+    <grid-list></grid-list>
+    </div>
+
 
 	<div class="row justify-content-center">
 	    {!! $services->appends(\Request::except('page'))->render() !!}
@@ -46,6 +49,10 @@
 
       </div>
     @endforeach
+    </div>
+    <div class="row justify-content-center">
+        {!! $services->appends(\Request::except('page'))->render() !!}
+
     </div>
 </div>
 

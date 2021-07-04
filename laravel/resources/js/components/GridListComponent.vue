@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <button id="sList" @click="listView()" class="btn btn-outline-primary">List</button>
-        <button id="sGrid" @click="gridView()" class="btn btn-outline-primary">Grid</button>
+    <div class="btn-group">
+        <button type="button" id="sList" @click="listView()" class="btn btn-outline-primary">List</button>
+        <button type="button" id="sGrid" @click="gridView()" class="btn btn-outline-primary">Grid</button>
     </div>
 </template>
 
@@ -30,9 +30,11 @@ export default {
 #viewType {
     display: grid;
     grid-template-columns: 100%;
+    justify-content: center;
 }
 #viewType.grid {
     grid-template-columns: 30% 30% 30%;
     margin: 10px;
+
 }
 </style>

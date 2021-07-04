@@ -2104,7 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#viewType {\n    display: grid;\n    grid-template-columns: 100%;\n}\n#viewType.grid {\n    grid-template-columns: 30% 30% 30%;\n    margin: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#viewType {\n    display: grid;\n    grid-template-columns: 100%;\n    justify-content: center;\n}\n#viewType.grid {\n    grid-template-columns: 30% 30% 30%;\n    margin: 10px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20040,12 +20040,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "btn-group" }, [
     _c(
       "button",
       {
         staticClass: "btn btn-outline-primary",
-        attrs: { id: "sList" },
+        attrs: { type: "button", id: "sList" },
         on: {
           click: function($event) {
             return _vm.listView()
@@ -20059,7 +20059,7 @@ var render = function() {
       "button",
       {
         staticClass: "btn btn-outline-primary",
-        attrs: { id: "sGrid" },
+        attrs: { type: "button", id: "sGrid" },
         on: {
           click: function($event) {
             return _vm.gridView()
