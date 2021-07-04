@@ -7,7 +7,7 @@ ul {
 }
 
 input[type="radio"] {
-    display:none;   
+    display:none;
 }
 
 input[type="radio"]:checked + label {
@@ -28,14 +28,4 @@ input[type="radio"]:checked + label {
     :root {
         font-size: 16px;
     }
-}
-/* LIST VIEW*/
-#lgDemo {
-  display: grid;
-  grid-template-columns: 100%;
-}
-/* TRANSFORM TO GRID VIEW */
-#lgDemo.grid { 
-	grid-template-columns: 30% 30% 30%; 
-	margin: 10px;
 }

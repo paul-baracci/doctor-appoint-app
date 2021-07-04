@@ -1,13 +1,15 @@
 import Vue from "vue";
-import Alert from "./components/Alert.vue";
+// import Alert from "./components/Alert.vue";
 import CartComponent from "./components/CartComponent.vue";
 import AddToCartComponent from "./components/AddToCartComponent.vue";
+import GridListComponent from "./components/GridListComponent";
 
 require('./bootstrap');
 
-Vue.component('alert', Alert);
+// Vue.component('alert', Alert);
 Vue.component('cart', CartComponent);
 Vue.component('addToCart', AddToCartComponent);
+Vue.component('gridList', GridListComponent);
 
 const app = new Vue({
     el: '#app',
@@ -19,7 +21,7 @@ const app = new Vue({
     methods: {
         addToCart(serviceId) {
             if(!this.isProductAdded(serviceId)) {
-                this.cart.push(serviceId);
+                this.cart.unshift(serviceId);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             }
         },
@@ -27,8 +29,10 @@ const app = new Vue({
             if (this.cart.length === 0) {
                  return false;
             }
-            const serviceIndex = this.cart.indexOf(serviceId);
-            return serviceIndex !== -1
+            return this.cart.some(service => service.id === serviceId.id);
         }
     }
 });
+
+
+

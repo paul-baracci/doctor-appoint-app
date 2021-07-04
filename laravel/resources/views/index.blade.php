@@ -33,7 +33,7 @@
 </div>
 
 <div class="container my-4" id="aboutus">
-    <div class="text-center mb-4"> 
+    <div class="text-center mb-4">
        <h1>About us</h1>
     </div>
     <div class="row align-items-center">
@@ -46,17 +46,14 @@
        </div>
 </div>
 <div class="container my-4" id="process">
-    <div class="text-center mb-4"> 
+    <div class="text-center mb-4">
        <h1>Our process</h1>
     </div>
-    <div class="row justify-content-center">       
+    <div class="row justify-content-center">
         <div class="col-sm-10 text-center text-muted">
             <h4>Augmented Heart Clinic allows you to schedule appointments with ease and speed. Access the <a href="/services">Services page</a> and set up an appoinment. Once a request is submitted, our team will contact you to confirm the exact time and payment method.</h4>
         </div>
     </div>
-</div> 
-</div>
-</div>
 </div>
 <div class="container my-4" id="sponsors">
     <div class="text-center mb-4">
@@ -67,12 +64,11 @@
             <img class="p-2 img-fluid " src="https://via.placeholder.com/200x200?text=Sponsor+2" alt="Sponsor2" />
     		<img class="p-2 img-fluid " src="https://via.placeholder.com/200x200?text=Sponsor+3" alt="Sponsor3" />
 		</div>
-   </div>
-</div>       
+</div>
 <div class="container my-4" id="contact">
     <div class="text-center mb-4">
         <h1>Contact us</h1>
     </div>
-    @include('contactForm')            
+    @include('contactForm')
 </div>
 @endsection

@@ -1,4 +1,5 @@
 /laravel/public/node_modules
+/laravel/node_modules
 /laravel/public/img
 /docker-containers
 /composer*

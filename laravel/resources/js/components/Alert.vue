@@ -18,8 +18,8 @@ export default {
   },
   computed: {
     alertType() {
-      return `alert-warning`;
-      // return `alert-{{this.type}}`;
+      // return `alert-warning`;
+      return `alert-{{this.type}}`;
 
     }
   },

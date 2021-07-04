@@ -11,7 +11,6 @@ export default {
     methods: {
     addToCart() {
       this.$root.addToCart(this.serviceId)
-
     },
     isProductAdded() {
         return this.$root.isProductAdded(this.serviceId)

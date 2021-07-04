@@ -11,7 +11,6 @@
 <body>
     <main role="main" id="app">
         @include('header')
-        <alert>Alert</alert>
         @yield('content')
         @include('footer')
     </main>

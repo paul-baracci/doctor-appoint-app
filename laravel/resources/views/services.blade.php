@@ -5,10 +5,8 @@
     <div class="text-center">
         <h1>Services</h1>
     </div>
-    <div>
-      <button id="sList" class="btn btn-outline-primary">List</button>
-      <button id="sGrid" class="btn btn-outline-primary">Grid</button>
-    </div>
+    <grid-list></grid-list>
+
     <div class="m-4" id="button-group">
 	<button class="order btn btn-outline-primary" > @sortablelink('title', 'Sort by Name') </button>
         <button class="order btn btn-outline-primary" > @sortablelink('price', 'Sort by Price') </button>
@@ -19,7 +17,7 @@
 	    {!! $services->appends(\Request::except('page'))->render() !!}
 
 	</div>
-    <div id= "lgDemo" class="row row-view">
+    <div id= "viewType" class="row row-view">
 
     @foreach($services as $service)
       <div class="card row m-2 d-flex flex-row justify-content-between align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
@@ -37,7 +35,7 @@
 
         <div class="col-m-12 text-center ml-auto p-2" >
           <h2>${{ $service->price }}</h2>
-          <add-to-cart :service-id="{{ $service->id }}">Add</add-to-cart>
+          <add-to-cart :service-id="{ id: {{ $service->id }}, title: '{{ $service->title }}', price: {{ $service->price }} }"></add-to-cart>
           @include('scheduleModal')
 
           <button type="button" class="btn btn-outline-secondary btn-sm">
@@ -49,28 +47,6 @@
       </div>
     @endforeach
     </div>
-    <script type="text/javascript">
-      checkGrid();
-
-      function checkGrid() {
-          let storedView = sessionStorage.getItem('view');
-
-          if (storedView === 'grid') {
-        document.getElementById("lgDemo").classList.add("grid");
-          }
-      };
-
-      window.addEventListener("DOMContentLoaded", function(){
-        document.getElementById("sList").addEventListener("click", function(){
-          document.getElementById("lgDemo").classList.remove("grid");
-          sessionStorage.setItem('view', 'list');
-        });
-        document.getElementById("sGrid").addEventListener("click", function(){
-          document.getElementById("lgDemo").classList.add("grid");
-          sessionStorage.setItem('view', 'grid');
-        });
-      });
-    </script>
 </div>
 
 @endsection
