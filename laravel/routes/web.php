@@ -9,12 +9,22 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::get('/',[HomeController::class, 'index']);
 Route::post('/',[AppointmentController::class, 'setappointment']);
 
@@ -34,4 +44,3 @@ Route::get('/contact',[ContactFormController::class, 'contact']);
 Route::post('/contact',[ContactFormController::class, 'contactform']);
 
 Route::get('/terms',[HomeController::class, 'terms']);
-
