@@ -1853,13 +1853,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'AddToCartComponent',
-  props: ['serviceId'],
+  props: ['serviceObject'],
   methods: {
     addToCart: function addToCart() {
-      this.$root.addToCart(this.serviceId);
+      this.$root.addToCart(this.serviceObject);
     },
     isProductAdded: function isProductAdded() {
-      return this.$root.isProductAdded(this.serviceId);
+      return this.$root.isProductAdded(this.serviceObject);
     }
   }
 });
@@ -2012,19 +2012,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     };
   },
   methods: {
-    addToCart: function addToCart(serviceId) {
-      if (!this.isProductAdded(serviceId)) {
-        this.cart.unshift(serviceId);
+    addToCart: function addToCart(serviceObject) {
+      if (!this.isProductAdded(serviceObject)) {
+        this.cart.unshift(serviceObject);
         localStorage.setItem('cart', JSON.stringify(this.cart));
       }
     },
-    isProductAdded: function isProductAdded(serviceId) {
+    isProductAdded: function isProductAdded(serviceObject) {
       if (this.cart.length === 0) {
         return false;
       }
 
       return this.cart.some(function (service) {
-        return service.id === serviceId.id;
+        return service.id === serviceObject.id;
       });
     }
   }

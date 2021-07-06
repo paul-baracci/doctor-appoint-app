@@ -38,7 +38,7 @@
 
         <div class="col-m-12 text-center ml-auto p-2" >
           <h2>${{ $service->price }}</h2>
-          <add-to-cart :service-id="{ id: {{ $service->id }}, title: '{{ $service->title }}', price: {{ $service->price }} }"></add-to-cart>
+          <add-to-cart :service-object="{ id: {{ $service->id }}, title: '{{ $service->title }}', price: {{ $service->price }} }"></add-to-cart>
           @include('scheduleModal')
 
           <button type="button" class="btn btn-outline-secondary btn-sm">

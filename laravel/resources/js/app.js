@@ -19,20 +19,21 @@ const app = new Vue({
         }
     },
     methods: {
-        addToCart(serviceId) {
-            if(!this.isProductAdded(serviceId)) {
-                this.cart.unshift(serviceId);
+        addToCart(serviceObject) {
+            if(!this.isProductAdded(serviceObject)) {
+                this.cart.unshift(serviceObject);
                 localStorage.setItem('cart', JSON.stringify(this.cart));
             }
         },
-        isProductAdded(serviceId) {
+        isProductAdded(serviceObject) {
             if (this.cart.length === 0) {
                  return false;
             }
-            return this.cart.some(service => service.id === serviceId.id);
+            return this.cart.some(service => service.id === serviceObject.id);
         }
     }
 });
+
 
 
 

@@ -35,6 +35,5 @@ export default {
 #viewType.grid {
     grid-template-columns: 30% 30% 30%;
     margin: 10px;
-
 }
 </style>

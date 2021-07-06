@@ -7,13 +7,13 @@
 <script>
 export default {
     name: 'AddToCartComponent',
-    props: [ 'serviceId' ],
+    props: [ 'serviceObject' ],
     methods: {
     addToCart() {
-      this.$root.addToCart(this.serviceId)
+      this.$root.addToCart(this.serviceObject)
     },
     isProductAdded() {
-        return this.$root.isProductAdded(this.serviceId)
+        return this.$root.isProductAdded(this.serviceObject)
     }
   }
 }
