@@ -10,15 +10,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-	$services = Service::orderBy('requests', 'desc')
-			    ->limit(3)
+	$popularServices = Service::orderBy('requests', 'desc')
 			    ->get();
 	$recentServices = Service::orderBy('created_at', 'desc')
-			    ->limit(3)
 			    ->get();
 	
 	return view ('index' , [
-	    'services' => $services ,
+	    'popularServices' => $popularServices ,
 	    'recentServices' => $recentServices,
 	]);
     }
