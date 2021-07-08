@@ -17,18 +17,19 @@ use App\Http\Controllers\AppointmentController;
 */
 Route::get('/',[HomeController::class, 'index']);
 Route::post('/',[AppointmentController::class, 'setappointment']);
+//Route::get('services',[ServiceController::class, 'index']);
+//Route::post('services',[AppointmentController::class, 'setappointment']);
+//Route::get('services/{id}',[ServiceController::class, 'show']);
 
-Route::get('/services',[ServiceController::class, 'services']);
-Route::post('/services',[AppointmentController::class, 'setappointment']);
-Route::get('/service/{id}',[ServiceController::class, 'service']);
+Route::resource('services',ServiceController::class); // rename services
 
 Route::get('/about',[HomeController::class, 'about']);
 Route::get('/about',[DoctorController::class, 'index']);
 
-Route::get('/blog',[ArticleController::class, 'index']);
-Route::get('/article/{id}',[ArticleController::class, 'show']);
-Route::get('/category/{id}',[CategoryController::class, 'show']);
-Route::get('/tag/{id}',[TagController::class, 'show']);
+Route::get('/articles',[ArticleController::class, 'index']);
+Route::get('/articles/{id}',[ArticleController::class, 'show']);
+Route::get('/categories/{id}',[CategoryController::class, 'show']);
+Route::get('/tags/{id}',[TagController::class, 'show']);
 
 Route::get('/contact',[ContactFormController::class, 'contact']);
 Route::post('/contact',[ContactFormController::class, 'contactform']);
