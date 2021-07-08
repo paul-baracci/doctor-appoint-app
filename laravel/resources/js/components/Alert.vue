@@ -12,15 +12,13 @@ export default {
       type: String,
       required: true,
       validator: function (value) {
-        return ['primary', 'success', 'danger', 'warning'].indexOf(value) !== -1;
+        return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
       }
     }
   },
   computed: {
     alertType() {
-      // return `alert-warning`;
-      return `alert-{{this.type}}`;
-
+      return ('alert-' + this.type );
     }
   },
   data() {
@@ -42,11 +40,6 @@ export default {
   border-radius: .45rem;
   align-items: center;
 }
-.alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
-}
 .alert-success {
   color: #155724;
   background-color: #d4edda;
@@ -66,11 +59,6 @@ export default {
   color: #0c5460;
   background-color: #d1ecf1;
   border-color: #bee5eb;
-}
-.alert-light {
-  color: #818182;
-  background-color: #fefefe;
-  border-color: #fdfdfe;
 }
 .closebtn {
   transition: 0.3s;
