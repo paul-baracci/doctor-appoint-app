@@ -33,7 +33,7 @@ class ServiceFactory extends Factory
             'category_id' => Category::inRandomOrder()->first()->id,
             'image_id' => Image::inRandomOrder()->first()->id,
             'seo_title' => $this->faker->word(),
-            'seo_description' => $this->faker->sentence(),
+            'seo_description' => $this->faker->paragraph(),
             'slug' => Str::slug($this->faker->unique()->word(2), '-'),
             'requests' => $this->faker->randomNumber(),
         ];
