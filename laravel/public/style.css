@@ -6,6 +6,12 @@ ul {
     list-style-type: none;
 }
 
+.thumbnail {
+    max-width: 30rem;
+    
+    
+}
+
 .h-captcha {
     text-align: center;
 }

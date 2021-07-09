@@ -35,10 +35,6 @@ export default {
 </script>
 
 <style>
-.thumbnail {
-    height: auto;
-    max-width: 20rem;
-}
 #viewType {
     display: grid;
     grid-template-columns: 100%;

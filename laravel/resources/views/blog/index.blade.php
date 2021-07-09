@@ -8,11 +8,9 @@
     {{ $articles->links() }}
   </div>
   @foreach($articles as $article)
-      <div class="row m-2">
-        <div class="col-md-12">
-          <div class="card flex-row mb-4 box-shadow">
-            <img class="card-img-right flex-auto d-none d-md-block" src="https://via.placeholder.com/500x300?text=Article">
-            <div class="card-body d-flex flex-column align-items-start">
+          <div class="shadow card flex-row mb-2">
+            <img class="thumbnail" src="img/hero3.jpg">
+            <div class="card-body">
               <h3 class="mb-1">{{ $article->article_title }}  </h3>
               <div class="mb-1 text-muted"> <strong>Published on </strong>{{ $article->published_at }}</div>
               <div class="mb-1 text-muted"> <strong>Author </strong>{{ $article->doctor->name }}</div>
@@ -24,10 +22,8 @@
                   <a href="/tag/{{ $tag->id }}"> {{ $tag->name }} </a>
                 @endforeach
               </p>
-            </div>           
+            </div>
           </div>
-        </div>
-      </div>
   @endforeach
 
   <div class="row m-2 justify-content-center">
