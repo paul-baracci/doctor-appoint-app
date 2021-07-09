@@ -1,8 +1,12 @@
 /laravel/public/node_modules
+/laravel/node_modules/
 /laravel/public/img
 /docker-containers
 /composer*
-/
+.idea/
+/laravel/public/css/
+/laravel/public/js/
+/laravel/public/mix-manifest.json
 /.docker/docker-compose/*
 /laravel/public/storage
 /laravel/storage/*.key

@@ -13,6 +13,6 @@
             <a href="https://www.facebook.com/" class="nav-link">
             <img class="img-fluid" src="#" alt="Facebook page"></a>
         </div>
-        
+        <cart></cart>        
     </nav>
 </header> 

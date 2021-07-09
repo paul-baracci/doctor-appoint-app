@@ -10,19 +10,6 @@ ul {
     text-align: center;
 }
 
-input[type="radio"] {
-    display:none;   
-}
-
-input[type="radio"]:checked + label {
-    border: solid 2px #40a5fc;
-}
-
-.card img {
-    min-width: 15px;
-    max-height: 100px;
-}
-
 .wrapper {
     width: 800px;
     margin: 0 auto;
@@ -45,25 +32,12 @@ input[type="radio"]:checked + label {
   display: flex;
   flex-direction: column;
 }
-
-/* LIST VIEW*/
-#lgDemo {
-  display: grid;
-  grid-template-columns: 100%;
-}
-/* TRANSFORM TO GRID VIEW */
-#lgDemo.grid { 
-	grid-template-columns: 50% 50%; 
-	margin: 10px;
+.slider-item {
+    border-right: none;
 }
 
 @media only screen and (min-width: 768px) {
     :root {
-        font-size: 16px;
-    }
-
-    #lgDemo.grid { 
-        grid-template-columns: 30% 30% 30%; 
-        margin: 10px;
+        font-size: 18px;
     }
 }
