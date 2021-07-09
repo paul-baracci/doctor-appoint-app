@@ -20,7 +20,7 @@
   <div id= "viewType" class="row row-view">
  
     @foreach($services as $service)
-      <div class="card row m-2 d-flex flex-row justify-content-center align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
+      <div class="shadow card row m-2 d-flex flex-row justify-content-center align-items-center" data-price="{{ $service->price }}" data-added="{{ $service->created_at }}" data-title="{{ $service->title }}">
         
         <img src="img/hero3.jpg" class="card-img thumbnail" alt="Image">
         
