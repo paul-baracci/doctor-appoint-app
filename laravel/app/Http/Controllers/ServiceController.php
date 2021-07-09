@@ -13,7 +13,7 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function services()
+    public function index()
     {
         $services = Service::sortable()
             ->paginate(9);
@@ -50,7 +50,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function service($id)
+    public function show($id)
     {
         return view('service')
             ->with('service', Service::where('id', $id)->first());

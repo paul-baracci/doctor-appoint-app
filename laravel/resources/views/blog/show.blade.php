@@ -23,7 +23,7 @@
     </div>
     <div>
         <h3 class="m-5">Comments</h3>
-        @foreach($comments as $comment)
+        @foreach($article->comments as $comment)
             <div class="m-5">
             <p>posted by {{ $comment->user->name }} on {{ $comment->approved_at }} </p>
             <p> {{ $comment->message }} </p>

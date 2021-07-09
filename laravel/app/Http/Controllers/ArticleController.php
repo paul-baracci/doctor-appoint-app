@@ -58,16 +58,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {   
-        $article = Article::where('id', $id)->first();
-	
-	$comments = Comment::where('article_id', $article->id)
-	    ->orderBy('created_at' , 'DESC')
-	    ->paginate(5);
-
-	return view('blog.show', [
-	    'article' => $article,
-	    'comments' => $comments
-        ]);
+        $article = Article::with('comments')->find($id);
+	return view('blog.show', ['article' => $article]);
             
     }
 

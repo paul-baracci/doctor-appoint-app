@@ -7,7 +7,7 @@
 
         <a class="navbar-brand" href="/"><img src="#" alt="Augmented Heart Clinic"></a>
         <div class="collapse navbar-collapse mx-auto" id="topnav">
-            <a href="/services" class="nav-link">Services</a>
+            <a href="{{ route('services.index')}}" class="nav-link">Services</a>
             <a href="/about" class="nav-link">About</a>
             <a href="/blog" class="nav-link">Blog</a>
             <a href="/contact" class="nav-link">Contact</a>

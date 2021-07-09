@@ -1,13 +1,10 @@
-<form action=""
-      method="post"
-      enctype="multipart/form-data"
-      name="comment">
+<form method="post" action="">
     @csrf
-    <div class="form-row align-items-center">
+    <div class="form-group form-row align-items-center">
         <div class="col-9">
             <input type="text" name="content" class="form-control form-control-lg" placeholder="Leave a comment" required></input>
         </div>
-        <div class="col-3">
+        <div class="form-group col-3">
             <button type="submit" class="btn-lg btn-primary">Post comment</button>
         </div>
     </div>

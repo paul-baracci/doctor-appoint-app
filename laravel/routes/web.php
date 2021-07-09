@@ -9,6 +9,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,7 @@ Route::post('/',[AppointmentController::class, 'setappointment']);
 //Route::post('services',[AppointmentController::class, 'setappointment']);
 //Route::get('services/{id}',[ServiceController::class, 'show']);
 
-Route::resource('services',ServiceController::class); // rename services
-
+Route::resource('services', ServiceController::class); // rename services
 Route::get('/about',[HomeController::class, 'about']);
 Route::get('/about',[DoctorController::class, 'index']);
 

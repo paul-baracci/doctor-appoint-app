@@ -14,7 +14,7 @@ public function doctor() {
         return $this->belongsTo(Doctor::class);
     }
   
-    public function comment() {
+    public function comments() {
         return $this->hasMany(Comment::class);
     } 
 
