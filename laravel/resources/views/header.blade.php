@@ -1,9 +1,9 @@
-<header class="bg-light">    
-    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light ">
+<header class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-expanded="false" aria-label="Toggle navigation">
         <div class="navbar-toggler-icon"></div>
         </button>
-        <a class="navbar-brand" href="/"><img src="#" alt="Augmented Heart Clinic"></a>    
+        <a class="navbar-brand" href="/"><img src="#" alt="Augmented Heart Clinic"></a>
         <div class="collapse navbar-collapse justify-content-start mx-auto" id="topnav">
             <a href="/services" class="nav-link">Services</a>
             <a href="/about" class="nav-link">About</a>
@@ -15,4 +15,4 @@
         </div>
         <cart></cart>
     </nav>
-</header> 
+</header>

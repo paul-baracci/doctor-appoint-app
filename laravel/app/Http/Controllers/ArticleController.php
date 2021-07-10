@@ -17,16 +17,16 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $articles = Article::with('category' , 'tags')
                             ->orderBy('published_at', 'desc')
                             ->paginate(5);
-		
-	    
+
+
 	    return view ('blog.index' , [
             'articles'=>$articles ,
-	]); 
-    
+	]);
+
     }
 
     /**
@@ -57,18 +57,10 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $article = Article::where('id', $id)->first();
-	
-	$comments = Comment::where('article_id', $article->id)
-	    ->orderBy('created_at' , 'DESC')
-	    ->paginate(5);
+    {
+        $article = Article::with('comments')->find($id);
+        return view('blog.show', ['article' => $article]);
 
-	return view('blog.show', [
-	    'article' => $article,
-	    'comments' => $comments
-        ]);
-            
     }
 
     /**

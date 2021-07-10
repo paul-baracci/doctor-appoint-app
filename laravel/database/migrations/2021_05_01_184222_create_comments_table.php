@@ -33,7 +33,6 @@ class CreateCommentsTable extends Migration
                   ->onUpdate('cascade');
 
             $table->timestamps();
-            $table->datetime('approved_at');
         });
     }
 
