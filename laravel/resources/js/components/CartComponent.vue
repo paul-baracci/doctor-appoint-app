@@ -28,7 +28,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn" @click="clearCart()">Clear</button>
+            <button v-if="cartCount !== 0" class="btn" @click="clearCart()">Clear</button>
         </div>
         </transition>
     </div>

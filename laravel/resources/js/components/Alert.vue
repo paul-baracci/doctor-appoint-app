@@ -61,7 +61,6 @@ export default {
   border-color: #bee5eb;
 }
 .closebtn {
-  transition: 0.3s;
   float: right;
   cursor: pointer;
 }

@@ -7,8 +7,10 @@ ul {
 }
 
 .thumbnail {
-    max-height: 155px;
-    width: auto;
+    object-fit: cover;
+    max-width:307px;
+    height:auto;
+    border-radius: 0;
 }
 
 .wrapper {

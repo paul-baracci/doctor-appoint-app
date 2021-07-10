@@ -7,10 +7,15 @@
     </div>
 
     <div class="d-flex">
-        <div class="btn-group mr-auto">
-            <button type="button" class="order btn btn-outline-primary" > @sortablelink('title', 'Sort by Name') </button>
-            <button type="button" class="order btn btn-outline-primary" > @sortablelink('price', 'Sort by Price') </button>
-            <button type="button" class="order btn btn-outline-primary" > @sortablelink('created_at', 'Sort by Date') </button>
+        <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort By
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <p class="btn dropdown-item">@sortablelink('title', 'Sort by Name')</p>
+                <p class="btn dropdown-item">@sortablelink('price', 'Sort by Price')</p>
+                <p class="btn dropdown-item">@sortablelink('created_at', 'Sort by Date')</p>
+            </div>
         </div>
         <grid-list></grid-list>
     </div>
