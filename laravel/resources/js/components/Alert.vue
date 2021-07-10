@@ -1,6 +1,6 @@
 <template>
   <div :class="[alert, alertType]">
-  <span class="btn closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <slot></slot>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
   max-width: 40rem;
   border: 1px solid transparent;
   border-radius: .45rem;
-  align-items: center;
+  align-content: center;
 }
 .alert-success {
   color: #155724;
@@ -63,8 +63,7 @@ export default {
 .closebtn {
   transition: 0.3s;
   float: right;
-  font-size: 22px;
-  line-height: 20px;
+  cursor: pointer;
 }
 </style>
 @endsection
