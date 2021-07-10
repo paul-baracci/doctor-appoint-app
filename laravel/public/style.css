@@ -8,8 +8,7 @@ ul {
 
 .thumbnail {
     max-width: 30rem;
-    
-    
+    height: auto;
 }
 
 .h-captcha {
