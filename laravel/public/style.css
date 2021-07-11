@@ -7,16 +7,14 @@ ul {
 }
 
 .thumbnail {
-    max-width: 30rem;
-    height: auto;
-}
-
-.h-captcha {
-    text-align: center;
+    object-fit: cover;
+    max-width:307px;
+    height:auto;
+    border-radius: 0;
 }
 
 .wrapper {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -26,22 +24,15 @@ ul {
 
 .slider-track {
     display: flex;
-    transition: .2s;
+    transition: .5s;
 }
 
-.slider-buttons {
-    text-align: center;
+.carousel-caption {
+    background-color: rgba(0,0,0,0.50);
+    border-radius: 50px;
 }
 
-.row-view {
-  display: flex;
-  flex-direction: column;
-}
-.slider-item {
-    border-right: none;
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
     :root {
         font-size: 18px;
     }

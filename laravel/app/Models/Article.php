@@ -9,14 +9,13 @@ class Article extends Model
 {
     use HasFactory;
 
-  
 public function doctor() {
         return $this->belongsTo(Doctor::class);
     }
-  
-    public function comment() {
+
+    public function comments() {
         return $this->hasMany(Comment::class);
-    } 
+    }
 
     public function tags() {
         return $this->belongsToMany(Tag::class);

@@ -1,8 +1,10 @@
 <template>
-  <div :class="[alert, alertType]">
-  <span class="btn closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <slot></slot>
-  </div>
+  <transition name="fade">
+      <div :class="[alert, alertType]">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <slot></slot>
+      </div>
+  </transition>
 </template>
 <script>
 export default {
@@ -28,7 +30,13 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
 .alert {
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +46,8 @@ export default {
   max-width: 40rem;
   border: 1px solid transparent;
   border-radius: .45rem;
-  align-items: center;
+  align-content: center;
+  transition: all 0.5s ease;
 }
 .alert-success {
   color: #155724;
@@ -61,10 +70,8 @@ export default {
   border-color: #bee5eb;
 }
 .closebtn {
-  transition: 0.3s;
   float: right;
-  font-size: 22px;
-  line-height: 20px;
+  cursor: pointer;
 }
 </style>
 @endsection

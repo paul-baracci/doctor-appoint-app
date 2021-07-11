@@ -36,7 +36,21 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'message' => 'bail|required|min:3|max:255'
+        ], [
+            'message.required' => 'A message is required',
+            'message.min' => 'The message must be at least 3 characters long',
+            'message.max' => 'The message cannot exceed 255 characters'
+        ]);
+
+        Comment::create([
+            'message' => $request->input('message'),
+            'article_id' => $request->input('article_id'),
+            'user_id' => "1"
+        ]);
+
+	return back()->with('success', 'Comment added');
     }
 
     /**

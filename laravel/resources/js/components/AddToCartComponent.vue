@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="btn btn-primary btn-sm" @click="addToCart" :disabled="isProductAdded()">
+  <button type="button" class="btn btn-primary" @click="addToCart" :disabled="isProductAdded()">
       {{ isProductAdded() ? 'Added to cart' : 'Add to cart' }}
   </button>
 </template>

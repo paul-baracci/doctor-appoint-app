@@ -9,7 +9,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\AppointmentController;
-
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,7 @@ Route::get('/about',[DoctorController::class, 'index']);
 
 Route::get('/blog',[ArticleController::class, 'index']);
 Route::get('/article/{id}',[ArticleController::class, 'show']);
+Route::post('article/{id}/comments',[CommentController::class, 'store']);
 Route::get('/category/{id}',[CategoryController::class, 'show']);
 Route::get('/tag/{id}',[TagController::class, 'show']);
 

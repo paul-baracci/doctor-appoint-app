@@ -14,16 +14,16 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $doctors = Doctor::with('articles')
                             ->orderBy('name', 'asc')
 			    ->get();
-		
-	    
+
+
 	    return view ('about' , [
             'doctors'=>$doctors ,
-	]); 
-    
+	]);
+
     }
 
     /**
@@ -54,18 +54,14 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
         $article = Article::where('id', $id)->first();
-	
-	$comments = Comment::where('article_id', $article->id)
-	    ->orderBy('created_at' , 'DESC')
-	    ->paginate(5);
+
 
 	return view('blog.show', [
 	    'article' => $article,
-	    'comments' => $comments
         ]);
-            
+
     }
 
     /**

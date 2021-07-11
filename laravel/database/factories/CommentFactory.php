@@ -26,7 +26,6 @@ class CommentFactory extends Factory
     {
         return [
             'message' => $this->faker->realText(),
-            'approved_at' => $this->faker->dateTime(),
             'article_id' => Article::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
         ];
