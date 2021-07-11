@@ -11,16 +11,8 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" src="img/hero1.jpg" alt="First slide">
-                <div class="carousel-caption">
-                    <div class="text-dark mb-4">
-                        <h1>About us</h1>
-                    </div>
-
-
-                        <div class="col-sm text-white bg-primary">
-                            <h4><em>Augemnted Heart Clinic</em> is a place of empathy and science. We do our best to make futuristic medical services available to everyone. From accurate central nervois system controlled hand/arm prosthetics to any vaccine for the latest pandemic!</h4>
-                        </div>
-
+                <div class="carousel-caption text-white">
+                    <h4><em>Augemnted Heart Clinic</em> is a place of empathy and science. We do our best to make futuristic medical services available to everyone. From accurate central nervois system controlled hand/arm prosthetics to any vaccine for the latest pandemic!</h4>
                 </div>
             </div>
             <div class="carousel-item">

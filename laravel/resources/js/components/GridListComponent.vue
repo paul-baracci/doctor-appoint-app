@@ -41,13 +41,24 @@ export default {
     justify-content: center;
     transition: all 0.5s ease;
 }
+#viewType .price-caption {
+    float: right;
+    right: 5px;
+    bottom: 50%;
+
+}
 #viewType.grid {
     grid-template-columns: 50% 50%;
     margin: 10px;
     transition: all 0.5s ease;
 }
+#viewType.grid .price-caption {
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
 @media only screen and (min-width: 1000px) {
-
     #viewType.grid {
         grid-template-columns: 30% 30% 30%;
         transition: all 0.5s ease;

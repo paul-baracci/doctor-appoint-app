@@ -1,12 +1,11 @@
 <form method="post" action="/article/{{ $article->id }}/comments">
     @csrf
-    <div class="form-group form-row align-items-center">
-    <input type="hidden" name="article_id" value="{{ $article->id }}" />
-        <div class="col-9">
-            <input type="text" name="message" class="form-control form-control-lg" placeholder="Leave a comment" required></input>
-        </div>
-        <div class="form-group col-3">
-            <button type="submit" class="btn-lg btn-primary">Post comment</button>
-        </div>
+    <div class="form-group">
+        <input type="hidden" name="article_id" value="{{ $article->id }}" />
+        <textarea type="text" name="message" class="form-control form-control {{ $errors->has('message') ? ' has-error' : '' }}" placeholder="Leave a comment" required></textarea>
+            <p class="text-danger">{{ $errors->first('message') }}</p>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add comment</button>
     </div>
 </form>

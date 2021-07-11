@@ -22,11 +22,7 @@ class ArticleController extends Controller
                             ->orderBy('published_at', 'desc')
                             ->paginate(5);
 
-
-	    return view ('blog.index' , [
-            'articles'=>$articles ,
-	]);
-
+	    return view ('blog.index' , ['articles'=>$articles]);
     }
 
     /**
@@ -58,7 +54,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::with('comments')->find($id);
+        $article = Article::where('id', $id)->first();
+
         return view('blog.show', ['article' => $article]);
 
     }

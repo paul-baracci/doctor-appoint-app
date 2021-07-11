@@ -8,7 +8,7 @@
         </button>
         <transition name="fade">
             <div class="cart-dropdown bg-light shadow" v-if="dropdownIsOpen">
-                <h3 v-if="cartCount == 0" class="text-center">No items in cart</h3>
+                <h3 v-if="cartCount == 0" class="text-center m-2">No items in cart</h3>
                 <table class="table table-sm table-hover">
                     <tbody>
                         <tr v-for="item in this.$root.cart" :key="item.id">

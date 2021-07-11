@@ -12,19 +12,19 @@ class ContactFormController extends Controller
     public function contactform(Request $request)
     {
 
-    	\Mail::send('emails.email', 
+    	\Mail::send('emails.email',
     	    [
-		'name' => $request->input('fname'),   
+		'name' => $request->input('fname'),
 		'email' => $request->input('email'),
-		'content' => $request->input('message'), 
-	    ], 
+		'content' => $request->input('message'),
+	    ],
     		function (Message $message) use ($request) {
 	        $message->to('support@augmented.com');
 		$message->from('no-reply@augmented.com');
     		$message->subject('Contact Form: ' . $request->input('subject'));
     	});
-	
-	return back()->with('success', 'Contact Form Submit Successfully');
+
+	return back()->with('success', 'Contact form submitted successfully. Thank you for contacting us!');
     }
     public function contact()
     {

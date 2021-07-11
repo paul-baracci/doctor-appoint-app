@@ -24,7 +24,12 @@ ul {
 
 .slider-track {
     display: flex;
-    transition: .2s;
+    transition: .5s;
+}
+
+.carousel-caption {
+    background-color: rgba(0,0,0,0.50);
+    border-radius: 50px;
 }
 
 @media only screen and (min-width: 800px) {
