@@ -37,7 +37,7 @@ const app = new Vue({
 // Slider functionality
 let position = 0;
 const slidesVisible = 3;
-const slidesOnScroll = 2;
+const slidesOnScroll = 1;
 const container = document.querySelector('.slider-container');
 const track = document.querySelector('.slider-track');
 const prevBtn = document.querySelector('.btn-prev');

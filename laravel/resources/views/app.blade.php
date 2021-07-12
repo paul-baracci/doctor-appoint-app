@@ -11,8 +11,8 @@
 <body>
     <main role="main" id="app">
         @include('header')
-        @if(session('success'))
-            <alert class="shadow" type="success">{{ session('success') }}</alert>
+        @if(session('alert'))
+            <alert class="shadow" type="{{session('alert')}}"></alert>
         @endif
         @yield('content')
         @include('footer')

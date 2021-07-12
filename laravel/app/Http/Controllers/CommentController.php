@@ -50,7 +50,10 @@ class CommentController extends Controller
             'user_id' => "1"
         ]);
 
-	return back()->with('success', 'Comment added');
+	return back()->with('alert', json_encode([
+        'type' => 'success',
+        'message' => 'Comment posted successfully.'
+    ]));
     }
 
     /**

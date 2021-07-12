@@ -2,7 +2,7 @@
   <transition name="fade">
       <div :class="[alert, alertType]">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <slot></slot>
+            {{ messageInfo ? messageInfo.message : '' }}
       </div>
   </transition>
 </template>
@@ -14,19 +14,26 @@ export default {
       type: String,
       required: true,
       validator: function (value) {
-        return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
+        // return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
+        return true;
       }
     }
   },
   computed: {
     alertType() {
-      return ('alert-' + this.type );
+      return ('alert-' + this.messageInfo.type );
     }
   },
   data() {
     return {
       alert: 'alert',
+        messageInfo: 'default'
     }
+  },
+  mounted() {
+      this.messageInfo = JSON.parse(this.type)
+      console.log(this.messageInfo);
+
   }
 }
 </script>
