@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <main role="main" id="app">
+    <main role="main" id="app" class="bg-light">
         @include('header')
         @if(session('alert'))
             <alert class="shadow" type="{{session('alert')}}"></alert>

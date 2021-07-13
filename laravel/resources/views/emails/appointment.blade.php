@@ -19,7 +19,8 @@
     <p>Email: {{ $email }} </p>
     <p>Phone: {{ $phone }} </p>
     <p>Service: {{ $service }} </p>
-    <p>Time choice: {{ $options }} </p>
+    <p>Date: {{ $date }} </p>
+    <p>Time: {{ $time }} </p>
 
 </body>
 

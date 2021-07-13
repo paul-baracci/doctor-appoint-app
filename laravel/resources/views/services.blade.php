@@ -57,7 +57,8 @@
                         <h6 class="text-muted font-weight-normal">
                             {!! Str::limit($service->description, 30) !!}
                         </h6>
-
+                        @include('scheduleButton')
+                        @include('scheduleModal')
                         <add-to-cart :service-object="{
                             id: {{ $service->id }},
                             title: '{{ $service->title }}',
@@ -66,9 +67,6 @@
                         </add-to-cart>
                         <h4 class="price-caption">${{ $service->price }}</h4>
                     </div>
-
-
-
                 </div>
             @endforeach
         </div>

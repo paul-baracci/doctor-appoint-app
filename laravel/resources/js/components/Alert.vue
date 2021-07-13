@@ -1,10 +1,8 @@
 <template>
-  <transition name="fade">
       <div :class="[alert, alertType]">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <span class="closebtn mx-2" onclick="this.parentElement.style.display='none';">&times;</span>
             {{ messageInfo ? messageInfo.message : '' }}
       </div>
-  </transition>
 </template>
 <script>
 export default {
@@ -45,16 +43,14 @@ export default {
     opacity: 0;
 }
 .alert {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding: .75rem 1.25rem;
-  margin-bottom: 1rem;
-  max-width: 40rem;
+  margin: 1.25rem;
+  position: absolute;
+  right: 10px;
+  padding: 1.25rem;
+  z-index: 9;
   border: 1px solid transparent;
   border-radius: .45rem;
   align-content: center;
-  transition: all 0.5s ease;
 }
 .alert-success {
   color: #155724;

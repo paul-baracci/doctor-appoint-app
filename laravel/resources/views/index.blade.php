@@ -76,15 +76,12 @@
                     </div>
                     <div class="col ml-auto p-2" >
                         <h3> ${{ $service->price }} </h3>
-                        <add-to-cart :service-object="{
-                            id: {{ $service->id }},
-                            title: '{{ $service->title }}',
-                            price: {{ $service->price }}
-                            }"></add-to-cart>
+                        @include('scheduleButton')
                         <button type="button" class="btn btn-sm">
                         <a href="/service/{{ $service->id }}">More details</a></button>
                     </div>
                 </div>
+                @include('scheduleModal')
             @endforeach
         </div>
     </div>

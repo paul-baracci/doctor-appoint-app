@@ -86,20 +86,23 @@ class AppointmentController extends Controller
     }
     public function setappointment(Request $request)
     {
-	\Mail::send('emails.appointment', 
+	\Mail::send('emails.appointment',
     	    [
-		'name' => $request->input('fname'),   
+		'name' => $request->input('fname'),
 		'email' => $request->input('email'),
 		'phone' => $request->input('phone'),
 		'service' => $request->input('service'),
-		'options' => $request->input('options'),	
-	    ], 
+        'date' => $request->input('date'),
+		'time' => $request->input('time')
+	    ],
     		function (Message $message) use ($request) {
-	        $message->to('support@augmented.com');
-		$message->from('no-reply@augmented.com');
-    		$message->subject('Appointment request: ' . $request->input('service'));
+                $message->to('support@augmented.com');
+                $message->from('no-reply@augmented.com');
+                $message->subject('Appointment request: ' . $request->input('service'));
     	});
-	
-	return back()->with('success', 'Thank you for your request. We will send you the appointment confirmation and details shortly.');
+        return back()->with('alert', json_encode([
+            'type' => 'success',
+            'message' => 'Thank you for your request. We will call you shortly to confirm your appointment.'
+        ]));
     }
 }
