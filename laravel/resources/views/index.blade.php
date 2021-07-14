@@ -105,10 +105,4 @@
             <img class="p-2 img-fluid" width="200" src="/img/ocp.jpg" alt="Sponsor3"/>
         </div>
     </div>
-    <div class="container my-4" id="contact">
-        <div class="text-center mb-4">
-            <h1>Contact us</h1>
-        </div>
-        @include('contactForm')
-    </div>
 @endsection

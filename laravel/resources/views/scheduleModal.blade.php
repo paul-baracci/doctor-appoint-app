@@ -65,7 +65,7 @@
                                         <a href="terms">Terms and conditions</a>
                                     </label>
                                 </div>
-                                <div class="h-captcha" data-sitekey="9c6eb30c-cf96-4956-beef-49f335ee66c2"></div>
+                                <div class="h-captcha text-center" data-sitekey="9c6eb30c-cf96-4956-beef-49f335ee66c2"></div>
                                 <div class="modal-footer justify-content-center">
                                     <button type="submit" class="btn btn-success">Confirm appointment</button>
                                 </div>

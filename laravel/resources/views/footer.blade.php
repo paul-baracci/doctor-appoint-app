@@ -1,5 +1,5 @@
 <footer>
-    <nav class="navbar navbar-light bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><img src="#" alt="Augmented Heart Clinic"></a>
             <ul>
                 <li><a href="/services" class="nav-link">Services</a></li>
@@ -14,4 +14,4 @@
                 <li><a href="#" class="nav-link"><img class="img-fluid" src="#" alt="Twitter"></a></li>
             </ul>
     </nav>
-</footer>  
+</footer>

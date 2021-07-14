@@ -1,5 +1,5 @@
-<header class="bg-white">
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow bg-white">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-expanded="false" aria-label="Toggle navigation">
         <div class="navbar-toggler-icon"></div>
         </button>
@@ -10,8 +10,6 @@
             <a href="/blog" class="nav-link">Blog</a>
             <a href="/contact" class="nav-link">Contact</a>
             <a href="/terms" class="nav-link">Terms and conditions</a>
-            <a href="https://www.facebook.com/" class="nav-link">
-            <img class="img-fluid" src="#" alt="Facebook page"></a>
         </div>
         <cart></cart>
     </nav>
