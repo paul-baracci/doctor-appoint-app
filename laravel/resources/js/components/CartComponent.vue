@@ -1,22 +1,22 @@
 <template>
     <div class="text-center">
         <button class="btn btn-outline-primary" @click="dropdownIsOpen = !dropdownIsOpen">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
-                <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
             </svg>
          {{ cartCount }}
         </button>
         <transition name="fade">
-            <div class="cart-dropdown bg-light shadow" v-if="dropdownIsOpen">
-                <h3 v-if="cartCount == 0" class="text-center m-2">No items in cart</h3>
+            <div class="cart-dropdown shadow p-2 m-2" v-if="dropdownIsOpen">
+                <h3 v-if="cartCount == 0" class="text-center">Favorites is empty...</h3>
                 <table class="table table-sm table-hover">
                     <tbody>
-                        <tr v-for="item in this.$root.cart" :key="item.id">
+                        <tr v-for="item in this.$root.cart" :key="item.id" @click="clicked(item)">
                             <td class="align-middle">
-                                <img src="img/hero3.jpg" class="card-img thumbnail" alt="Image">
+                                <img src="/img/hero3.jpg" class="card-img thumbnail" alt="Image">
                             </td>
                             <td class="align-middle">{{ item.title }}</td>
-                            <td class="align-middle">${{ item.price }}</td>
+                            <td class="align-middle text-right">${{ item.price }}</td>
                             <td class="align-middle">
                                 <button type="button" class="btn" @click="removeFromCart(item)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
@@ -59,6 +59,9 @@ export default {
         removeFromCart(item) {
 	        this.$root.cart.splice(this.$root.cart.indexOf(item), 1)
             localStorage.setItem('cart', JSON.stringify(this.$root.cart));
+        },
+        clicked(item) {
+	        window.location = '/service/' + item.id ;
         }
     }
 };
@@ -69,6 +72,10 @@ img {
     max-height: 50px;
 }
 
+tr {
+    cursor: pointer;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;
 }
@@ -77,9 +84,11 @@ img {
 }
 .cart-dropdown {
     position: absolute;
-    background-color: #fff;
+    background-color: white;
     top: 100%;
+    border-radius: 15px;
     right:  5px;
+
     padding: 5px;
     z-index: 9;
 }

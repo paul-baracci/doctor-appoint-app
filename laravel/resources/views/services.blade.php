@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" id="prices">
-        <div class="text-center">
+        <div class="text-center m-4">
             <h1>Services</h1>
         </div>
         <div class="d-flex">
@@ -45,26 +45,27 @@
         </div>
         <div id="viewType" class="row row-view">
             @foreach($services as $service)
-                <div class="shadow card row m-2 d-flex flex-row" >
-                        <img src="img/hero3.jpg" class="card-img thumbnail" alt="Image">
-
+                <div class="shadow card row m-2 d-flex flex-row">
+                    <img src="/img/hero3.jpg" class="card-img thumbnail" alt="Image">
                     <div class="col p-2">
                         <a href="/service/{{ $service->id }}">
                             <h6 class="font-weight-semibold">{{ $service->title }}</h6>
                         </a>
-                        <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
-                        <hr>
-                        <h6 class="text-muted font-weight-normal">
-                            {!! Str::limit($service->description, 30) !!}
-                        </h6>
-                        @include('scheduleButton')
-                        @include('scheduleModal')
                         <add-to-cart :service-object="{
                             id: {{ $service->id }},
                             title: '{{ $service->title }}',
                             price: {{ $service->price }}
                             }">
                         </add-to-cart>
+                        <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
+                        <hr>
+                        <h6 class="text-muted font-weight-normal">
+                            {!! Str::limit($service->description, 30) !!}
+                        </h6>
+                        <div class="justify-content-center">
+                            @include('scheduleButton')
+                        </div>
+                        @include('scheduleModal')
                         <h4 class="price-caption">${{ $service->price }}</h4>
                     </div>
                 </div>

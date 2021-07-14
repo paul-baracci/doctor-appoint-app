@@ -3,10 +3,6 @@
 @section('content')
 <div class="container text">
   <h1 class="text-center">Our Blog</h1>
-
-  <div class="row m-2 justify-content-center">
-    {{ $articles->links() }}
-  </div>
   @foreach($articles as $article)
       <div class="row m-2">
         <div class="col-md-12">
@@ -17,15 +13,11 @@
               <div class="mb-1 text-muted">{{ $article->created_at }}</div>
               <p class="card-text mb-auto">{{ $article->article_description }}</p>
               <a href="article">Continue reading</a>
-            </div>           
+            </div>
           </div>
         </div>
       </div>
   @endforeach
-
-  <div class="row m-2 justify-content-center">
-    {{ $articles->links() }}
-  </div>
 </div>
 
 @endsection

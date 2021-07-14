@@ -47,7 +47,7 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {    
+    {
         return view ('tag')
             ->with('articles', Tag::findOrFail($id)->articles);
     }

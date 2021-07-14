@@ -52,7 +52,7 @@ class CategoryController extends Controller
     {
         return view ('blog.category')
             		->with('articles', Article::where('category_id', '=', $id)
-            		->get());
+            		->paginate(5));
     }
 
     /**

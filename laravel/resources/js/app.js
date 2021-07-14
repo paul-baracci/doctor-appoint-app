@@ -48,16 +48,16 @@ const itemWidth = container.clientWidth / slidesVisible + 5;
 const movePosition = slidesOnScroll * itemWidth;
 
 items.forEach((item) => {
-    item.style.minWidth = `${ container.clientWidth / slidesVisible }px`;
+    item.style.minWidth = `${container.clientWidth / slidesVisible}px`;
     item.style.marginRight = '5px';
     item.style.border = '0';
     window.addEventListener("resize", () => {
-        item.style.minWidth = `${ container.clientWidth / slidesVisible }px`;
+        item.style.minWidth = `${container.clientWidth / slidesVisible}px`;
     });
 });
 
 prevBtn.addEventListener('click', () => {
-    const itemsLeft =  Math.abs(position) / itemWidth;
+    const itemsLeft = Math.abs(position) / itemWidth;
     position += itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
 
     setPosition();

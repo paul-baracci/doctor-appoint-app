@@ -6,9 +6,15 @@ ul {
     list-style-type: none;
 }
 
+.img-circle {
+    border-radius: 50%;
+    max-width: 15em;
+}
+
 .thumbnail {
     object-fit: cover;
-    max-width:307px;
+    max-width: 250px;
+    max-height: 250px;
     height:auto;
     border-radius: 0;
 }
@@ -28,12 +34,15 @@ ul {
 }
 
 .carousel-caption {
-    background-color: rgba(0,0,0,0.50);
+    background-color: rgba(0, 0, 0, 0.50);
     border-radius: 50px;
 }
 
 @media only screen and (min-width: 800px) {
     :root {
         font-size: 18px;
+    }
+    .thumbnail {
+        max-width: 400px;
     }
 }
