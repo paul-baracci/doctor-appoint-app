@@ -7,8 +7,8 @@
          {{ cartCount }}
         </button>
         <transition name="fade">
-            <div class="cart-dropdown shadow p-2 m-2" v-if="dropdownIsOpen">
-                <h3 v-if="cartCount == 0" class="text-center">Favorites is empty...</h3>
+            <div class="cart-dropdown shadow p-4 m-2" v-if="dropdownIsOpen">
+                <h3 v-if="cartCount == 0" class="text-center m-4">Favorites is empty...</h3>
                 <table class="table table-sm table-hover">
                     <tbody>
                         <tr v-for="item in this.$root.cart" :key="item.id" @click="clicked(item)">

@@ -21,7 +21,7 @@
                                     </button>
                                     <hr>
                                     <h6 class="text-muted font-weight-normal">
-                                        {!! Str::limit($service->description, 255) !!}
+                                        {!! Str::limit($service->description, 1530) !!}
                                     </h6>
                                 </div>
                             </div>

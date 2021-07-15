@@ -1,6 +1,23 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 :root {
     font-size: 10px;
 }
+
+/* make the footer sticky, without overlapping content*/
+body {
+    margin-bottom: 260px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+}
+/* end of sticky footer settings*/
 
 ul {
     list-style-type: none;

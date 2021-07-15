@@ -1,4 +1,4 @@
-<div class="shadow card flex-row mb-2">
+<div class="shadow card flex-row mb-4">
     <img class="thumbnail" src="{{ $article->image->path }}">
     <div class="card-body">
         <h3 class="mb-1"><a href="{{ route('articles.show', ['article' => $article]) }}">{{ $article->article_title }}</a></h3>

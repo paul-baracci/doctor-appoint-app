@@ -1,4 +1,5 @@
 /laravel/public/node_modules
+/laravel/public/fonts
 /laravel/node_modules/
 /laravel/public/img
 /docker-containers
