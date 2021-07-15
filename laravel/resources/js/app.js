@@ -44,12 +44,12 @@ const prevBtn = document.querySelector('.btn-prev');
 const nextBtn = document.querySelector('.btn-next');
 const items = document.querySelectorAll('.slider-item');
 const itemCount = items.length;
-const itemWidth = container.clientWidth / slidesVisible + 10;
+const itemWidth = container.clientWidth / slidesVisible + 5;
 const movePosition = slidesOnScroll * itemWidth;
 
 items.forEach((item) => {
     item.style.minWidth = `${container.clientWidth / slidesVisible}px`;
-    item.style.marginRight = '10px';
+    item.style.marginRight = '5px';
     item.style.border = '0';
     window.addEventListener("resize", () => {
         item.style.minWidth = `${container.clientWidth / slidesVisible}px`;

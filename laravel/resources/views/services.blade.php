@@ -5,9 +5,9 @@
         <div class="text-center m-4">
             <h1>Services</h1>
         </div>
-        <div class="d-flex">
-            <div class="dropdown mr-auto">
-                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+        <div class="d-flex justify-content-around">
+            <div class="dropdown">
+                <button class="btn shadow bg-white text-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sort by
                 </button>
@@ -38,10 +38,10 @@
                     </p>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                {!! $services->appends(\Request::except('page'))->render() !!}
+            </div>
             <grid-list></grid-list>
-        </div>
-        <div class="row justify-content-center">
-            {!! $services->appends(\Request::except('page'))->render() !!}
         </div>
         <div id="viewType" class="row row-view">
             @foreach($services as $service)
@@ -54,7 +54,8 @@
                         <add-to-cart :service-object="{
                             id: {{ $service->id }},
                             title: '{{ $service->title }}',
-                            price: {{ $service->price }}
+                            price: {{ $service->price }},
+                            image: '{{ $service->image->path }}'
                             }">
                         </add-to-cart>
                         <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
