@@ -3,6 +3,7 @@ import Alert from "./components/Alert.vue";
 import CartComponent from "./components/CartComponent.vue";
 import AddToCartComponent from "./components/AddToCartComponent.vue";
 import GridListComponent from "./components/GridListComponent";
+import TopScrollComponent from "./components/TopScrollComponent";
 
 require('./bootstrap');
 
@@ -10,6 +11,7 @@ Vue.component('alert', Alert);
 Vue.component('cart', CartComponent);
 Vue.component('addToCart', AddToCartComponent);
 Vue.component('gridList', GridListComponent);
+Vue.component('topScroll', TopScrollComponent);
 
 const app = new Vue({
     el: '#app',

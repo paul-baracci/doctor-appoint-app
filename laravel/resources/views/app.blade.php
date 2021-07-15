@@ -14,6 +14,7 @@
         @if(session('alert'))
             <alert class="shadow" type="{{session('alert')}}"></alert>
         @endif
+        <top-scroll>Scroll</top-scroll>
         @yield('content')
         @include('footer')
     </main>

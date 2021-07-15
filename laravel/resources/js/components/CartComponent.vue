@@ -91,6 +91,6 @@ tr {
     right:  5px;
 
     padding: 5px;
-    z-index: 9;
+    z-index: 1;
 }
 </style>
