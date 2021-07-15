@@ -1,4 +1,4 @@
-<form action="/contact"
+<form action="{{ route('contact.send') }}"
                 method="post"
                 enctype="multipart/form-data">
                 @csrf

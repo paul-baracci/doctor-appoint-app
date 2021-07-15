@@ -7,13 +7,13 @@
         </div>
         <div class="row align-items-center">
             <div class="col-sm">
-                <p><em>Augemnted Heart Clinic</em> is a place of empathy and science. We do our best to make futuristic
-                    medical services available to everyone. From accurate central nervois system controlled hand/arm
+                <p><em>Augmented Heart Clinic</em> is a place of empathy and science. We do our best to make futuristic
+                    medical services available to everyone. From accurate central nervous system controlled hand/arm
                     prosthetics to any vaccine for the latest pandemic!</p>
                 <p>Our word-class medical specialists have been hand-picked to take on procedures that are safe and up
                     the newest standards.</p>
 
-                <p><a href="/services/">Schedule an appointment</a> today, we're glad to hear what time works for
+                <p><a href="{{ route('services.index') }}">Schedule an appointment</a> today, we're glad to hear what time works for
                     you!</p>
             </div>
         </div>
@@ -24,7 +24,7 @@
             @foreach ($doctors as $doctor)
                 <div class="card shadow">
                     <div class="card-title text-center pt-4">
-                        <img class="img-circle card-img-top" src="/img/jd.jpg" alt="{{ $doctor->name }}" />
+                        <img class="img-circle card-img-top" src="{{ $doctor->image->path }}" alt="{{ $doctor->name }}" />
                     </div>
                     <div class="card-body text-center">
                         <h4> {{ $doctor->name }} </h4>

@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-public function doctor() {
+    public function doctor() {
         return $this->belongsTo(Doctor::class);
     }
 
@@ -23,5 +23,8 @@ public function doctor() {
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+    public function image() {
+        return $this->belongsTo(Image::class);
     }
 }

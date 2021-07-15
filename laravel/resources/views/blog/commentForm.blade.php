@@ -1,4 +1,4 @@
-<form method="post" action="/article/{{ $article->id }}/comments">
+<form method="post" action="{{ route('comments.store', ['article' => $article->id]) }}">
     @csrf
     <div class="form-group">
         <input type="hidden" name="article_id" value="{{ $article->id }}" />

@@ -8,8 +8,12 @@ use Illuminate\Contracts\Mail\Mailer;
 
 class ContactFormController extends Controller
 {
+    public function index()
+    {
+        return view('contact');
+    }
 
-    public function contactform(Request $request)
+    public function send(Request $request)
     {
 
     	\Mail::send('emails.email',
@@ -28,9 +32,5 @@ class ContactFormController extends Controller
             'type' => 'success',
             'message' => 'Thank you for contacting us! We will get back to you as soon as possible.'
         ]));
-    }
-    public function contact()
-    {
-    	return view('contact');
     }
 }

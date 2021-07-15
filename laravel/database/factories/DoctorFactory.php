@@ -29,7 +29,6 @@ class DoctorFactory extends Factory
 	    'name' => $this->faker->name(),
 	    'specialization' => $this->faker->word(),
 	    'image_id' => Image::inRandomOrder()->first()->id,
-	    'schedule_id' =>Schedule::inRandomOrder()->first()->id,
         ];
     }
 }

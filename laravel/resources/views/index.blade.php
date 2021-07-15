@@ -44,7 +44,7 @@
                     <h1>Our process</h1>
                 </div>
                 <p>Augmented Heart Clinic allows you to schedule appointments with ease and speed. Access the <a
-                        href="/services">Services page</a> and set up an appoinment. Once a request is submitted, our
+                        href="{{ route('services.index') }}">Services page</a> and set up an appointment. Once a request is submitted, our
                     team will contact you to confirm the exact time and payment method.</p>
             </div>
         </div>
@@ -58,7 +58,9 @@
             <div class=" slider-track">
                 @foreach ($popularServices as $service)
                     <div class="shadow slider-item card text-center align-content-start">
-                        <img src="/img/hero3.jpg" class="card-img thumbnail" alt="Image">
+
+                        <img src="{{ $service->image->path }}" class="card-img thumbnail" alt="Image">
+
                         <div class="col">
                             <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
                             <p><strong>Available since </strong> {{ $service->created_at }} </p>
@@ -71,7 +73,7 @@
                             <h3> ${{ $service->price }} </h3>
                             @include('scheduleButton')
                             <button type="button" class="btn btn-sm">
-                                <a href="/service/{{ $service->id }}">More details</a></button>
+                                <a href="{{ route('services.show', ['service' => $service->id]) }}">More details</a></button>
                         </div>
                     </div>
                 @endforeach
@@ -97,9 +99,9 @@
             </button>
         </div>
     </div>
-    <div class="container my-4" id="sponsors">
-        <div class="text-center mb-4">
-            <h1>Our Sponsors</h1>
+    <div class="container my-4">
+        <div class="text-center">
+            <h1 class="my-4">Our Sponsors</h1>
             <img class="p-2 img-fluid" width="200" src="/img/tyrell-corp.jpg" alt="Sponsor1"/>
             <img class="p-2 img-fluid" width="200" src="/img/sarif.jpg" alt="Sponsor2"/>
             <img class="p-2 img-fluid" width="200" src="/img/ocp.jpg" alt="Sponsor3"/>

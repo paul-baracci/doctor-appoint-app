@@ -4,19 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
-use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
-{   
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function services()
+    public function index()
     {
-        $services = Service::sortable()
-            ->paginate(6);
+        $services = Service::sortable()->paginate(6);
 
     	return view('services', [
             'services' => $services
@@ -47,13 +45,12 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Service $service
      * @return \Illuminate\Http\Response
      */
-    public function service($id)
+    public function show(Service $service)
     {
-        return view('service')
-            ->with('service', Service::where('id', $id)->first());
+        return view('service', ['service' => $service]);
     }
 
     /**

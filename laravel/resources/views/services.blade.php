@@ -46,9 +46,9 @@
         <div id="viewType" class="row row-view">
             @foreach($services as $service)
                 <div class="shadow card row m-2 d-flex flex-row">
-                    <img src="/img/hero3.jpg" class="card-img thumbnail" alt="Image">
+                    <img src="{{ $service->image->path }}" class="card-img thumbnail" alt="Image">
                     <div class="col p-2">
-                        <a href="/service/{{ $service->id }}">
+                        <a href="{{ route('services.show', ['service' => $service->id]) }}">
                             <h6 class="font-weight-semibold">{{ $service->title }}</h6>
                         </a>
                         <add-to-cart :service-object="{

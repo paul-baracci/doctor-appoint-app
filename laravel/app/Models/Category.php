@@ -15,8 +15,7 @@ class Category extends Model
     public function services() {
         return $this->hasMany(Service::class);
         }
-    /*
     public function image() {
-        return $this->has(Image::class);
-    } */
+        return $this->belongsTo(Image::class);
+    }
 }

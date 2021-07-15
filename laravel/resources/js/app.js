@@ -44,12 +44,12 @@ const prevBtn = document.querySelector('.btn-prev');
 const nextBtn = document.querySelector('.btn-next');
 const items = document.querySelectorAll('.slider-item');
 const itemCount = items.length;
-const itemWidth = container.clientWidth / slidesVisible + 5;
+const itemWidth = container.clientWidth / slidesVisible + 10;
 const movePosition = slidesOnScroll * itemWidth;
 
 items.forEach((item) => {
     item.style.minWidth = `${container.clientWidth / slidesVisible}px`;
-    item.style.marginRight = '5px';
+    item.style.marginRight = '10px';
     item.style.border = '0';
     window.addEventListener("resize", () => {
         item.style.minWidth = `${container.clientWidth / slidesVisible}px`;
@@ -57,15 +57,15 @@ items.forEach((item) => {
 });
 
 prevBtn.addEventListener('click', () => {
-    const itemsLeft = Math.abs(position) / itemWidth;
-    position += itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
+    const itemsLeft = Math.abs(position) / container.clientWidth;
+    position += itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * container.clientWidth;
 
     setPosition();
     checkBtns();
 });
 nextBtn.addEventListener('click', () => {
-    const itemsLeft = itemCount - (Math.abs(position) + slidesVisible * itemWidth) / itemWidth;
-    position -= itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
+    const itemsLeft = itemCount - (Math.abs(position) + slidesVisible * container.clientWidth) / container.clientWidth;
+    position -= itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * container.clientWidth;
 
     setPosition();
     checkBtns();

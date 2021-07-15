@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col ">
                             <div class="shadow slider-item card text-center align-content-start">
-                                <img src="/img/hero3.jpg" class="card-img" alt="Image">
+                                <img src="{{ $service->image->path }}" class="card-img" alt="Image">
                                 <div class="col">
                                     <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
                                     <h3>Price ${{ $service->price }} </h3>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <form method="post" action="/services/{{ $service->id }}/schedule">
+                            <form method="post" action="{{ route('schedule', ['service' => $service->id]) }}">
                                 @csrf
                                 <div class="input-group">
                                     <input type="hidden" id="service" name="service" value=" {{ $service->title }} ">

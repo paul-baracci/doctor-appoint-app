@@ -14,19 +14,23 @@ class CreateAppointmentsTable extends Migration
      */
     public function up()
     {
-        DB::statement("
-            CREATE TABLE `appointments` (
-                `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                `requester_email` VARCHAR(50) NOT NULL UNIQUE,
-                `service_id` BIGINT UNSIGNED NOT NULL,
-                `requested_at` DATETIME NULL DEFAULT NULL,
-                `timechoice_id` BIGINT UNSIGNED NOT NULL,
-                FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON UPDATE CASCADE ON DELETE RESTRICT,
-                FOREIGN KEY (`timechoice_id`) REFERENCES `time_choices` (`id`) ON UPDATE CASCADE ON DELETE RESTRICT
-            ) ENGINE=InnoDB
-            ");
+        Schema::create('appointments', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
+            $table->string('desired_date');
+            $table->string('desired_time');
+            $table->text('article_content');
+            $table->unsignedBigInteger('service_id');
+            $table->foreign('service_id')
+                ->references('id')
+                ->on('services')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+            $table->timestamps();
+        });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -34,6 +38,6 @@ class CreateAppointmentsTable extends Migration
      */
     public function down()
     {
-        DB::statement('DROP TABLE IF EXISTS appointments');
+        Schema::dropIfExists('appointments');
     }
 }

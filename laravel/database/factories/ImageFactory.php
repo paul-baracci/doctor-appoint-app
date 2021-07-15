@@ -24,7 +24,7 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            'path' => Str::length(6),
+            'path' => '/img/hero3.jpg',
             'name' => $this->faker->word(),
             'size' => Str::length(6),
         ];

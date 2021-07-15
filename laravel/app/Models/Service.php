@@ -13,4 +13,8 @@ class Service extends Model
 
     use Sortable;
     public $sortable = [ 'title','price','created_at'];
+
+    public function image() {
+        return $this->belongsTo(Image::class);
+    }
 }

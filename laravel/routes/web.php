@@ -15,24 +15,21 @@ use App\Http\Controllers\CommentController;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/',[HomeController::class, 'index']);
-Route::post('/',[AppointmentController::class, 'setappointment']);
+Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::post('/',[AppointmentController::class, 'store'])->name('schedule');
 
-Route::get('/services',[ServiceController::class, 'services']);
-Route::post('/services/{id}/schedule',[AppointmentController::class, 'setappointment']);
-Route::get('/service/{id}',[ServiceController::class, 'service']);
+Route::post('/services/{service}/schedule',[AppointmentController::class, 'store'])->name('schedule');
+Route::resource('services', ServiceController::class);
 
-Route::get('/about',[HomeController::class, 'about']);
-Route::get('/about',[DoctorController::class, 'index']);
+Route::get('about',[DoctorController::class, 'index'])->name('doctors.index');
 
-Route::get('/blog',[ArticleController::class, 'index']);
-Route::get('/article/{id}',[ArticleController::class, 'show']);
-Route::post('article/{id}/comments',[CommentController::class, 'store']);
-Route::get('/category/{id}',[CategoryController::class, 'show']);
-Route::get('/tag/{id}',[TagController::class, 'show']);
+Route::resource('articles', ArticleController::class);
+Route::post('articles/{article}/comments',[CommentController::class, 'store'])->name('comments.store');
+Route::get('categories/{id}',[CategoryController::class, 'show'])->name('categories.show');
+Route::get('tags/{id}',[TagController::class, 'show'])->name('tags.show');
 
-Route::get('/contact',[ContactFormController::class, 'contact']);
-Route::post('/contact',[ContactFormController::class, 'contactform']);
+Route::get('contact',[ContactFormController::class, 'index'])->name('contact.index');
+Route::post('contact',[ContactFormController::class, 'send'])->name('contact.send');
 
-Route::get('/terms',[HomeController::class, 'terms']);
+Route::get('terms',[HomeController::class, 'terms'])->name('terms');
 

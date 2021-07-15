@@ -37,7 +37,24 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Mail::send('emails.appointment',
+            [
+                'name' => $request->input('fname'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'service' => $request->input('service'),
+                'date' => $request->input('date'),
+                'time' => $request->input('time')
+            ],
+            function (Message $message) use ($request) {
+                $message->to('support@augmented.com');
+                $message->from('no-reply@augmented.com');
+                $message->subject('Appointment request: ' . $request->input('service'));
+            });
+        return back()->with('alert', json_encode([
+            'type' => 'success',
+            'message' => 'Thank you for your request. We will call you shortly to confirm your appointment.'
+        ]));//
     }
 
     /**
@@ -83,26 +100,5 @@ class AppointmentController extends Controller
     public function destroy(Appointment $appointment)
     {
         //
-    }
-    public function setappointment(Request $request)
-    {
-	\Mail::send('emails.appointment',
-    	    [
-		'name' => $request->input('fname'),
-		'email' => $request->input('email'),
-		'phone' => $request->input('phone'),
-		'service' => $request->input('service'),
-        'date' => $request->input('date'),
-		'time' => $request->input('time')
-	    ],
-    		function (Message $message) use ($request) {
-                $message->to('support@augmented.com');
-                $message->from('no-reply@augmented.com');
-                $message->subject('Appointment request: ' . $request->input('service'));
-    	});
-        return back()->with('alert', json_encode([
-            'type' => 'success',
-            'message' => 'Thank you for your request. We will call you shortly to confirm your appointment.'
-        ]));
     }
 }

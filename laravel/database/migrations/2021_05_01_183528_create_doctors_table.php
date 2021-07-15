@@ -24,13 +24,6 @@ class CreateDoctorsTable extends Migration
                   ->unique()
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-            $table->unsignedBigInteger('schedule_id');
-            $table->foreign('schedule_id')
-                  ->references('id')
-                  ->on('schedules')
-                  ->unique()
-                  ->onDelete('restrict')
-                  ->onUpdate('cascade');
             $table->timestamps();
         });
     }

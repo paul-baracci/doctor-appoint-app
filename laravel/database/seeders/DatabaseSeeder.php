@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+
+use App\Models\Article;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use App\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,14 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(5)->create();
-	\App\Models\Image::factory(10)->create();
-	\App\Models\Schedule::factory(6)->create();
-	\App\Models\Doctor::factory(6)->create();
-	\App\Models\Category::factory(3)->create();
-	\App\Models\Tag::factory(5)->create();
-	\App\Models\Article::factory(15)->create();
-	\App\Models\Comment::factory(10)->create();
+        \App\Models\User::factory(3)->create();
+        \App\Models\Image::factory(2)->create();
+        \App\Models\Doctor::factory(6)->create();
+        \App\Models\Category::factory(3)->create();
+        \App\Models\Tag::factory(5)->has(Article::factory()->count(15))->create();
+        \App\Models\Comment::factory(10)->create();
         \App\Models\Service::factory(10)->create();
     }
 }
