@@ -2,7 +2,9 @@ html {
     position: relative;
     min-height: 100%;
 }
-
+carousel {
+    z-index: 0;
+}
 :root {
     font-size: 10px;
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class='container'>
-        <div id="myslide" class="carousel slide" data-ride="carousel">
+        <div id="myslide" class="carousel slide mt-3 shadow" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myslide" data-slide-to="0" class="active"></li>
                 <li data-target="#myslide" data-slide-to="1"></li>
@@ -99,12 +99,12 @@
             </button>
         </div>
     </div>
-    <div class="container my-4">
+    <div class="container mt-4">
         <div class="text-center">
             <h1 class="my-4">Our Sponsors</h1>
-            <img class="p-2 img-fluid" width="200" src="/img/tyrell-corp.jpg" alt="Sponsor1"/>
-            <img class="p-2 img-fluid" width="200" src="/img/sarif.jpg" alt="Sponsor2"/>
-            <img class="p-2 img-fluid" width="200" src="/img/ocp.jpg" alt="Sponsor3"/>
+            <img class="m-2 img-fluid shadow" width="200" src="/img/tyrell-corp.jpg" alt="Sponsor1"/>
+            <img class="m-2 img-fluid shadow" width="200" src="/img/sarif.jpg" alt="Sponsor2"/>
+            <img class="m-2 img-fluid shadow" width="200" src="/img/ocp.jpg" alt="Sponsor3"/>
         </div>
     </div>
 @endsection
