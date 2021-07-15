@@ -72,14 +72,14 @@ export default {
 #viewType.grid {
     grid-template-columns: 50% 50%;
     text-align: center;
-    margin: 1px;
+    margin: 10px;
     transition: all 0.5s ease;
 }
 
 #viewType.grid .price-caption {
     position: relative;
     bottom: 0;
-    right: 0;
+    right: 3rem;
 }
 
 @media only screen and (min-width: 1000px) {

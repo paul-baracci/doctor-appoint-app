@@ -12,8 +12,7 @@ export default {
       type: String,
       required: true,
       validator: function (value) {
-        // return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
-        return true;
+        return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
       }
     }
   },
@@ -44,10 +43,10 @@ export default {
 }
 .alert {
   margin: 1.25rem;
-  position: absolute;
+  position: fixed;
   right: 10px;
   padding: 1.25rem;
-  z-index: 9;
+  z-index: 1;
   border: 1px solid transparent;
   border-radius: .45rem;
   align-content: center;

@@ -37,14 +37,28 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
+//        $this->validate($request, [
+//            'name' => 'required',
+//            'email' => 'required|email',
+//            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+//            'comments'=>'required',
+//            'service_id' => 'required',
+//            'desired_date' => 'required',
+//            'desired_time' => 'required'
+//        ]);
+//
+//        Appointment::create($request->all());
+
         \Mail::send('emails.appointment',
             [
-                'name' => $request->input('fname'),
+                'name' => $request->input('name'),
                 'email' => $request->input('email'),
                 'phone' => $request->input('phone'),
+                'comment' => $request->input('comment'),
+                'service_id' => $request->input('service_id'),
                 'service' => $request->input('service'),
-                'date' => $request->input('date'),
-                'time' => $request->input('time')
+                'desired_date' => $request->input('desired_date'),
+                'desired_time' => $request->input('desired_time'),
             ],
             function (Message $message) use ($request) {
                 $message->to('support@augmented.com');

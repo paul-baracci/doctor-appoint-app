@@ -30,10 +30,11 @@
                             <form method="post" action="{{ route('schedule', ['service' => $service->id]) }}">
                                 @csrf
                                 <div class="input-group">
-                                    <input type="hidden" id="service" name="service" value=" {{ $service->title }} ">
+                                    <input type="hidden" id="service" name="service" value="{{ $service->title }}">
+                                    <input type="hidden" id="service_id" name="service_id" value="{{ $service->id }} ">
                                     <div class="form-group">
                                         <label>Full name</label>
-                                        <input type="text" class="form-control" id="fname" name="fname"
+                                        <input type="text" class="form-control" id="name" name="name"
                                                placeholder="Rick Deckard" required>
                                     </div>
                                 </div>
@@ -49,14 +50,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Desired Appointment Date</label>
-                                    <input type="date" name="date" class="form-control" required/>
+                                    <input type="date" name="desired_date" class="form-control" required/>
                                 </div>
                                 <div class="form-group">
                                     <label>Desired Appointment Time</label>
-                                    <input type="time" name="time" class="form-control" required/>
+                                    <input type="time" name="desired_time" class="form-control" required/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" id="comment" rows="3" class="form-control"
+                                    <textarea name="comment" id="comment" rows="3" class="form-control"
                                               placeholder="Additional comments"></textarea>
                                 </div>
                                 <div class="form-group text-center">

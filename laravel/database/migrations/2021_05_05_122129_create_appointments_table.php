@@ -18,10 +18,10 @@ class CreateAppointmentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('phone');
             $table->text('message');
             $table->string('desired_date');
             $table->string('desired_time');
-            $table->text('article_content');
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')
                 ->references('id')

@@ -9,5 +9,5 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    public $fillable = 'requester_email';
+    public $fillable = ['name','email','phone','message','desired_date','desired_time','service_id'];
 }

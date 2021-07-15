@@ -18,9 +18,10 @@
     <p>From: {{ $name }} </p>
     <p>Email: {{ $email }} </p>
     <p>Phone: {{ $phone }} </p>
+    <p>Message: {{ $comment }} </p>
     <p>Service: {{ $service }} </p>
-    <p>Date: {{ $date }} </p>
-    <p>Time: {{ $time }} </p>
+    <p>Date: {{ $desired_date }} </p>
+    <p>Time: {{ $desired_time }} </p>
 
 </body>
 

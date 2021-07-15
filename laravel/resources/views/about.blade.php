@@ -24,7 +24,7 @@
             @foreach ($doctors as $doctor)
                 <div class="card shadow">
                     <div class="card-title text-center pt-4">
-                        <img class="img-circle card-img-top" src="{{ $doctor->image->path }}" alt="{{ $doctor->name }}" />
+                        <img class="img-circle card-img-top shadow" src="{{ $doctor->image->path }}" alt="{{ $doctor->name }}" />
                     </div>
                     <div class="card-body text-center">
                         <h4> {{ $doctor->name }} </h4>
