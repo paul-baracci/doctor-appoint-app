@@ -17,7 +17,7 @@
                                     <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
                                     <h3>Price ${{ $service->price }} </h3>
                                     <button type="button" class="btn btn-sm">
-                                        <a href="/service/{{ $service->id }}">More details</a>
+                                        <a href="{{ route('services.show', ['service' => $service]) }}">More details</a>
                                     </button>
                                     <hr>
                                     <h6 class="text-muted font-weight-normal">

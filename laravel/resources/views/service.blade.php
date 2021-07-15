@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div class="container card shadow m-4">
+    <div class="container card shadow my-4">
         <div class="row m-5">
             <add-to-cart :service-object="{
                 id: {{ $service->id }},
@@ -15,7 +15,7 @@
             <div class="col-md-7">
                 <img src="{{ $service->image->path }}" class="card-img" alt="Image">
             </div>
-            <div class="col-xs-5 m-4 text-center">
+            <div class="col-xs-5">
                 <p><strong>Price</strong> ${{ $service->price }}</p>
                 @include('scheduleButton')
                 @include('scheduleModal')
