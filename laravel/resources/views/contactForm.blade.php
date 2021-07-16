@@ -1,8 +1,8 @@
-<form action="{{ route('contact.send') }}"
+<form class="needs-validation" action="{{ route('contact.send') }}"
                 method="post"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data" novalidate>
                 @csrf
-                <div class="form-row form-group">
+                <div class="form-row form-group" >
                     <div class="col-6">
                         <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
                     </div>

@@ -27,7 +27,7 @@
                         <img class="img-circle card-img-top shadow" src="{{ $doctor->image->path }}" alt="{{ $doctor->name }}" />
                     </div>
                     <div class="card-body text-center">
-                        <h4> {{ $doctor->name }} </h4>
+                        <h5> {{ $doctor->name }} </h5>
                         <p>Specialization {{ $doctor->specialization }} </p>
                         <p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#007bff" class="bi bi-envelope" viewBox="0 0 16 16">

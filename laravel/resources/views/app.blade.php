@@ -15,7 +15,7 @@
             <alert class="shadow" type="{{session('alert')}}"></alert>
         @endif
         @if ($errors->any())
-                <alert class="shadow" type="danger">{{ $errors->first('message') }}</alert>
+                <alert class="shadow" :type="danger">{{ $errors->first('message') }}</alert>
         @endif
         <top-scroll>Scroll</top-scroll>
         @yield('content')

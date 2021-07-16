@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <form method="post" action="{{ route('schedule', ['service' => $service->id]) }}">
+                            <form class="needs-validation" method="post" action="{{ route('schedule', ['service' => $service->id]) }}" novalidate>
                                 @csrf
                                 <div class="input-group">
                                     <input type="hidden" id="service" name="service" value="{{ $service->title }}">
@@ -58,17 +58,22 @@
                                 </div>
                                 <div class="form-group">
                                     <textarea name="comment" id="comment" class="form-control"
-                                              placeholder="Additional comments"></textarea>
+                                              placeholder="Additional comments" required></textarea>
                                 </div>
-                                <div class="form-group text-center">
-                                    <input type="checkbox" for="acceptTerms" id="acceptTerms" required/>
-                                    <label id="acceptTerms">I accept the
-                                        <a href="terms">Terms and conditions</a>
-                                    </label>
+                                <div class="form-group text-center" >
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        <label class="form-check-label" for="invalidCheck">
+                                            Agree to <a href="terms">Terms and conditions</a>
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            You must agree before submitting.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="h-captcha text-center" data-sitekey="9c6eb30c-cf96-4956-beef-49f335ee66c2"></div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="submit" class="btn btn-success">Confirm appointment</button>
+                                    <button id="schedule" type="submit" class="btn btn-success">Confirm appointment</button>
                                 </div>
                             </form>
                         </div>
@@ -78,3 +83,4 @@
         </div>
     </div>
 </div>
+

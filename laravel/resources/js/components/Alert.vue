@@ -10,10 +10,10 @@ export default {
   props: {
     type: {
       type: String,
-      required: true,
-      validator: function (value) {
-        return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
-      }
+      required: true
+      // validator: function (value) {
+      //   return ['info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
+      // }
     }
   },
   computed: {

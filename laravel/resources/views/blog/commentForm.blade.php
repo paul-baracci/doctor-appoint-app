@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('comments.store', ['article' => $article->id]) }}">
+<form class="needs-validation" method="post" action="{{ route('comments.store', ['article' => $article->id]) }}" novalidate>
     @csrf
     <div class="form-group">
         <input type="hidden" name="article_id" value="{{ $article->id }}" />
