@@ -49,16 +49,16 @@ export default {
     border: 1px solid transparent;
     border-radius: 100px;
     align-content: center;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-name: slidein;
 }
 
 @keyframes slidein {
     from {
-        right: 0px;
+        right: -200px;
     }
 
-    to {
+    and {
         right: 10px;
     }
 }
