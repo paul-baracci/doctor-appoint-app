@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="row shadow m-4">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10886.304396598176!2d28.8295993!3d46.9896601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97ebf6127764b%3A0xe06982c767f80c8e!2sExcellence!5e0!3m2!1sen!2s!4v1626263669368!5m2!1sen!2s" style="border:0; height: 600px; width: 100%" allowfullscreen="" loading="lazy"></iframe>
+            <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=28.82646203041077%2C47.01750057219366%2C28.830850124359134%2C47.01928714595263&amp;layer=mapnik&amp;marker=47.01839478086158%2C28.82865607738495" style="border: 1px solid transparent"></iframe><br/>
         </div>
     </div>
 @endsection

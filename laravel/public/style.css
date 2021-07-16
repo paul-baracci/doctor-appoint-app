@@ -30,6 +30,7 @@ ul {
 }
 
 .img-circle {
+    object-fit: cover;
     border-radius: 50%;
     max-width: 15em;
 }
@@ -42,6 +43,10 @@ ul {
     border-radius: 0;
 }
 
+.article-thumbnail {
+    object-fit: cover;
+    max-width: 100px;
+}
 .wrapper {
     max-width: 800px;
     margin: 0 auto;
@@ -67,5 +72,8 @@ ul {
     }
     .thumbnail {
         max-width: 400px;
+    }
+    .article-thumbnail {
+        max-width: 250px;
     }
 }

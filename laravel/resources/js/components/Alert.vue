@@ -1,6 +1,6 @@
 <template>
     <div :class="[alert, alertType]">
-        <span class="closebtn mx-2" onclick="this.parentElement.style.display='none';">&times;</span>
+        <span class="closebtn mx-2" onclick="this.parentElement.style.display='none';"><h4>&times;</h4></span>
         {{ messageInfo ? messageInfo.message : '' }}
     </div>
 </template>
@@ -29,7 +29,6 @@ export default {
     },
     mounted() {
         this.messageInfo = JSON.parse(this.type);
-        // document.getElementById('alert').classList.add('slide');
     },
     methods: {
         CloseAlert() {

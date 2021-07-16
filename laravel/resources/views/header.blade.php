@@ -3,7 +3,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-expanded="false" aria-label="Toggle navigation">
         <div class="navbar-toggler-icon"></div>
         </button>
-        <a class="navbar-brand" href="{{ route('home') }}"><img src="#" alt="Augmented Heart Clinic"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img src="logo.png" alt="Augmented Heart Clinic" height="50px"></a>
         <div class="collapse navbar-collapse justify-content-start mx-auto" id="topnav">
             <a href="{{ route('services.index') }}" class="nav-link">Services</a>
             <a href="{{ route('doctors.index') }}" class="nav-link">About</a>

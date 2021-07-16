@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label>Phone</label>
                                     <input type="tel" id="phone" name="phone" class="form-control"
-                                           placeholder="+12 000 555" required min="4" max="30">
+                                           placeholder="+12 000 555" required pattern="^[0-9]{5,20}$">
                                 </div>
                                 <div class="form-group">
                                     <label>Desired Appointment Date</label>
@@ -65,7 +65,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="terms" required>
                                         <label class="form-check-label" for="terms">
-                                            Agree to <a href="terms">Terms and conditions</a>
+                                            I have read and agree to the <a href="{{ route('terms') }}">terms and conditions</a>
                                         </label>
                                         <div class="invalid-feedback">
                                             You must agree before submitting.
