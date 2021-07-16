@@ -35,22 +35,22 @@
                                     <div class="form-group">
                                         <label>Full name</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                               placeholder="Rick Deckard" required>
+                                               placeholder="Rick Deckard" required min="4" max="30">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input type="email" id="email" name="email" class="form-control"
-                                           placeholder="rick.deckard@lapd.gov" required>
+                                           placeholder="rick.deckard@lapd.gov" required min="4" max="30">
                                 </div>
                                 <div class="form-group">
                                     <label>Phone</label>
-                                    <input type="phone" id="phone" name="phone" class="form-control"
-                                           placeholder="+12 000 555" required>
+                                    <input type="tel" id="phone" name="phone" class="form-control"
+                                           placeholder="+12 000 555" required min="4" max="30">
                                 </div>
                                 <div class="form-group">
                                     <label>Desired Appointment Date</label>
-                                    <input type="date" name="desired_date" class="form-control" required/>
+                                    <input type="date" name="desired_date" class="form-control" required />
                                 </div>
                                 <div class="form-group">
                                     <label>Desired Appointment Time</label>
@@ -58,12 +58,13 @@
                                 </div>
                                 <div class="form-group">
                                     <textarea name="comment" id="comment" class="form-control"
-                                              placeholder="Additional comments" required></textarea>
+                                              placeholder="Additional comments" required>
+                                    </textarea>
                                 </div>
                                 <div class="form-group text-center" >
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        <label class="form-check-label" for="invalidCheck">
+                                        <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                                        <label class="form-check-label" for="terms">
                                             Agree to <a href="terms">Terms and conditions</a>
                                         </label>
                                         <div class="invalid-feedback">
