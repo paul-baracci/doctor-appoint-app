@@ -32,6 +32,7 @@ export default {
     transform: translateY(100px);
     transition: all .8s ease;
     border-radius: 50%;
+    box-shadow: 0px 0px 20px gray!important;
 }
 .show {
     opacity: 1;

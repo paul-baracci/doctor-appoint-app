@@ -2,9 +2,7 @@ html {
     position: relative;
     min-height: 100%;
 }
-carousel {
-    z-index: 0;
-}
+
 :root {
     font-size: 10px;
 }
@@ -13,10 +11,12 @@ carousel {
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
+
 /* make the footer sticky, without overlapping content*/
 body {
     margin-bottom: 260px;
 }
+
 footer {
     position: absolute;
     bottom: 0;

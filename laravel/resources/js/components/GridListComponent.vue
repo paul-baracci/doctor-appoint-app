@@ -1,13 +1,13 @@
 <template>
     <div>
-        <button type="button" @click="listView()" id="lst" class="btn bg-white">
+        <button type="button" @click="listView()" id="lst" class="btn btn-custom bg-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#007bff" class="bi bi-list-ul"
                  viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                       d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
             </svg>
         </button>
-        <button type="button" @click="gridView()" id="grd" class="btn bg-white">
+        <button type="button" @click="gridView()" id="grd" class="btn btn-custom bg-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#007bff" class="bi bi-grid-3x2-gap"
                  viewBox="0 0 16 16">
                 <path
@@ -45,7 +45,7 @@ export default {
             document.getElementById("viewType").classList.add("grid");
             document.getElementById("lst").classList.add("disabled");
             document.getElementById("lst").classList.remove("shadow");
-            document.getElementById("grd").classList.add("shadow-lg");
+            document.getElementById("grd").classList.add("shadow");
             document.getElementById("grd").classList.remove("disabled");
             sessionStorage.setItem('view', 'grid');
         }
@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style>
+.shadow {
+    box-shadow: 0 0 20px #c4c5c7!important;
+    -webkit-box-shadow: 0 0 20px #c4c5c7 !important;
+}
 #viewType {
     display: grid;
     grid-template-columns: 100%;
