@@ -37,9 +37,9 @@ ul {
 
 .thumbnail {
     object-fit: cover;
-    max-width: 250px;
-    max-height: 250px;
-    height:auto;
+    max-width: 235px;
+    max-height: 170px;
+    height: auto;
     border-radius: 0;
 }
 

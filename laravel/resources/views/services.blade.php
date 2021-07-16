@@ -45,12 +45,9 @@
         </div>
         <div id="viewType" class="row row-view">
             @foreach($services as $service)
-                <div class="shadow card row m-2 d-flex flex-row">
+                <div class="shadow card row m-2">
+                    <div class="card-inner">
                     <img src="{{ $service->image->path }}" class="card-img thumbnail" alt="Image">
-                    <div class="col p-2">
-                        <a href="{{ route('services.show', ['service' => $service->id]) }}">
-                            <h6 class="font-weight-semibold">{{ $service->title }}</h6>
-                        </a>
                         <add-to-cart :service-object="{
                             id: {{ $service->id }},
                             title: '{{ $service->title }}',
@@ -58,16 +55,20 @@
                             image: '{{ $service->image->path }}'
                             }">
                         </add-to-cart>
-                        <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
-                        <hr>
-                        <h6 class="text-muted font-weight-normal">
-                            {!! Str::limit($service->description, 30) !!}
-                        </h6>
-                        <div class="justify-content-center">
+                        <div class="title-description">
+                            <a href="{{ route('services.show', ['service' => $service->id]) }}">
+                                <h6 class="font-weight-semibold">{{ $service->title }}</h6>
+                            </a>
+                            <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
+                            <h6 class="text-muted font-weight-light">
+                                {!! Str::limit($service->description, 28) !!}
+                            </h6>
+                        </div>
+                        <div class="price-schedule">
+                            <h5>${{ $service->price }}</h5>
                             @include('scheduleButton')
                         </div>
                         @include('scheduleModal')
-                        <h5 class="price-caption">${{ $service->price }}</h5>
                     </div>
                 </div>
             @endforeach
