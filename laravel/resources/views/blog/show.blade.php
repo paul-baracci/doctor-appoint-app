@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container my-4">
-        <div class="card row shadow-lg mx-0">
+        <div class="card row shadow mx-0">
             <img class="card-img-top" src="{{ $article->image->path }}">
             <div class ="col ">
                 <h2>{{ $article->article_title }}</h2>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <h3 class="my-4">{{ $article->comments->count() }} Comments</h3>
-        <div class="card shadow-lg p-4 my-4">
+        <div class="card shadow p-4 my-4">
             @include('blog.commentForm')
             @foreach($article->comments->sortByDesc('created_at') as $comment)
                 <div class="mt-1">

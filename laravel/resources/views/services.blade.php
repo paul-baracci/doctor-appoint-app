@@ -67,7 +67,7 @@
                             @include('scheduleButton')
                         </div>
                         @include('scheduleModal')
-                        <h4 class="price-caption">${{ $service->price }}</h4>
+                        <h5 class="price-caption">${{ $service->price }}</h5>
                     </div>
                 </div>
             @endforeach
