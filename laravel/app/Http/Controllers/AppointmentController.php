@@ -32,22 +32,29 @@ class AppointmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-//        $this->validate($request, [
-//            'name' => 'required',
-//            'email' => 'required|email',
-//            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-//            'comments'=>'required',
-//            'service_id' => 'required',
-//            'desired_date' => 'required',
-//            'desired_time' => 'required'
-//        ]);
-//
-//        Appointment::create($request->all());
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'comment' => 'required',
+            'desired_date' => 'required',
+            'desired_time' => 'required'
+        ]);
+
+        Appointment::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'comment' => $request->input('comment'),
+            'service_id' => $request->input('service_id'),
+            'desired_date' => $request->input('desired_date'),
+            'desired_time' => $request->input('desired_time'),
+        ]);
 
         \Mail::send('emails.appointment',
             [
@@ -65,16 +72,17 @@ class AppointmentController extends Controller
                 $message->from('no-reply@augmented.com');
                 $message->subject('Appointment request: ' . $request->input('service'));
             });
+
         return back()->with('alert', json_encode([
             'type' => 'success',
             'message' => 'Thank you for your request. We will call you shortly to confirm your appointment.'
-        ]));//
+        ]));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Appointment  $appointment
+     * @param \App\Models\Appointment $appointment
      * @return \Illuminate\Http\Response
      */
     public function show(Appointment $appointment)
@@ -85,7 +93,7 @@ class AppointmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Appointment  $appointment
+     * @param \App\Models\Appointment $appointment
      * @return \Illuminate\Http\Response
      */
     public function edit(Appointment $appointment)
@@ -96,8 +104,8 @@ class AppointmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Appointment  $appointment
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Appointment $appointment
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Appointment $appointment)
@@ -108,7 +116,7 @@ class AppointmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Appointment  $appointment
+     * @param \App\Models\Appointment $appointment
      * @return \Illuminate\Http\Response
      */
     public function destroy(Appointment $appointment)

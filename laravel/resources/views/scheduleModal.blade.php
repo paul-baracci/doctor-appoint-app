@@ -57,7 +57,7 @@
                                     <input type="time" name="desired_time" class="form-control" required/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="comment" id="comment" rows="3" class="form-control"
+                                    <textarea name="comment" id="comment" class="form-control"
                                               placeholder="Additional comments"></textarea>
                                 </div>
                                 <div class="form-group text-center">

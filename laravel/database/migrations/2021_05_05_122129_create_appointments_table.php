@@ -19,7 +19,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->text('message');
+            $table->text('comment');
             $table->string('desired_date');
             $table->string('desired_time');
             $table->unsignedBigInteger('service_id');
