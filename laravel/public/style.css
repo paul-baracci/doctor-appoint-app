@@ -9,6 +9,10 @@ carousel {
     font-size: 10px;
 }
 
+.btn {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
 /* make the footer sticky, without overlapping content*/
 body {
     margin-bottom: 260px;
