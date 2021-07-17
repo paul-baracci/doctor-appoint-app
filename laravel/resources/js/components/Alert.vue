@@ -44,7 +44,7 @@ export default {
     position: fixed;
     right: 10px;
     padding: 1.25rem;
-    z-index: 1;
+    z-index: 9;
     border: 1px solid transparent;
     border-radius: 100px;
     align-content: center;
@@ -54,7 +54,7 @@ export default {
 
 @keyframes slidein {
     from {
-        right: -200px;
+        right: -75px;
     }
 
     and {

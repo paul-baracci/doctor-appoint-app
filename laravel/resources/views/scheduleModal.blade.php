@@ -60,9 +60,9 @@
                                 </div>
                                 <div class="form-group text-center" >
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                                        <input class="form-check-input" type="checkbox" id="terms" required>
                                         <label class="form-check-label" for="terms">
-                                            I agree to the <a href="{{ route('terms') }}">terms and conditions</a>
+                                            I agree with the <a href="{{ route('terms') }}">terms and conditions</a>
                                         </label>
                                         <div class="invalid-feedback">
                                             You must agree before submitting.

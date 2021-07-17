@@ -106,7 +106,12 @@ export default {
     transition: all 0.5s ease;
 }
 
-
+#viewType .thumbnail {
+    max-width: 160px;
+}
+#viewType.grid .thumbnail {
+    max-width: 235px;
+}
 
 @media only screen and (min-width: 768px) {
 
@@ -132,6 +137,12 @@ export default {
         flex-direction: column;
         margin-left: auto;
         text-align: center;
+    }
+    #viewType .thumbnail {
+        max-width: 260px;
+    }
+    #viewType.grid .thumbnail {
+        max-width: 400px;
     }
     #viewType .title-description {
         display: flex;

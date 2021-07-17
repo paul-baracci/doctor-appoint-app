@@ -35,13 +35,6 @@ ul {
     max-width: 15em;
 }
 
-.thumbnail {
-    object-fit: cover;
-    max-width: 235px;
-    max-height: 170px;
-    height: auto;
-    border-radius: 0;
-}
 
 .article-thumbnail {
     object-fit: cover;

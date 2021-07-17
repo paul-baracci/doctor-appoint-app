@@ -89,8 +89,7 @@ tr {
     top: 100%;
     border-radius: 15px;
     right:  5px;
-
     padding: 5px;
-    z-index: 1;
+    z-index: 9;
 }
 </style>

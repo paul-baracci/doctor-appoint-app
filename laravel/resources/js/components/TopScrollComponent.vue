@@ -27,15 +27,12 @@ export default {
     right: 42px;
     z-index: 2;
     cursor: pointer;
-    /* hide with opacity */
-    opacity: 0;
     transform: translateY(100px);
     transition: all .8s ease;
     border-radius: 50%;
     box-shadow: 0px 0px 20px gray!important;
 }
 .show {
-    opacity: 1;
     transform: translateY(0)
 }
 </style>
