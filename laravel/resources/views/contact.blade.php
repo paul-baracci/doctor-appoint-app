@@ -6,10 +6,10 @@
             <h1>Contact us</h1>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 @include('contactForm')
             </div>
-            <div class="col-md-6 text-left">
+            <div class="col-sm-6 mt-3 text-left">
                 <h3>Augmented Heart Clinic</h3>
                 <p class="my-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#007bff" class="bi bi-geo-alt" viewBox="0 0 16 16">
