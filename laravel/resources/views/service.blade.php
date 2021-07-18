@@ -6,7 +6,8 @@
             <add-to-cart :service-object="{
                 id: {{ $service->id }},
                 title: '{{ $service->title }}',
-                price: {{ $service->price }}
+                price: {{ $service->price }},
+                image: '{{ $service->image->path }}'
                 }">
             </add-to-cart>
             <h2> {{ $service->title }} </h2>
