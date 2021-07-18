@@ -62,15 +62,21 @@
                         <img src="{{ $service->image->path }}" class="card-img thumbnail" alt="Image">
 
                         <div class="col">
-                            <h6 class="font-weight-semibold"> {{ $service->title }} </h6>
-                            <p><strong>Available since </strong> {{ $service->created_at }} </p>
-                            <hr>
+                        <add-to-cart :service-object="{
+                            id: {{ $service->id }},
+                            title: '{{ $service->title }}',
+                            price: {{ $service->price }},
+                            image: '{{ $service->image->path }}'
+                            }">
+                        </add-to-cart>
+                            <a href="{{ route('services.show', ['service' => $service->id]) }}">
+                                <h6 class="font-weight-semibold">{{ $service->title }}</h6>
+                            </a>
+                            <p><strong>scheduled</strong> {{ $service->requests }} times</p>
                         </div>
-                        <div class="col ml-auto">
+                        <div class="col ml-auto mb-2">
                             <h3> ${{ $service->price }} </h3>
                             @include('scheduleButton')
-                            <button type="button" class="btn btn-sm">
-                                <a href="{{ route('services.show', ['service' => $service->id]) }}">More details</a></button>
                         </div>
                     </div>
                 @endforeach

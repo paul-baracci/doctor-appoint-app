@@ -6,7 +6,7 @@
             <li><a href="{{ route('doctors.index') }}"  class="nav-link text-white">About</a></li>
             <li><a href="{{ route('articles.index') }}" class="nav-link text-white">Blog</a></li>
             <li><a href="{{ route('contact.index') }}" class="nav-link text-white">Contact</a></li>
-            <li><a href="{{ route('terms') }}" class="nav-link text-white">Terms and conditions</a></li>
+            <li><a href="{{ route('terms') }}" class="nav-link text-white">Legal</a></li>
         </ul>
         <ul>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">

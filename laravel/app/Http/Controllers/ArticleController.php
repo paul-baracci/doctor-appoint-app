@@ -8,7 +8,6 @@ use App\Models\Tag;
 use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
 
-
 class ArticleController extends Controller
 {
     /**
@@ -18,9 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('category' , 'tags')
-                            ->orderBy('published_at', 'desc')
-                            ->paginate(5);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(5);
 
 	    return view ('blog.index' , ['articles'=>$articles]);
     }

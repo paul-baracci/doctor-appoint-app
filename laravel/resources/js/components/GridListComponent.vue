@@ -69,7 +69,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 3em;
+    margin-right: 2em;
 }
 #viewType.grid .card-inner {
     display: flex;
@@ -107,7 +107,9 @@ export default {
 }
 
 #viewType .thumbnail {
-    max-width: 160px;
+    object-fit: cover;
+    max-width: 170px;
+    height: 170px;
 }
 #viewType.grid .thumbnail {
     max-width: 235px;
