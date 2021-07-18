@@ -14,14 +14,14 @@ html {
 
 /* make the footer sticky, without overlapping content*/
 body {
-    margin-bottom: 275px;
+    margin-bottom: 160px;
+    background: #f8f9fa;
 }
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 20px;
 }
 /* end of sticky footer settings*/
 
@@ -58,10 +58,17 @@ ul {
     background-color: rgba(0, 0, 0, 0.50);
     border-radius: 50px;
 }
-
+@media only screen and (max-width: 368px) {
+    body {
+        margin-bottom: 190px;
+    }
+}
 @media only screen and (min-width: 800px) {
     :root {
         font-size: 18px;
+    }
+    body {
+        margin-bottom: 275px;
     }
     .thumbnail {
         max-width: 400px;
