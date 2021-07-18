@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Tag;
 use App\Models\Comment;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
@@ -18,8 +19,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::orderBy('created_at', 'desc')->paginate(5);
-
-	    return view ('blog.index' , ['articles'=>$articles]);
+        $categories = Category::orderBy('name', 'ASC')->get();
+        
+        return view ('blog.index' , [
+            'articles'=>$articles, 
+            'categories'=>$categories
+        ]);
     }
 
     /**

@@ -5,20 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\Service;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('blog.categories')
-            ->with('categories', Category::orderBy('name', 'ASC')->get());
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -40,17 +30,25 @@ class CategoryController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function articles($id)
     {
-        return view('blog.category')
-            ->with('articles', Article::where('category_id', '=', $id)
-                ->paginate(5));
+        $categories = Category::orderBy('name', 'ASC')->get();
+        $categoryArticles = Article::where('category_id', '=', $id)->paginate(5);  
+        
+        return view('blog.category', [
+            'categoryArticles' => $categoryArticles,
+            'categories' => $categories
+        ]);
+    }
+    
+    public function services($id)
+    {
+        $categories = Category::orderBy('name', 'ASC')->get();
+        $categoryServices = Service::where('category_id', '=', $id)->sortable()->paginate(5);       
+        return view('services.category', [
+            'categoryServices' => $categoryServices,
+            'categories' => $categories
+        ]);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Category;
 
 class ServiceController extends Controller
 {
@@ -15,9 +16,11 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::sortable()->paginate(6);
-
-    	return view('services', [
-            'services' => $services
+        $categories = Category::orderBy('name', 'ASC')->get();
+        
+        return view('services.index', [
+            'services' => $services,
+            'categories' => $categories
         ]);
     }
 
@@ -50,7 +53,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('service', ['service' => $service]);
+        return view('services.show', ['service' => $service]);
     }
 
     /**

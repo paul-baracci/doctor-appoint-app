@@ -1,6 +1,6 @@
 <template>
     <div :class="[alert, alertType]">
-        <span class="closebtn mx-2" onclick="this.parentElement.style.display='none';"><h4>&times;</h4></span>
+        <span class="closebtn mx-2" @click="CloseAlert()"><h4>&times;</h4></span>
         {{ messageInfo ? messageInfo.message : '' }}
     </div>
 </template>
@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         CloseAlert() {
-            document.getElementById('alert').classList.add('closed');
+            document.getElementById('alert').style.right = "-750px";
         }
     }
 }
@@ -50,11 +50,12 @@ export default {
     align-content: center;
     animation-duration: 0.5s;
     animation-name: slidein;
+    transition: .5s;
 }
 
 @keyframes slidein {
     from {
-        right: -75px;
+        right: -700px;
     }
 
     and {

@@ -12,6 +12,7 @@ html {
     box-shadow: none!important;
 }
 
+
 /* make the footer sticky, without overlapping content*/
 body {
     margin-bottom: 160px;
@@ -41,7 +42,7 @@ ul {
     max-width: 100px;
 }
 .wrapper {
-    max-width: 800px;
+    max-width: 1110px;
     margin: 0 auto;
 }
 
@@ -51,6 +52,7 @@ ul {
 
 .slider-track {
     display: flex;
+    justify-content: between;
     transition: .5s;
 }
 
@@ -58,6 +60,19 @@ ul {
     background-color: rgba(0, 0, 0, 0.50);
     border-radius: 50px;
 }
+
+.categ-drop {
+    position: fixed;
+    z-index: 9;
+    max-width: 10em;
+    background-color: #ffffff;
+    left: -700px;
+    width: 10em;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+
+
 @media only screen and (max-width: 368px) {
     body {
         margin-bottom: 190px;

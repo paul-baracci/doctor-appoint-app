@@ -4,6 +4,8 @@
     <div class="container" id="prices">
         <div class="text-center m-4">
             <h1>Services</h1>
+                <div>
+                </div>
         </div>
         <div class="d-flex justify-content-around">
             <div class="dropdown">
@@ -39,38 +41,13 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                {!! $services->appends(\Request::except('page'))->render() !!}
+                    @include('services.categories')
             </div>
             <grid-list></grid-list>
         </div>
         <div id="viewType" class="row row-view">
             @foreach($services as $service)
-                <div class="shadow card row m-2">
-                    <div class="card-inner">
-                    <img src="{{ $service->image->path }}" class="card-img thumbnail" alt="Image">
-                        <add-to-cart :service-object="{
-                            id: {{ $service->id }},
-                            title: '{{ $service->title }}',
-                            price: {{ $service->price }},
-                            image: '{{ $service->image->path }}'
-                            }">
-                        </add-to-cart>
-                        <div class="title-description">
-                            <a href="{{ route('services.show', ['service' => $service->id]) }}">
-                                <h6 class="font-weight-semibold">{{ $service->title }}</h6>
-                            </a>
-                            <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
-                            <h6 class="text-muted font-weight-light">
-                                {!! Str::limit($service->description, 28) !!}
-                            </h6>
-                        </div>
-                        <div class="price-schedule">
-                            <h5>${{ $service->price }}</h5>
-                            @include('scheduleButton')
-                        </div>
-                        @include('scheduleModal')
-                    </div>
-                </div>
+                @include('services.services')
             @endforeach
         </div>
         <div class="row justify-content-center">

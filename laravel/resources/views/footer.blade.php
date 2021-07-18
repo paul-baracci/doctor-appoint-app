@@ -1,6 +1,6 @@
 <footer>
     <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
-        <a class="navbar-brand" href="/"><img src="logo-mono.png" alt="Augmented Heart Clinic" height="100"></a>
+        <a class="navbar-brand" href="/"><img src="/logo-mono.png" alt="Augmented Heart Clinic" height="100"></a>
         <ul>
             <li><a href="{{ route('services.index') }}" class="nav-link text-white">Services</a></li>
             <li><a href="{{ route('doctors.index') }}"  class="nav-link text-white">About</a></li>
