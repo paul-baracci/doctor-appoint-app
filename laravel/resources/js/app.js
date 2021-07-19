@@ -22,6 +22,7 @@ const app = new Vue({
         }
     },
     mounted() {
+        // Product carousel
         if (window.location.href === 'http://localhost:880/') {
             let position = 0;
             const slidesVisible = 3;
