@@ -2,18 +2,18 @@
                 method="post"
                 enctype="multipart/form-data" novalidate>
                 @csrf
-                <div class="d-xl-flex justify-content-between form-group" >
-                    <div class="mt-3">
+                <div class="d-md-flex justify-content-between form-group" >
+                    <div class="mt-3 mr-2">
                         <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 mr-2">
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mr-2">
                         <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mr-2">
                         <textarea name="content" rows="3" class="form-control" placeholder="Message" required></textarea>
                 </div>
                 <div class="form-group">

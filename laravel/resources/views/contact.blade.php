@@ -5,9 +5,11 @@
         <div class="text-center m-4">
             <h1>Contact us</h1>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-sm-6">
+                <div class="ml-5">
                 @include('contactForm')
+                </div>
             </div>
             <div class="col-sm-6 mt-3 text-left">
                 <h3>Augmented Heart Clinic</h3>
