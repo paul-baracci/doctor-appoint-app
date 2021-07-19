@@ -30,6 +30,10 @@ ul {
     list-style-type: none;
 }
 
+img {
+    outline: 0!important;
+}
+
 .img-circle {
     object-fit: cover;
     border-radius: 50%;

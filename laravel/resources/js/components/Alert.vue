@@ -1,6 +1,6 @@
 <template>
     <div :class="[alert, alertType]">
-        <span class="closebtn mx-2" @click="CloseAlert()"><h4>&times;</h4></span>
+        <div class="closebtn mx-2" @click="CloseAlert()">&times;</div>
         {{ messageInfo ? messageInfo.message : '' }}
     </div>
 </template>
@@ -40,14 +40,12 @@ export default {
 <style>
 
 .alert {
-    margin: 1.25rem;
     position: fixed;
     right: 10px;
-    padding: 1.25rem;
     z-index: 9;
+    padding: 1.25rem;
     border: 1px solid transparent;
     border-radius: 100px;
-    align-content: center;
     animation-duration: 0.5s;
     animation-name: slidein;
     transition: .5s;

@@ -9,7 +9,9 @@ class HomeController extends Controller
     public function index()
     {
 	return view ('index' , [
-	    'popularServices' => Service::orderBy('requests', 'desc')->get(),
+            'popularServices' => Service::where('requests', '>', '0')
+                ->orderBy('requests', 'desc')
+                ->get(),
 	    'recentServices' => Service::orderBy('created_at', 'desc')->get()
 	]);
     }

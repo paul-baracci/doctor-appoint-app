@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
 use Illuminate\Contracts\Mail\Mailer;
@@ -72,6 +73,8 @@ class AppointmentController extends Controller
                 $message->from('no-reply@augmented.com');
                 $message->subject('Appointment request: ' . $request->input('service'));
             });
+        
+        Service::where('id', '=', $request->input('service_id'))->increment('requests');
 
         return back()->with('alert', json_encode([
             'type' => 'success',

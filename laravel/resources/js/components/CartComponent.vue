@@ -13,7 +13,7 @@
                     <tbody>
                         <tr v-for="item in this.$root.cart" :key="item.id" @click="clicked(item)">
                             <td class="align-middle">
-                                <img :src=item.image class="card-img thumbnail" alt="Image">
+                                <img :src=item.image class="card-img thumbnail" style="width: 100px;" alt="Image">
                             </td>
                             <td class="align-middle">{{ item.title }}</td>
                             <td class="align-middle text-right">${{ item.price }}</td>

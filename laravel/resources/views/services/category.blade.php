@@ -3,7 +3,7 @@
 @section('content')
     <div class="container" id="prices">
         <div class="text-center m-4">
-            <h1>Category</h1>
+            <h1>{{ $categoryName->name }} ( {{ $categServiceCount }} )</h1>
         </div>
         <div class="d-flex justify-content-around">
             <div class="dropdown">

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center m-4"> Category </h1>
+        <h1 class="text-center m-4"> {{ $categoryName->name}} ( {{ $categArticleCount }} )</h1>
         <div class="row m-2 justify-content-center">
             @include('blog.categories')
         </div>

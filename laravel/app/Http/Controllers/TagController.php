@@ -5,19 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tag;
 use App\Models\Article;
+use App\Models\Category;
 
 class TagController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('tags')
-            ->with('tags', Tag::orderBy('name', 'ASC')->paginate(5));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -48,8 +39,15 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        return view('tag')
-            ->with('articles', Tag::findOrFail($id)->articles);
+        $categories = Category::orderBy('name', 'ASC')->get();
+        $tagArticles = Tag::findOrFail($id)->articles;
+        $tagName = Tag::where('id', '=', $id)->findOrFail($id);
+
+        return view('tag', [
+            'tagArticles' => $tagArticles,
+            'tagName' => $tagName,
+            'categories' => $categories,
+        ]);
     }
 
     /**

@@ -34,10 +34,15 @@ class CategoryController extends Controller
     {
         $categories = Category::orderBy('name', 'ASC')->get();
         $categoryArticles = Article::where('category_id', '=', $id)->paginate(5);  
-        
+        $categArticleCount = Article::where('category_id', '=', $id)->get()->count();
+
+        $categoryName = Category::where('id', '=', $id)->findOrFail($id);
+
         return view('blog.category', [
             'categoryArticles' => $categoryArticles,
-            'categories' => $categories
+            'categories' => $categories,
+            'categoryName' => $categoryName,
+            'categArticleCount' => $categArticleCount
         ]);
     }
     
@@ -45,9 +50,15 @@ class CategoryController extends Controller
     {
         $categories = Category::orderBy('name', 'ASC')->get();
         $categoryServices = Service::where('category_id', '=', $id)->sortable()->paginate(5);       
+        $categServiceCount = Service::where('category_id', '=', $id)->get()->count();
+        
+        $categoryName = Category::where('id', '=', $id)->findOrFail($id);
+        
         return view('services.category', [
             'categoryServices' => $categoryServices,
-            'categories' => $categories
+            'categories' => $categories,
+            'categoryName' => $categoryName,
+            'categServiceCount' => $categServiceCount,
         ]);
     }
 
