@@ -11,7 +11,7 @@ class HomeController extends Controller
 
         return view ('index' , [
             'popularServices' => Service::has('appointments', '>=', 1)
-                ->withCount('appointments')->orderBy('appointments_count', 'desc')->get(),
+                ->withCount('appointments')->orderBy('appointments_count', 'desc')->limit(15)->get(),
 	    'recentServices' => Service::orderBy('created_at', 'desc')->get()
 	]);
     }
