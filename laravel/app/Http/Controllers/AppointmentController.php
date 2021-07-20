@@ -46,7 +46,7 @@ class AppointmentController extends Controller
             'desired_date' => 'required',
             'desired_time' => 'required'
         ]);
-
+        try {
         Appointment::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -56,6 +56,13 @@ class AppointmentController extends Controller
             'desired_date' => $request->input('desired_date'),
             'desired_time' => $request->input('desired_time'),
         ]);
+        
+        } catch(ModelNotFoundException $exception) {
+            return back()->with('alert', json_encode([
+                'type' => 'danger',
+                'message' => 'Error, appointment request was not sent' 
+            ]));
+        }
 
         \Mail::send('emails.appointment',
             [
@@ -74,8 +81,6 @@ class AppointmentController extends Controller
                 $message->subject('Appointment request: ' . $request->input('service'));
             });
         
-        /* Service::where('id', '=', $request->input('service_id'))->increment('requests'); */
-
         return back()->with('alert', json_encode([
             'type' => 'success',
             'message' => 'Thank you for your request. We will call you shortly to confirm your appointment.'
