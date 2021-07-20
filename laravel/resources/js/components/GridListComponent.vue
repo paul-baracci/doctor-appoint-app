@@ -28,7 +28,7 @@ export default {
             document.getElementById("grd").classList.add("shadow");
         } else {
             document.getElementById("lst").classList.remove("disabled");
-            document.getElementById("grd").classList.add("disabled")
+            document.getElementById("grd").classList.add("disabled");
             document.getElementById("lst").classList.add("shadow");
         }
     },
@@ -62,21 +62,21 @@ export default {
     display: grid;
     grid-template-columns: 100%;
     justify-content: center;
-    transition: all 0.5s ease;
+    transition: .5s;
 }
 
 #viewType .card-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 2em;
+    margin-right: 2rem;
 }
 #viewType.grid .card-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     justify-content: center;
 
 }
@@ -96,23 +96,23 @@ export default {
 }
 #viewType.grid .price-schedule {
     text-align: center;
-    margin: 0.5em;
+    margin: .5rem;
 }
 
 #viewType.grid {
     grid-template-columns: 50% 50%;
     text-align: center;
-    margin: 10px;
-    transition: all 0.5s ease;
+    margin: .2rem;
+    transition: .5;
 }
 
 #viewType .thumbnail {
     object-fit: cover;
-    max-width: 170px;
-    height: 170px;
+    max-width: 12rem;
 }
 #viewType.grid .thumbnail {
-    max-width: 235px;
+    max-width: 23.5rem;
+    max-height: 12rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -125,7 +125,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-right: 3em;
+        margin-right: 0.5rem;
     }
     #viewType.grid .card-inner {
         display: flex;
@@ -141,10 +141,10 @@ export default {
         text-align: center;
     }
     #viewType .thumbnail {
-        max-width: 260px;
+        max-width: 14rem;
     }
     #viewType.grid .thumbnail {
-        max-width: 400px;
+        max-width: 18rem;
     }
     #viewType .title-description {
         display: flex;

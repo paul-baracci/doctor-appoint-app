@@ -10,9 +10,8 @@
         </add-to-cart>
         <div class="title-description">
             <a href="{{ route('services.show', ['service' => $service->id]) }}">
-                <h6 class="font-weight-semibold">{{ $service->title }}</h6>
+                <h3 class="font-weight-semibold">{{ $service->title }}</h>
             </a>
-            <p><strong>Added</strong> {{ $service->created_at->diffForHumans() }}</p>
             <h6 class="text-muted font-weight-light">
                 {!! Str::limit($service->description, 28) !!}
             </h6>

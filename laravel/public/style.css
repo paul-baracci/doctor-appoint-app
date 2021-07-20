@@ -40,7 +40,6 @@ img {
     max-width: 15em;
 }
 
-
 .article-thumbnail {
     object-fit: cover;
     max-width: 100px;
@@ -82,15 +81,12 @@ img {
         margin-bottom: 190px;
     }
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
     :root {
         font-size: 18px;
     }
     body {
         margin-bottom: 275px;
-    }
-    .thumbnail {
-        max-width: 400px;
     }
     .article-thumbnail {
         max-width: 250px;
