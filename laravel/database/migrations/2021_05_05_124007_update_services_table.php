@@ -15,7 +15,6 @@ class UpdateServicesTable extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             $table->integer('price')->after('description');
-            $table->integer('requests');
         });
     }
 
@@ -28,7 +27,6 @@ class UpdateServicesTable extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             $table->dropColumn('price');
-            $table->dropColumn('requests');
         });
     }
 }
