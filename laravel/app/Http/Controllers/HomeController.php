@@ -10,8 +10,8 @@ class HomeController extends Controller
     {
 
         return view ('index' , [
-            'popularServices' => Service::has('appointments', '>', 1)
-                ->withCount('appointments')->get(),
+            'popularServices' => Service::has('appointments', '>=', 1)
+                ->withCount('appointments')->orderBy('appointments_count', 'desc')->get(),
 	    'recentServices' => Service::orderBy('created_at', 'desc')->get()
 	]);
     }
