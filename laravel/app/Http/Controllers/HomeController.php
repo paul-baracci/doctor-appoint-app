@@ -8,10 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-	return view ('index' , [
-            'popularServices' => Service::where('requests', '>', '0')
-                ->orderBy('requests', 'desc')
-                ->get(),
+
+        return view ('index' , [
+            'popularServices' => Service::has('appointments', '>', 1)
+                ->withCount('appointments')->get(),
 	    'recentServices' => Service::orderBy('created_at', 'desc')->get()
 	]);
     }
@@ -20,4 +20,5 @@ class HomeController extends Controller
     {
     	return view('terms');
     }
+
 }

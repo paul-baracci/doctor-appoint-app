@@ -72,7 +72,7 @@
                             <a href="{{ route('services.show', ['service' => $service->id]) }}">
                                 <h6 class="font-weight-semibold">{{ $service->title }}</h6>
                             </a>
-                            <p><strong>scheduled</strong> {{ $service->requests }} times</p>
+                            <p><strong>scheduled</strong> {{ $service->appointments_count }} times</p>
                         </div>
                         <div class="col ml-auto mb-2">
                             <h3> ${{ $service->price }} </h3>

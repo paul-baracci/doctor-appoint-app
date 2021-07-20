@@ -74,7 +74,7 @@ class AppointmentController extends Controller
                 $message->subject('Appointment request: ' . $request->input('service'));
             });
         
-        Service::where('id', '=', $request->input('service_id'))->increment('requests');
+        /* Service::where('id', '=', $request->input('service_id'))->increment('requests'); */
 
         return back()->with('alert', json_encode([
             'type' => 'success',
@@ -119,11 +119,18 @@ class AppointmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Appointment $appointment
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Appointment $appointment)
+    public function destroy($id)
     {
-        //
+        $appointment = Appointment::findOrFail($id);
+
+        $appointment->delete();
+
+        return back()->with('alert', json_encode([
+            'type' => 'success',
+            'message' => 'Appointment deleted!'
+        ]));
     }
 }

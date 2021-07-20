@@ -17,4 +17,7 @@ class Service extends Model
     public function image() {
         return $this->belongsTo(Image::class);
     }
+    public function appointments() {
+        return $this->hasMany(Appointment::class);
+    }
 }
