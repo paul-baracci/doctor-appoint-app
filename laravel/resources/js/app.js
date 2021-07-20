@@ -32,7 +32,9 @@ const app = new Vue({
             const prevBtn = document.querySelector('.btn-prev');
             const nextBtn = document.querySelector('.btn-next');
             const items = document.querySelectorAll('.slider-item');
+            
             const itemCount = items.length;
+
             const itemWidth = container.clientWidth / slidesVisible + 10 ;
             const movePosition = slidesOnScroll * itemWidth;
 
@@ -53,7 +55,14 @@ const app = new Vue({
             });
             nextBtn.addEventListener('click', () => {
                 const itemsLeft = itemCount - (Math.abs(position) + slidesVisible * itemWidth) / itemWidth;
-                position -= itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
+                const reachedEnd = -(itemCount/2 - slidesVisible) * itemWidth;
+
+                if (position <= reachedEnd) {
+                    position = 0;
+                } else {
+                    position -= itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
+                }
+                
                 setPosition();
                 checkBtns();
             });
@@ -64,7 +73,8 @@ const app = new Vue({
 
             const checkBtns = () => {
                 prevBtn.disabled = position === 0;
-                nextBtn.disabled = position <= -(itemCount/2 - slidesVisible) * itemWidth;
+                // Uncomment the follwing line to disable next button when the final slide is reached
+                // nextBtn.disabled = position <= -(itemCount/2 - slidesVisible) * itemWidth;
             };
 
             checkBtns();
