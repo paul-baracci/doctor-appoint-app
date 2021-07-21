@@ -22,6 +22,20 @@ const app = new Vue({
         }
     },
     mounted() {
+        if (window.location.href === 'http://localhost:880/about') {
+            $(document).keydown(function(e) {
+                if (e.keyCode === 37) {
+                    // Previous
+                    $(".carousel-control.left").click();
+                    return false;
+                }
+                if (e.keyCode === 39) {
+                    // Next
+                    $(".carousel-control.right").click();
+                    return false;
+                }
+            });
+        }
         // Product carousel
         if (window.location.href === 'http://localhost:880/') {
             let position = 0;
@@ -32,7 +46,7 @@ const app = new Vue({
             const prevBtn = document.querySelector('.btn-prev');
             const nextBtn = document.querySelector('.btn-next');
             const items = document.querySelectorAll('.slider-item');
-            
+
             const itemCount = items.length;
 
             const itemWidth = container.clientWidth / slidesVisible + 10 ;
@@ -62,7 +76,7 @@ const app = new Vue({
                 } else {
                     position -= itemsLeft >= slidesOnScroll ? movePosition : itemsLeft * itemWidth;
                 }
-                
+
                 setPosition();
                 checkBtns();
             });
@@ -107,7 +121,7 @@ const app = new Vue({
         },
         isProductAdded(serviceObject) {
             if (this.cart.length === 0) {
-                 return false;
+                return false;
             }
             return this.cart.some(service => service.id === serviceObject.id);
         }

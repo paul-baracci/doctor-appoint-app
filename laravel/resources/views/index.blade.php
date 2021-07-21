@@ -70,7 +70,7 @@
                             }">
                         </add-to-cart>
                             <a href="{{ route('services.show', ['service' => $service->id]) }}">
-                                <h6 class="font-weight-semibold">{{ $service->title }}</h6>
+                                <h3 class="font-weight-semibold">{{ $service->title }}</h3>
                             </a>
                             <p><strong>scheduled</strong> {{ $service->appointments_count }} times</p>
                         </div>
