@@ -22,20 +22,20 @@ const app = new Vue({
         }
     },
     mounted() {
-        if (window.location.href === 'http://localhost:880/about') {
-            $(document).keydown(function(e) {
-                if (e.keyCode === 37) {
-                    // Previous
-                    $(".carousel-control.left").click();
-                    return false;
-                }
-                if (e.keyCode === 39) {
-                    // Next
-                    $(".carousel-control.right").click();
-                    return false;
-                }
-            });
-        }
+        // Carousel arrow key controls
+        $(document).keydown(function(e) {
+            if (e.keyCode === 37) {
+                // Previous
+                $(".carousel-control.left").click();
+                return false;
+            }
+            if (e.keyCode === 39) {
+                // Next
+                $(".carousel-control.right").click();
+                return false;
+            }
+        });
+
         // Product carousel
         if (window.location.href === 'http://localhost:880/') {
             let position = 0;

@@ -30,6 +30,10 @@ ul {
     list-style-type: none;
 }
 
+#gallery img {
+    cursor: pointer;
+}
+
 img {
     outline: 0!important;
 }

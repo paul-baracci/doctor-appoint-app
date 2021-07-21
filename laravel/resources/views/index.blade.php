@@ -66,7 +66,7 @@
                     <a href="{{ route('services.show', ['service' => $service->id]) }}">
                         <h3 class="font-weight-semibold">{{ $service->title }}</h3>
                     </a>
-                    <p><strong>Added</strong><strong class="font-weight-light mx-3">{{ $service->created_at->diffForHumans() }}</strong> </p>
+                    <p><strong>Added </strong>{{ $service->created_at->diffForHumans() }}</p>
                     <h3> ${{ $service->price }} </h3>
                     <div class="m-2">
                         @include('scheduleButton')
