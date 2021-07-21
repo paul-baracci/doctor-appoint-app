@@ -59,13 +59,18 @@ img {
     transition: .5s;
 }
 
+.recent {
+    max-width: 290px!important;
+    height: auto;
+}
+
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.50);
     border-radius: 50px;
 }
 
 .categ-drop {
-    position: fixed;
+    position: absolute;
     z-index: 9;
     max-width: 10em;
     background-color: #ffffff;

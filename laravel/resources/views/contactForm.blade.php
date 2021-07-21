@@ -17,7 +17,7 @@
                         <textarea name="content" rows="3" class="form-control" placeholder="Message" required></textarea>
                 </div>
                 <div class="form-group">
-                        <div class="h-captcha text-center" data-sitekey="9c6eb30c-cf96-4956-beef-49f335ee66c2" data-theme="light"></div>
+                        <div class="h-captcha text-center" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-theme="light"></div>
                 </div>
                 <div class="form-group text-center">
                   <button type="submit" class="btn-lg btn-success">Send</button>

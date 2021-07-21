@@ -49,6 +49,33 @@
             </div>
         </div>
     </div>
+    <div>
+        <div class="container text-center mb-4">
+            <h1 class="mb-4">Latest services</h1>
+            <div class="d-flex flex-row">
+            @foreach($recentServices as $service)
+                <div class="card shadow m-1 p-0">
+                    <img src="{{ $service->image->path }}"  alt="Image">
+                    <add-to-cart :service-object="{
+                        id: {{ $service->id }},
+                        title: '{{ $service->title }}',
+                        price: {{ $service->price }},
+                        image: '{{ $service->image->path }}'
+                        }">
+                    </add-to-cart>
+                    <a href="{{ route('services.show', ['service' => $service->id]) }}">
+                        <h3 class="font-weight-semibold">{{ $service->title }}</h3>
+                    </a>
+                    <p><strong>Added</strong><strong class="font-weight-light mx-3">{{ $service->created_at->diffForHumans() }}</strong> </p>
+                    <h3> ${{ $service->price }} </h3>
+                    <div class="m-2">
+                        @include('scheduleButton')
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="text-center mb-4">
             <h1>Popular Services</h1>
