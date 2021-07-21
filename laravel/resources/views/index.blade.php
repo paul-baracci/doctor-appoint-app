@@ -52,7 +52,7 @@
     <div>
         <div class="container text-center mb-4">
             <h1 class="mb-4">Latest services</h1>
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-wrap flex-lg-nowrap">
             @foreach($recentServices as $service)
                 <div class="card shadow m-1 p-0">
                     <img src="{{ $service->image->path }}"  alt="Image">
